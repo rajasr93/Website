@@ -1,0 +1,87 @@
+/* General Settings */
+body {
+    font-family: 'Courier New', monospace; /* Keeps the terminal vibe */
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+}
+
+/* 1. HEADER & SOCIAL ICONS */
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-header h1 {
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+}
+
+.profile-header h2 {
+    margin-top: 0;
+    font-weight: 300; /* Thin font */
+    color: #666;
+    font-family: 'Arial', sans-serif; /* Cleaner font for title */
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #333;        /* Icon color */
+    font-size: 1.5rem;  /* Icon size */
+    margin: 0 15px;     /* Spacing between icons */
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;     /* Blue on hover */
+    transform: translateY(-3px); /* Floats up slightly */
+}
+
+/* 2. SEARCH BAR (Shadow, No Border) */
+.search-container {
+    width: 60%;
+    margin: 0 auto 30px auto;
+}
+
+input#command-input {
+    width: 100%;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
+
+    /* The Magic: No Border + Shadow */
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+
+    transition: box-shadow 0.3s ease;
+}
+
+input#command-input:focus {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on click */
+}
+
+/* Output Area */
+#terminal-output {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    min-height: 100px;
+    white-space: pre-wrap; /* Preserves formatting */
+}
