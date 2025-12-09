@@ -1,57 +1,23 @@
-/* src/components/Widgets/AboutWidget.jsx */
 import React from 'react';
-import { User, BadgeCheck, MapPin, Mail, Phone } from 'lucide-react';
 
-const AboutWidget = ({ data, profile }) => {
+const AboutWidget = () => {
   return (
-    <div className="space-y-8 pb-10">
-      <h2 className="text-2xl font-bold text-slate-100 flex items-center gap-3 border-b border-white/10 pb-4">
-        <span className="w-2 h-8 bg-blue-500 rounded-full"></span>
-        User Profile
-      </h2>
+    <div className="animate-fade-in font-mono text-gray-800 space-y-6 leading-relaxed text-justify">
+      
+      {/* Section 1 */}
+      <p>
+        My path into cybersecurity wasn't linear; it was a recursive loop of curiosity. During my time at <span className="font-bold">Drexel University</span>, I realized that engineering reliable software requires a fundamental understanding of failure states. That insight shifted my focus from simply building applications to securing the infrastructure that powers them. I became obsessed with the logic behind the code—analyzing why systems fracture under pressure and how to design architectures that are resilient by default.
+      </p>
 
-      <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 md:p-8 space-y-6">
-        {/* Contact Header inside About */}
-        <div className="flex flex-wrap gap-4 text-sm text-slate-400 font-mono border-b border-white/5 pb-6">
-            <div className="flex items-center gap-2">
-                <MapPin size={16} className="text-blue-400" />
-                {profile.location}
-            </div>
-            <div className="flex items-center gap-2">
-                <Mail size={16} className="text-blue-400" />
-                {profile.email}
-            </div>
-            <div className="flex items-center gap-2">
-                <Phone size={16} className="text-blue-400" />
-                {profile.phone}
-            </div>
-        </div>
+      {/* Section 2 */}
+      <p>
+        I started my career grappling with the tangible chaos of general IT and network hardware, which gave me a necessary respect for the physical layer of technology. As I pivoted toward <span className="font-bold">Security Engineering</span>, I translated that hands-on discipline into the cloud. I learned that modern security isn't just about configuring firewalls; it is about orchestration, automating compliance, and understanding the behavioral psychology behind every attack vector.
+      </p>
 
-        <div className="flex items-start gap-4">
-          <div className="p-3 bg-blue-500/10 rounded-xl text-blue-400 mt-1">
-            <User size={24} />
-          </div>
-          <div className="space-y-4">
-             <p className="text-slate-300 leading-relaxed text-lg">
-               {data.bio}
-             </p>
-          </div>
-        </div>
-
-        <div className="mt-8 pt-6 border-t border-white/10">
-           <div className="flex items-center gap-2 text-slate-400 mb-4">
-             <BadgeCheck size={18} className="text-cyber" />
-             <span className="text-sm font-bold uppercase tracking-wider">Certifications</span>
-           </div>
-           <div className="flex flex-wrap gap-3">
-             {data.certifications.map((item, i) => (
-               <span key={i} className="px-3 py-1.5 bg-blue-900/20 border border-blue-500/20 rounded-lg text-sm text-blue-300">
-                 {item}
-               </span>
-             ))}
-           </div>
-        </div>
-      </div>
+      {/* Section 3 */}
+      <p>
+        Today, my work exists at the volatile intersection of infrastructure and innovation. Whether I am hardening <span className="font-bold">cloud environments</span> or dissecting <span className="font-bold">adversarial AI</span> models, I approach security as an engineering problem rather than a checklist. I don't just want to patch vulnerabilities; I want to engineer environments where those vulnerabilities are statistically unlikely to exist.
+      </p>
     </div>
   );
 };

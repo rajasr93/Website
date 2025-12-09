@@ -2,7 +2,7 @@
 export const config = {
   profile: {
     name: "Rajas Ronghe",
-    role: "Cloud Security Engineer",
+    role: "Security Engineer",
     email: "rajasr9@outlook.com",
     phone: "+1 (267) 366-3719",
     location: "Philadelphia, PA",

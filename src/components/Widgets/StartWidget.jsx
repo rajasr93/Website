@@ -1,45 +1,42 @@
-/* src/components/Widgets/StartWidget.jsx */
 import React from 'react';
-import { Terminal, ArrowRight, Power } from 'lucide-react';
-import { config } from '../../data/config';
 
 const StartWidget = () => {
-  const commands = [
-    { cmd: "start", desc: "Initialize system & view command menu" },
-    { cmd: "about", desc: "User profile, bio & certifications" },
-    { cmd: "experience", desc: "Professional history & operations log" },
-    { cmd: "projects", desc: "Active payloads & research archives" },
-    { cmd: "skills", desc: "Technical arsenal & tool inventory" },
-    { cmd: "education", desc: "Academic credentials & degrees" },
-  ];
-
   return (
-    <div className="space-y-8 pb-10">
-      <div className="flex items-center gap-4 border-b border-white/10 pb-6">
-        <div className="p-4 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 text-emerald-400">
-          <Power size={32} />
-        </div>
-        <div>
-          <h2 className="text-3xl font-bold text-slate-100">Welcome, User.</h2>
-          <p className="text-slate-400 font-mono text-sm mt-1">System ready. Select a vector to begin.</p>
-        </div>
+    <div className="animate-fade-in space-y-6 font-mono text-gray-800 leading-relaxed">
+      {/* Greeting Section */}
+      <div>
+        <p className="mb-4 text-blue-600 font-bold">System initialized. Welcome to the terminal.</p>
+        
+        <p className="mb-4">
+          I’m <span className="font-bold text-black">Rajas Ronghe</span>, a security engineer who believes that the best way to build a secure system is to understand exactly how to break it. I spend my time architecting cloud defenses, researching the vulnerabilities of AI, and occasionally staring at the night sky. This interface is designed to let you query my background directly from the source.
+        </p>
       </div>
 
-      <div className="grid gap-3">
-        {commands.map((item, i) => (
-          <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 transition-colors group">
-            <div className="p-3 bg-slate-800 rounded-lg text-cyber group-hover:text-white transition-colors">
-              <Terminal size={20} />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-lg font-bold text-cyan-400 font-mono">{item.cmd}</span>
-                <ArrowRight size={14} className="text-slate-600" />
-              </div>
-              <p className="text-slate-400 text-sm mt-1">{item.desc}</p>
-            </div>
-          </div>
-        ))}
+      {/* Command Menu */}
+      <div className="bg-gray-50 border-l-4 border-blue-500 p-4 rounded-r-md shadow-sm">
+        <p className="font-bold mb-3 text-gray-900">To navigate, the following commands are available to you:</p>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <span className="text-blue-600 font-bold">about</span> <span className="text-gray-400 mx-2">-</span> 
+            My background and philosophy.
+          </li>
+          <li>
+            <span className="text-blue-600 font-bold">experience</span> <span className="text-gray-400 mx-2">-</span> 
+            Professional history and technical roles.
+          </li>
+          <li>
+            <span className="text-blue-600 font-bold">projects</span> <span className="text-gray-400 mx-2">-</span> 
+            A log of my engineering and research work.
+          </li>
+          <li>
+            <span className="text-blue-600 font-bold">socials</span> <span className="text-gray-400 mx-2">-</span> 
+            Links to my GitHub, LinkedIn, and contact info.
+          </li>
+          <li>
+            <span className="text-blue-600 font-bold">help</span> <span className="text-gray-400 mx-2">-</span> 
+            Detailed help menu.
+          </li>
+        </ul>
       </div>
     </div>
   );

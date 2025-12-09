@@ -1,36 +1,41 @@
 import React from 'react';
 
-const ExperienceWidget = ({ data }) => {
+const ExperienceWidget = () => {
+  const experiences = [
+    {
+      title: "Cloud Security Engineer",
+      company: "Saayam-for-All",
+      description: "I served as the primary architect for the organization’s cloud defense strategy, focusing on the hardening of AWS infrastructure. My work centered on enforcing strict Identity and Access Management (IAM) governance to ensure a principle of least privilege across all development environments. By leveraging serverless automation and Python scripting, I engineered self-healing workflows that could detect and auto-remediate misconfigurations in real-time, significantly reducing the window of exposure for critical data assets."
+    },
+    {
+      title: "AI Cybersecurity Research Co-op",
+      company: "Drexel University",
+      description: "Operating at the cutting edge of Adversarial Machine Learning, I conducted extensive research into the security implications of Large Language Models (LLMs). My role involved utilizing PyTorch to develop and simulate sophisticated attack vectors, specifically targeting prompt injection vulnerabilities and \"jailbreak\" scenarios. This deep vulnerability analysis provided critical data on how generative AI systems can be manipulated, contributing to the development of robust defense mechanisms against emerging AI-driven threats."
+    },
+    {
+      title: "Security Engineer",
+      company: "SK Enterprises",
+      description: "In this role, I executed a comprehensive security strategy focused on network integrity and attack surface reduction. I was responsible for the continuous monitoring of network traffic patterns to identify anomalies indicative of latent threats. I orchestrated the deployment of rigorous access controls and collaborated with cross-functional teams to close security gaps in legacy systems, ensuring that the organization’s internal architecture remained resilient against both external penetration attempts and lateral movement."
+    }
+  ];
+
   return (
-    <div className="space-y-8 pb-10">
-      <h2 className="text-2xl font-bold text-slate-100 flex items-center gap-3 border-b border-white/10 pb-4">
-        <span className="w-2 h-8 bg-cyan-500 rounded-full"></span>
-        Professional Experience
-      </h2>
-      
-      <div className="space-y-12">
-        {data.map((job, i) => (
-          <div key={i} className="relative pl-6 md:pl-8 border-l border-white/10 ml-2">
-            <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 bg-slate-900 border border-cyan-500 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
-            
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-1">
-              <h3 className="text-xl font-bold text-slate-100">{job.role}</h3>
-              <span className="text-sm font-mono text-cyan-400/80">{job.period}</span>
-            </div>
-            
-            <div className="text-slate-400 font-medium mb-3">{job.company}</div>
-            <p className="text-slate-300 leading-relaxed text-sm mb-4 max-w-3xl">{job.desc}</p>
-            
-            <div className="flex flex-wrap gap-2">
-              {job.tags.map(tag => (
-                <span key={tag} className="px-2 py-1 text-[10px] uppercase tracking-wider font-bold text-cyan-300 bg-cyan-950/30 rounded border border-cyan-500/20">
-                  {tag}
-                </span>
-              ))}
-            </div>
+    <div className="animate-fade-in space-y-8 font-mono">
+      {experiences.map((job, index) => (
+        <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+          
+          {/* Job Header */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 border-b border-gray-100 pb-2">
+            <h3 className="text-lg font-bold text-gray-900">{job.title}</h3>
+            <span className="text-blue-600 font-semibold">{job.company}</span>
           </div>
-        ))}
-      </div>
+
+          {/* Job Description */}
+          <p className="text-gray-700 leading-relaxed text-justify text-sm md:text-base">
+            {job.description}
+          </p>
+        </div>
+      ))}
     </div>
   );
 };
