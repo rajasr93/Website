@@ -7,18 +7,26 @@ import SearchBar from './components/Search/SearchBar';
 import ExperienceWidget from './components/Widgets/ExperienceWidget';
 import ProjectsWidget from './components/Widgets/ProjectsWidget';
 import EducationWidget from './components/Widgets/EducationWidget';
-import HelpWidget from './components/Widgets/HelpWidget'; // <-- 1. Import HelpWidget
+import StartWidget from './components/Widgets/StartWidget';
+import AboutWidget from './components/Widgets/AboutWidget';
+import SkillsWidget from './components/Widgets/SkillsWidget';
 import { config } from './data/config';
 
 const App = () => {
   const [input, setInput] = useState('');
 
   const getActiveSection = () => {
-    const val = input.toLowerCase();
+    const val = input.toLowerCase().trim();
+    if (!val) return null;
+
     if (val.includes('exp') || val.includes('work')) return 'EXPERIENCE';
     if (val.includes('proj') || val.includes('dev')) return 'PROJECTS';
     if (val.includes('edu') || val.includes('study')) return 'EDUCATION';
-    if (val.includes('help') || val.includes('cmd')) return 'HELP'; // <-- 2. Add Help Logic
+    if (val.includes('skill') || val.includes('tech')) return 'SKILLS';
+    if (val.includes('about') || val.includes('bio')) return 'ABOUT';
+    // 'start' or 'help' maps to START
+    if (val.includes('start') || val.includes('help') || val.includes('cmd')) return 'START';
+    
     return null;
   };
 
@@ -37,7 +45,6 @@ const App = () => {
         
         <SearchBar input={input} setInput={setInput} isActive={!!activeSection} />
 
-        {/* 3. Increased Height to 80vh (was 60vh) */}
         <div className="fixed bottom-0 left-0 right-0 h-[80vh] pointer-events-none flex justify-center">
           <AnimatePresence mode="wait">
             {activeSection && (
@@ -53,7 +60,9 @@ const App = () => {
                   {activeSection === 'EXPERIENCE' && <ExperienceWidget data={config.experience} />}
                   {activeSection === 'PROJECTS' && <ProjectsWidget data={config.projects} />}
                   {activeSection === 'EDUCATION' && <EducationWidget data={config.education} />}
-                  {activeSection === 'HELP' && <HelpWidget />} 
+                  {activeSection === 'SKILLS' && <SkillsWidget data={config.skills} />}
+                  {activeSection === 'ABOUT' && <AboutWidget data={config.about} profile={config.profile} />}
+                  {activeSection === 'START' && <StartWidget />} 
                 </div>
               </motion.div>
             )}

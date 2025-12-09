@@ -19,7 +19,7 @@ const SearchBar = ({ input, setInput, isActive }) => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Type 'help', 'projects', or 'exp'..."
+          placeholder="Type Start..."
           autoFocus
           className={`
             w-full bg-slate-900/60 backdrop-blur-xl border text-lg md:text-xl py-4 pl-12 pr-6 rounded-2xl shadow-2xl 
