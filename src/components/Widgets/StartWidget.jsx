@@ -3,7 +3,7 @@ import React from 'react';
 import { Terminal, ArrowRight, Power } from 'lucide-react';
 import { config } from '../../data/config';
 
-const StartWidget = () => {
+const StartWidget = ({ onNavigate }) => {
   const { greeting, bio, instruction, commands } = config.start;
 
   return (
@@ -17,30 +17,39 @@ const StartWidget = () => {
           <h2 className="text-xl md:text-2xl font-bold text-emerald-400 font-mono">
             {greeting}
           </h2>
-          <p className="text-slate-300 leading-relaxed text-lg">
+          <p className="text-slate-500 leading-relaxed text-lg">
             {bio}
           </p>
-          <p className="text-slate-500 text-sm font-mono mt-2">
-            // {instruction}
-          </p>
+          <div className="mt-4 space-y-2">
+            <p className="text-slate-500 text-sm font-mono">
+              // {instruction}
+            </p>
+            <p className="text-slate-400 text-sm font-medium border-t border-slate-200/50 pt-2 mt-2">
+              These are the commands that can be used in the searchbox:
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Command Grid */}
       <div className="grid gap-3 md:grid-cols-2">
         {commands.map((item, i) => (
-          <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 transition-colors group cursor-default">
-            <div className="p-3 bg-slate-800 rounded-lg text-emerald-400 group-hover:text-white transition-colors">
+          <button
+            key={i}
+            onClick={() => onNavigate(item.cmd)}
+            className="flex items-center gap-4 p-4 bg-white/50 border border-slate-200 rounded-xl hover:bg-white hover:shadow-md hover:border-cyan-500/30 transition-all group text-left w-full"
+          >
+            <div className="p-3 bg-slate-100 rounded-lg text-slate-600 group-hover:text-cyan-600 transition-colors">
               <Terminal size={20} />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-lg font-bold text-cyan-400 font-mono">{item.cmd}</span>
-                <ArrowRight size={14} className="text-slate-600 group-hover:translate-x-1 transition-transform" />
+                <span className="text-lg font-bold text-slate-800 font-mono group-hover:text-cyan-600 transition-colors">{item.cmd}</span>
+                <ArrowRight size={14} className="text-slate-400 group-hover:translate-x-1 transition-transform group-hover:text-cyan-500" />
               </div>
-              <p className="text-slate-400 text-sm mt-1">{item.desc}</p>
+              <p className="text-slate-500 text-sm mt-1">{item.desc}</p>
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </div>

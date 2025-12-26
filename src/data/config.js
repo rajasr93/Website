@@ -6,21 +6,22 @@ export const config = {
     email: "rajasr9@outlook.com",
     phone: "+1 (267) 366-3719",
     location: "Philadelphia, PA",
-    linkedin: "https://linkedin.com/in/rajas-ronghe93/", 
+    linkedin: "https://linkedin.com/in/rajas-ronghe93/",
     github: "https://github.com/rajasr93"
   },
 
   // 1. NEW: The Start Screen Content
   start: {
     greeting: "System initialized. Welcome to the terminal.",
-    bio: "I’m Rajas Ronghe, a security engineer who believes that the best way to build a secure system is to understand exactly how to breakXZ it. I spend my time architecting cloud defenses, researching the vulnerabilities of AI, and occasionally staring at the night sky.",
+    bio: "I’m Rajas Ronghe, a security engineer who believes that the best way to build a secure system is to understand exactly how to break it. I spend my time architecting cloud defenses, researching the vulnerabilities of AI, and occasionally staring at the night sky.",
     instruction: "This interface is designed to let you query my background directly from the source.",
     commands: [
       { cmd: "about", desc: "Background & Philosophy" },
       { cmd: "experience", desc: "Professional History" },
       { cmd: "projects", desc: "Research & Payloads" },
       { cmd: "skills", desc: "Technical Arsenal" },
-      { cmd: "education", desc: "Credentials" }
+      { cmd: "education", desc: "Credentials" },
+      { cmd: "blog", desc: "Intelligence Feed" }
     ]
   },
 
@@ -41,7 +42,7 @@ export const config = {
       period: "Feb 2025 – Present",
       location: "San Jose, CA",
       // The polished narrative summary:
-      desc: "I serve as the primary architect for the organization’s cloud defense strategy, focusing on the hardening of AWS infrastructure. My work centers on enforcing strict Identity and Access Management (IAM) governance to ensure a principle of least privilege. By leveraging serverless automation and Python scripting, I engineer self-healing workflows that detect and auto-remediate misconfigurations in real-time, significantly reducing the window of exposure for critical data assets.",
+      desc: " Security policies are useless if they aren't enforced by code. Engineered automated IAM provisioning systems using Python and Infrastructure as Code (IaC), which effectively eliminated manual configuration errors across the cloud environment. Orchestrated standardized validation frameworks for AWS infrastructure, ensuring strict compliance across development, staging, and production ecosystems. To tighten access controls, streamlined credential lifecycle management by automating rotation workflows and implemented secure secrets management architectures to support SOC 2 requirements. The focus was on building a self-healing infrastructure where security is baked in, not bolted on.",
       tags: ["AWS", "Python", "IaC", "SOC 2"]
     },
     {
@@ -49,7 +50,7 @@ export const config = {
       role: "AI Cybersecurity Research Co-op",
       period: "Oct 2024 – Dec 2024",
       location: "Philadelphia, PA",
-      desc: "Operating at the cutting edge of Adversarial Machine Learning, I conducted extensive research into the security implications of Large Language Models (LLMs). My role involved utilizing PyTorch to develop and simulate sophisticated attack vectors, specifically targeting prompt injection vulnerabilities. This deep vulnerability analysis provided critical data on how generative AI systems can be manipulated, contributing to the development of robust defense mechanisms.",
+      desc: "Active defense requires understanding how to break the model first. Pioneered adversarial machine learning testing methodologies against neural networks, achieving a 92% attack success rate to validate model robustness. Analyzed vulnerability patterns within image classification systems, documenting accuracy degradation to inform the development of resilient defense mechanisms. This research moved beyond theory, as findings on adversarial vulnerabilities were presented to stakeholders to directly influence future AI defense strategies",
       tags: ["Adversarial ML", "AI Security", "Research"]
     },
     {
@@ -57,7 +58,15 @@ export const config = {
       role: "Security Engineer",
       period: "Jan 2022 – Jan 2023",
       location: "India",
-      desc: "Executed a comprehensive security strategy focused on network integrity and attack surface reduction. I was responsible for the continuous monitoring of network traffic patterns to identify anomalies indicative of latent threats. I orchestrated the deployment of rigorous access controls and collaborated with cross-functional teams to close security gaps in legacy systems, ensuring the architecture remained resilient against lateral movement.",
+      desc: "Testing the human firewall is just as critical as testing the software. Spearheaded organizational phishing simulation campaigns using behavioral analysis, reducing employee susceptibility to social engineering by 32%. On the technical side, executed comprehensive vulnerability assessments utilizing Metasploit and OWASP standards to identify and remediate critical flaws in web applications. Optimized these testing workflows by integrating Burp Suite, which accelerated threat detection capabilities. Consolidated monitoring operations for 115 endpoints, enhancing incident response velocity and visibility into network threats. ",
+      tags: ["Phishing Sim", "Metasploit", "Burp Suite"]
+    },
+    {
+      company: "Digital Pass",
+      role: "Cybersecurity Intern",
+      period: "Jan 2021 – Jan 2022",
+      location: "India",
+      desc: "You cannot protect what you cannot see. Leveraged OSINT reconnaissance tools to identify exposed assets, aggressively shrinking the organizational attack surface. Managing security across 200+ endpoints required catalyzing remediation efforts and prioritizing critical findings for rapid patch deployment. To eliminate blind spots, mapped the full network topology to detect unauthorized services, applying strict access controls to close distinct security exposures. This technical data was streamlined into actionable risk reports, translating complex vulnerabilities into clear mitigation steps for leadership.",
       tags: ["Phishing Sim", "Metasploit", "Burp Suite"]
     }
   ],

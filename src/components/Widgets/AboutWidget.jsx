@@ -2,8 +2,8 @@ import React from 'react';
 
 const AboutWidget = () => {
   return (
-    <div className="animate-fade-in font-mono text-gray-800 space-y-6 leading-relaxed text-justify">
-      
+    <div className="animate-fade-in font-mono text-gray-700 space-y-6 leading-relaxed text-justify">
+
       {/* Section 1 */}
       <p>
         My path into cybersecurity wasn't linear; it was a recursive loop of curiosity. During my time at <span className="font-bold">Drexel University</span>, I realized that engineering reliable software requires a fundamental understanding of failure states. That insight shifted my focus from simply building applications to securing the infrastructure that powers them. I became obsessed with the logic behind the code—analyzing why systems fracture under pressure and how to design architectures that are resilient by default.

@@ -4,36 +4,36 @@ import React from 'react';
 const ExperienceWidget = ({ data }) => {
   return (
     <div className="space-y-8 pb-10">
-      <h2 className="text-2xl font-bold text-slate-100 flex items-center gap-3 border-b border-white/10 pb-4">
+      <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-3 border-b border-slate-200 pb-4">
         <span className="w-2 h-8 bg-cyan-500 rounded-full"></span>
         Professional Experience
       </h2>
-      
+
       <div className="space-y-12">
         {data.map((job, i) => (
-          <div key={i} className="relative pl-6 md:pl-8 border-l border-white/10 ml-2">
+          <div key={i} className="relative pl-6 md:pl-8 border-l border-slate-200 ml-2">
             {/* Timeline Dot */}
             <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 bg-slate-900 borderQD border-cyan-500 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
-            
+
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-1">
-              <h3 className="text-xl font-bold text-slate-100">{job.role}</h3>
+              <h3 className="text-xl font-bold text-slate-800">{job.role}</h3>
               <span className="text-sm font-mono text-cyan-400/80 bg-cyan-950/30 px-2 py-0.5 rounded border border-cyan-500/10">
                 {job.period}
               </span>
             </div>
-            
-            <div className="text-slate-400 font-medium mb-4 flex items-center gap-2">
-              {job.company} 
-              <span className="text-slate-600">•</span> 
+
+            <div className="text-slate-600 font-medium mb-4 flex items-center gap-2">
+              {job.company}
+              <span className="text-slate-600">•</span>
               <span className="text-xs text-slate-500">{job.location}</span>
             </div>
 
             {/* The Smart Summary Paragraph */}
-            <p className="text-slate-300 leading-relaxed text-base mb-5 max-w-4xl text-justify">
+            <p className="text-gray-700 leading-relaxed text-base mb-5 max-w-4xl text-justify">
               {job.desc}
             </p>
-            
+
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {job.tags.map(tag => (
