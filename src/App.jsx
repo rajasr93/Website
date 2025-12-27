@@ -72,7 +72,7 @@ const App = () => {
   const handleClose = () => setInput('menu');
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans relative overflow-hidden selection:bg-cyan-500/30 flex flex-col">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans relative overflow-x-hidden overflow-y-auto selection:bg-cyan-500/30 flex flex-col">
 
       {/* 1. Visual Layer */}
       <Background3D />
@@ -80,7 +80,7 @@ const App = () => {
       {/* 2. UI Layer */}
       <Header />
 
-      <main className="flex-grow flex flex-col items-center justify-center relative z-10 px-4 w-full max-w-5xl mx-auto transition-all duration-500 gap-8">
+      <main className="flex-grow flex flex-col items-center justify-center relative z-10 px-4 w-full max-w-5xl mx-auto transition-all duration-500 gap-8 pt-28 pb-24 md:pt-0 md:pb-0">
 
         {/* 3. Main Widget Display (Dashboard) */}
         <div className="w-full flex justify-center perspective-[1000px] min-h-[400px] items-center">
