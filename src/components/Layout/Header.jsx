@@ -12,7 +12,7 @@ const Header = () => {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 p-6 md:p-8 flex flex-col md:flex-row justify-between items-center md:items-start z-50 pointer-events-none transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 p-6 md:p-8 flex flex-col md:flex-row justify-between items-center md:items-start z-50 pointer-events-none transition-all duration-300 bg-white/90 backdrop-blur-md md:bg-transparent md:backdrop-blur-none">
 
       {/* LEFT SIDE: Identity & Socials (Original Layout) */}
       {/* CENTER MOBILE CONTROLS: Toggle Buttons (Between Name and Time) */}
@@ -214,9 +214,12 @@ const Header = () => {
         {/* Resume Toggle (Blue) */}
         <button
           onClick={() => {
-            const newState = !isResumeOpen;
-            setIsResumeOpen(newState);
-            if (newState) setIsWidgetOpen(false); // Close other widget
+            if (isResumeOpen) {
+              setIsResumeOpen(false);
+            } else {
+              setIsResumeOpen(true);
+              setIsWidgetOpen(false); // Exclusive open
+            }
           }}
           className="flex h-10 w-10 items-center justify-center bg-white border border-cyan-500/30 rounded-xl shadow-sm"
         >
@@ -233,9 +236,12 @@ const Header = () => {
         {/* Threat Toggle (Red) */}
         <button
           onClick={() => {
-            const newState = !isWidgetOpen;
-            setIsWidgetOpen(newState);
-            if (newState) setIsResumeOpen(false); // Close other widget
+            if (isWidgetOpen) {
+              setIsWidgetOpen(false);
+            } else {
+              setIsWidgetOpen(true);
+              setIsResumeOpen(false); // Exclusive open
+            }
           }}
           className="flex h-10 w-10 items-center justify-center bg-white border border-red-500/30 rounded-xl shadow-sm"
         >
@@ -249,6 +255,18 @@ const Header = () => {
           )}
         </button>
       </div>
+
+      {/* FIXED BACKDROP: Closes widgets when clicking outside */}
+      {/* Visible only when a widget is open on mobile */}
+      {(isResumeOpen || isWidgetOpen) && (
+        <div
+          className="md:hidden fixed inset-0 z-[55] bg-slate-900/10 backdrop-blur-[1px]"
+          onClick={() => {
+            setIsResumeOpen(false);
+            setIsWidgetOpen(false);
+          }}
+        />
+      )}
     </header>
   );
 };

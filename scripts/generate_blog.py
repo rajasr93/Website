@@ -519,7 +519,8 @@ def main():
         
         if not qa_passed:
             print(f"❌ QA Check Failed: {qa_result.get('reason', 'Unknown error')}")
-            print(f"⚠️  Post discarded due to QA failure.")
+            print(f"⚠️  Post discarded due to QA failure. (Strict Style Enforcement)")
+            # Log failure to audit log explicitly if needed or rely on overseer's internal logging
             return
 
         print(f"✅ QA Check Passed: {qa_result.get('status')} - {qa_result.get('reason')}")

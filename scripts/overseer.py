@@ -85,21 +85,23 @@ def check_content_quality(latest_post):
         client = genai.Client(api_key=GEMINI_API_KEY, http_options={'api_version': 'v1alpha'})
         
         prompt = f"""
-        Act as a strict Quality Assurance Editor. Review this blog post.
+        Act as a strict Quality Assurance Editor for a cybersecurity blog.
+        Your goal is to ensure content is "Raw, Authentic, and Industry-Specific" but accessible.
         
         Title: {latest_post.get('title')}
         Content: {latest_post.get('content')}
         Source: {latest_post.get('source', 'N/A')}
 
-        Check for:
-        1. Grammatical errors.
-        2. Hallucinations (does the content contradict the title?).
-        3. Professional tone validation.
+        CRITICAL CHECKS:
+        1. **Authenticity**: Does it sound like a real person/hacker? Reject "corporate fluff" or generic AI buzzwords.
+        2. **Terminology**: Does it use specific industry tools (e.g., 'nmap', 'Burp Suite', 'Metasploit') and CVE IDs where relevant? Reject generic terms like "cyber tools".
+        3. **Style**: Simple, direct, no-nonsense. No "In the ever-evolving landscape..." intros.
+        4. **Accuracy**: No hallucinations.
 
         Reply STRICTLY in JSON:
         {{
             "status": "PASS" | "WARN" | "FAIL",
-            "reason": "Short summary of issues or 'Looks good'"
+            "reason": "Specific feedback on why it failed (e.g. 'Too corporate', 'Missing tool names') or 'Looks good'"
         }}
         """
 
