@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-PROJECT_DIR="$(dirname "$0")/.."
+PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 LOG_FILE="$PROJECT_DIR/scripts/daily_run.log"
 
 echo "==================================================" >> "$LOG_FILE"

@@ -288,7 +288,7 @@ def generate_news_post(client, model, news_item):
     """Generate news post content"""
     print(f"📝 Generating NEWS post for: {news_item['title'][:50]}...")
     
-    prompt = f"""You are a cybersecurity expert writing for a technical audience.
+    prompt = f"""You are a cybersecurity researcher/hacker writing for a technical audience.
 Write a short update (approx 200 words) about this event.
 
 Event: {news_item['title']}
@@ -296,9 +296,11 @@ Context: {news_item['summary'][:500]}
 Source: {news_item['source']}
 
 Requirements:
-- No markdown formatting (no bold/headers).
-- Concisely explain the impact.
-- Professional, "raw" tone."""
+- TONE: Raw, authentic, direct. NO corporate fluff. NO "In the ever-evolving landscape".
+- DETAILS: You MUST include specific CVE IDs, tool names (e.g. Cobalt Strike, Mimikatz), or technical vectors if mentioned.
+- STYLE: No markdown formatting (no bold/headers). Write like a human engineer talking to peers.
+- CONTENT: Focus on the exploit mechanism and immediate defense.
+"""
     
     content, error = safe_api_call(client, model, prompt, "news post generation")
     return content if content else f"Error generating content: {error}"
@@ -380,9 +382,14 @@ def generate_educational_blog(client, model, existing_posts):
     print(f"📚 Generating EDUCATIONAL BLOG post about: {topic_title}")
     
     prompt = f"""Write a short educational blog post (250 words) about: {topic_title}.
-Audience: General tech users.
-Tone: Informative, helpful.
-Requirements: No markdown headers."""
+Audience: Technical security professionals and engineers.
+Tone: Raw, authentic, instructional. NO corporate buzzwords.
+Requirements:
+- No markdown headers.
+- Use specific tool names (e.g. Wireshark, Metasploit, Ghidra) where applicable.
+- Focus on practical tradecraft, not high-level theory.
+- Start directly with the concept, no fluffy intro.
+"""
     
     content, error = safe_api_call(client, model, prompt, "blog post generation")
     
