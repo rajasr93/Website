@@ -11,14 +11,16 @@ export const useVisitorData = () => {
     useEffect(() => {
         const fetchIP = async () => {
             try {
-                // Primary: ipapi.co
-                const res = await fetch('https://ipapi.co/json/');
+                // Primary: ipwho.is (Preferred: No key, clear JSON structure)
+                const res = await fetch('https://ipwho.is/');
                 if (!res.ok) throw new Error('Primary API failed');
                 const json = await res.json();
 
+                if (!json.success) throw new Error('API returned error');
+
                 setData({
                     ip: json.ip || 'UNKNOWN',
-                    isp: (json.org || json.isp || 'UNKNOWN').toUpperCase(),
+                    isp: (json.connection?.isp || json.connection?.org || json.isp || 'UNKNOWN').toUpperCase(),
                     city: (json.city || 'UNKNOWN').toUpperCase(),
                     loading: false
                 });
@@ -26,16 +28,14 @@ export const useVisitorData = () => {
                 console.warn("Primary IP Fetch failed, trying fallback...", err1);
 
                 try {
-                    // Fallback: ipwho.is (No key required, HTTPS supported)
-                    const res = await fetch('https://ipwho.is/');
+                    // Fallback: ipapi.co
+                    const res = await fetch('https://ipapi.co/json/');
                     if (!res.ok) throw new Error('Fallback API failed');
                     const json = await res.json();
 
-                    if (!json.success) throw new Error('Fallback API returned error');
-
                     setData({
                         ip: json.ip || 'UNKNOWN',
-                        isp: (json.connection?.isp || json.isp || 'UNKNOWN').toUpperCase(),
+                        isp: (json.org || json.isp || 'UNKNOWN').toUpperCase(),
                         city: (json.city || 'UNKNOWN').toUpperCase(),
                         loading: false
                     });
