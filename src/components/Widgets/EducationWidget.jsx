@@ -1,7 +1,7 @@
 import React from 'react';
 import { GraduationCap, Award } from 'lucide-react';
 
-const EducationWidget = ({ data }) => {
+const EducationWidget = ({ education, certifications }) => {
   return (
     <div className="space-y-8 pb-10">
       <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-3 border-b border-slate-200 pb-4">
@@ -10,7 +10,7 @@ const EducationWidget = ({ data }) => {
       </h2>
 
       <div className="grid gap-4">
-        {data.map((edu, i) => (
+        {education.map((edu, i) => (
           <div
             key={i}
             className="flex flex-col sm:flex-row gap-5 p-6 bg-white/50 border border-slate-200 rounded-2xl hover:border-emerald-500/30 transition-colors shadow-sm"
@@ -39,6 +39,42 @@ const EducationWidget = ({ data }) => {
           </div>
         ))}
       </div>
+
+      {/* Certifications Section */}
+      {certifications && certifications.length > 0 && (
+        <div className="mt-8 pt-8 border-t border-slate-200">
+          <h2 className="text-xl font-bold text-slate-800 flex items-center gap-3 mb-6">
+            <span className="w-2 h-6 bg-cyan-500 rounded-full"></span>
+            Certifications
+          </h2>
+          <div className="grid gap-4">
+            {certifications.map((cert, i) => (
+              <a
+                key={i}
+                href={cert.link}
+                target="_blank"
+                rel="noreferrer"
+                className="flex flex-col sm:flex-row gap-5 p-6 bg-white/50 border border-slate-200 rounded-2xl hover:border-cyan-500/30 transition-colors shadow-sm group cursor-pointer"
+              >
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-500 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+                    <Award size={24} />
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-lg font-bold text-slate-800">{cert.name}</h3>
+                    <span className="text-xs font-mono text-cyan-600 bg-cyan-100/50 px-2 py-1 rounded border border-cyan-200 whitespace-nowrap ml-2">
+                      {cert.code}
+                    </span>
+                  </div>
+                  <div className="text-sm text-slate-500 mt-1">{cert.date}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

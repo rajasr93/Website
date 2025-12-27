@@ -55,7 +55,7 @@ const StartWidget = ({ onNavigate, showGreeting = true }) => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-lg font-bold text-slate-800 font-mono group-hover:text-cyan-600 transition-colors">{item.cmd}</span>
+                <span className="text-lg font-bold text-slate-800 font-mono group-hover:text-cyan-600 transition-colors capitalize">{item.cmd}</span>
                 <ArrowRight size={14} className="text-slate-400 group-hover:translate-x-1 transition-transform group-hover:text-cyan-500" />
               </div>
               <p className="text-slate-500 text-sm mt-1">{item.desc}</p>

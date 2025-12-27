@@ -10,43 +10,43 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 p-6 md:p-8 flex justify-between items-start z-50 pointer-events-none">
 
-      {/* LEFT SIDE: Identity & System Time Widget */}
-      <div className="flex flex-col gap-6 pointer-events-auto">
-        {/* Branding */}
-        <div>
-          <h1 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 uppercase">
-            {config.profile.name}
-          </h1>
-          <p className="text-xs text-cyan-600 font-mono mt-1 mb-3">// {config.profile.role}</p>
+      {/* LEFT SIDE: Identity & Socials (Original Layout) */}
+      <div className="pointer-events-auto">
+        <h1 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 uppercase">
+          {config.profile.name}
+        </h1>
+        <p className="text-xs text-cyan-600 font-mono mt-1 mb-3">// {config.profile.role}</p>
 
-          <div className="flex gap-4 text-slate-500">
-            <a href={`mailto:${config.profile.email}`} className="hover:text-cyan-600 transition-colors block"><Mail size={18} /></a>
-            <a href={config.profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-cyan-600 transition-colors"><Linkedin size={18} /></a>
-            <a href={config.profile.github} target="_blank" rel="noreferrer" className="hover:text-cyan-600 transition-colors"><Github size={18} /></a>
+        <div className="flex gap-4 text-slate-500">
+          <div className="relative group">
+            <a href={`mailto:${config.profile.email}`} className="hover:text-cyan-600 transition-colors block">
+              <Mail size={18} />
+            </a>
+            <div className="absolute top-full left-0 mt-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none whitespace-nowrap z-50">
+              <div className="bg-white border border-slate-200 text-cyan-600 text-xs font-mono py-2 px-3 rounded-lg shadow-xl relative">
+                <div className="absolute -top-1 left-2 w-2 h-2 bg-white border-t border-l border-slate-200 rotate-45"></div>
+                {config.profile.email}
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* System Time Widget (Symmetrical Square) */}
-        <div className="bg-white/80 backdrop-blur-md border border-slate-200 rounded-xl p-4 shadow-sm w-64 h-64 flex flex-col justify-between">
-          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">
-            System Time
-          </h3>
-          <div className="flex-1 flex flex-col justify-center items-center font-mono">
-            <div className="text-4xl text-slate-800 font-light tracking-tighter">{timeString}</div>
-            <div className="text-xs text-slate-400 uppercase mt-2 tracking-widest">{dateString}</div>
-          </div>
-          <div className="text-[10px] text-slate-300 font-mono text-center">
-            SYNC: AUTOMATIC
-          </div>
+          <a href={config.profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-cyan-600 transition-colors"><Linkedin size={18} /></a>
+          <a href={config.profile.github} target="_blank" rel="noreferrer" className="hover:text-cyan-600 transition-colors"><Github size={18} /></a>
         </div>
       </div>
 
 
-      {/* RIGHT SIDE: Security Widget (Threat Intel) */}
+      {/* RIGHT SIDE: Clock & Security Widget */}
       <div className="flex flex-col items-end gap-6 pointer-events-auto">
 
-        {/* Threat Intel Widget (Red, Square) */}
-        <div className="bg-white/90 backdrop-blur-xl border border-red-500/30 rounded-xl p-5 shadow-sm text-left w-64 h-64 flex flex-col">
+        {/* Original Clock Layout */}
+        <div className="text-right font-mono text-sm text-slate-500">
+          <div className="text-slate-900 text-lg">{timeString}</div>
+          <div className="text-xs opacity-60 uppercase">{dateString}</div>
+        </div>
+
+        {/* Threat Intel Widget (Refined Symmetry) */}
+        <div className="bg-white/90 backdrop-blur-xl border border-red-500/30 rounded-xl p-5 shadow-sm text-center w-72 flex flex-col pointer-events-auto">
           <h3 className="text-xs font-bold text-red-500 uppercase tracking-widest mb-4 border-b border-red-100 pb-2 flex items-center justify-between">
             <span>Threat Intel</span>
             <span className="relative flex h-2 w-2">
@@ -55,41 +55,40 @@ const Header = () => {
             </span>
           </h3>
 
-          <div className="space-y-3 flex-1 overflow-y-auto pr-1 custom-scrollbar">
+          <div className="space-y-4">
+            {/* Row 1: Breach Status */}
             <div className="group">
-              <div className="text-[10px] uppercase text-slate-400 font-bold mb-1">Breach Status</div>
-              <div className="flex gap-2 text-xs font-mono">
-                <a href="https://haveibeenpwned.com" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-red-600 transition-colors bg-slate-50 px-2 py-1 rounded border border-slate-100 w-full text-center hover:border-red-200">
+              <div className="text-[10px] uppercase text-slate-400 font-bold mb-1 tracking-widest text-left">Breach Status</div>
+              <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                <a href="https://haveibeenpwned.com" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-red-600 transition-colors bg-slate-50 py-2 rounded border border-slate-100 hover:border-red-200 uppercase font-bold">
                   HIBP
                 </a>
-                <a href="https://monitor.mozilla.org" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-red-600 transition-colors bg-slate-50 px-2 py-1 rounded border border-slate-100 w-full text-center hover:border-red-200">
-                  Mozilla
+                <a href="https://monitor.mozilla.org" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-red-600 transition-colors bg-slate-50 py-2 rounded border border-slate-100 hover:border-red-200 uppercase font-bold">
+                  MOZILLA
                 </a>
               </div>
             </div>
 
+            {/* Row 2: Deep Search & Analysis */}
             <div className="group">
-              <div className="text-[10px] uppercase text-slate-400 font-bold mb-1">Deep Search</div>
-              <a href="https://dehashed.com" target="_blank" rel="noreferrer" className="block text-xs font-mono text-slate-600 hover:text-cyan-600 transition-colors bg-slate-50 px-2 py-1 rounded border border-slate-100 hover:border-cyan-200">
-                DeHashed Database
+              <div className="text-[10px] uppercase text-slate-400 font-bold mb-1 tracking-widest text-left">Deep Search</div>
+              <a href="https://dehashed.com/search#breachCheck" target="_blank" rel="noreferrer" className="block text-xs font-mono text-slate-600 hover:text-cyan-600 transition-colors bg-slate-50 py-2 rounded border border-slate-100 hover:border-cyan-200 uppercase font-bold mb-2">
+                DEHASHED DB
               </a>
-            </div>
-
-            <div className="group">
-              <div className="text-[10px] uppercase text-slate-400 font-bold mb-1">Analysis</div>
-              <div className="flex gap-2 text-xs font-mono">
-                <a href="https://virustotal.com" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors bg-slate-50 px-2 py-1 rounded border border-slate-100 w-full text-center hover:border-emerald-200">
-                  VirusTotal
+              <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                <a href="https://virustotal.com" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors bg-slate-50 py-2 rounded border border-slate-100 hover:border-emerald-200 uppercase font-bold">
+                  VIRUSTOTAL
                 </a>
-                <a href="https://urlscan.io" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-cyan-600 transition-colors bg-slate-50 px-2 py-1 rounded border border-slate-100 w-full text-center hover:border-cyan-200">
-                  Urlscan
+                <a href="https://urlscan.io" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-cyan-600 transition-colors bg-slate-50 py-2 rounded border border-slate-100 hover:border-cyan-200 uppercase font-bold">
+                  URLSCAN
                 </a>
               </div>
             </div>
 
+            {/* Row 3: Privacy */}
             <div className="group border-t border-slate-100 pt-2 mt-1">
-              <a href="https://coveryourtracks.eff.org" target="_blank" rel="noreferrer" className="flex justify-between items-center text-xs font-mono text-slate-500 hover:text-amber-600 transition-colors px-1">
-                <span>Browser Privacy</span>
+              <a href="https://coveryourtracks.eff.org" target="_blank" rel="noreferrer" className="flex justify-between items-center text-xs font-mono text-slate-500 hover:text-amber-600 transition-colors px-1 uppercase font-bold">
+                <span>BROWSER PRIVACY</span>
                 <span>↗</span>
               </a>
             </div>

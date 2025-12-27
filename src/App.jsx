@@ -57,7 +57,7 @@ const App = () => {
     if (val.includes('edu') || val.includes('study')) return 'EDUCATION';
     if (val.includes('skill') || val.includes('tech')) return 'SKILLS';
     if (val.includes('about') || val.includes('bio')) return 'ABOUT';
-    if (val.includes('blog') || val.includes('news') || val.includes('feed')) return 'BLOG';
+    if (val.includes('blog') || val.includes('news') || val.includes('intel')) return 'BLOG';
 
     // CMD/Help also maps to full start if typed
     if (val.includes('start') || val.includes('help') || val.includes('cmd')) return 'START';
@@ -121,7 +121,10 @@ const App = () => {
                 )}
                 {activeSection === 'EDUCATION' && (
                   <WidgetCard title="Education" onClose={handleClose}>
-                    <EducationWidget data={config.education} />
+                    <EducationWidget
+                      education={config.education}
+                      certifications={config.certifications}
+                    />
                   </WidgetCard>
                 )}
                 {activeSection === 'SKILLS' && (

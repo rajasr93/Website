@@ -51,20 +51,22 @@ const ParticleNetwork = () => {
             if (positionsArray[idx + 1] > 10) positionsArray[idx + 1] = -10;
             if (positionsArray[idx + 1] < -10) positionsArray[idx + 1] = 10;
 
-            // Mouse interaction: Gentle attraction/repulsion
+            // Mouse interaction: STRONG REPULSION (Flying Away)
             const dx = positionsArray[idx] - targetX;
             const dy = positionsArray[idx + 1] - targetY;
             const dist = Math.sqrt(dx * dx + dy * dy);
 
-            // If close to cursor, gently push away or pull towards. 
-            // Let's do a gentle pull for a "connected" feel, or push for interaction.
-            // User asked for "reactive". A subtle push often feels more interactive.
-            if (dist < 4) {
+            // Radius of influence (6 units)
+            if (dist < 6) {
                 const angle = Math.atan2(dy, dx);
-                const force = (4 - dist) * 0.005; // Strength of interaction
+                // Inverse force: Closer = Stronger push
+                const force = (6 - dist) * 0.08;
 
                 positionsArray[idx] += Math.cos(angle) * force;
                 positionsArray[idx + 1] += Math.sin(angle) * force;
+
+                // Add some Z-axis chaos when pushing
+                positionsArray[idx + 2] += (Math.random() - 0.5) * force;
             }
         }
 

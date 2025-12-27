@@ -21,8 +21,7 @@ export const config = {
       { cmd: "projects", desc: "Research & Payloads" },
       { cmd: "skills", desc: "Technical Arsenal" },
       { cmd: "education", desc: "Credentials" },
-      { cmd: "blog", desc: "Intelligence Feed" },
-      { cmd: "news", desc: "Latest Security News" }
+      { cmd: "intel", desc: "Intelligence Feed" }
     ]
   },
 
@@ -68,7 +67,7 @@ export const config = {
       period: "Jan 2021 – Jan 2022",
       location: "India",
       desc: "You cannot protect what you cannot see. Leveraged OSINT reconnaissance tools to identify exposed assets, aggressively shrinking the organizational attack surface. Managing security across 200+ endpoints required catalyzing remediation efforts and prioritizing critical findings for rapid patch deployment. To eliminate blind spots, mapped the full network topology to detect unauthorized services, applying strict access controls to close distinct security exposures. This technical data was streamlined into actionable risk reports, translating complex vulnerabilities into clear mitigation steps for leadership.",
-      tags: ["Phishing Sim", "Metasploit", "Burp Suite"]
+      tags: ["OSINT", "Network Security", "Vulnerability Management"]
     }
   ],
 
@@ -103,6 +102,14 @@ export const config = {
       school: "Savitribai Phule Pune University",
       degree: "B.Tech in Information Technology",
       year: "2018 – 2022"
+    }
+  ],
+  certifications: [
+    {
+      name: "CompTIA Security+",
+      code: "SY0-701",
+      date: "April 2024 – April 2027",
+      link: "https://www.credly.com/badges/02540d7d-f387-42eb-96c0-f5d16b0604a8"
     }
   ],
   skills: [

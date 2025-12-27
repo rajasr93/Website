@@ -5,7 +5,7 @@ const ExperienceWidget = ({ data }) => {
   return (
     <div className="space-y-8 pb-10">
       <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-3 border-b border-slate-200 pb-4">
-        <span className="w-2 h-8 bg-cyan-500 rounded-full"></span>
+        <span className="w-2 h-8 bg-slate-500 rounded-full"></span>
         Professional Experience
       </h2>
 
@@ -13,12 +13,12 @@ const ExperienceWidget = ({ data }) => {
         {data.map((job, i) => (
           <div key={i} className="relative pl-6 md:pl-8 border-l border-slate-200 ml-2">
             {/* Timeline Dot */}
-            <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 bg-slate-900 borderQD border-cyan-500 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
+            <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 bg-slate-900 borderQD border-slate-500 rounded-full shadow-[0_0_10px_rgba(100,116,139,0.5)]"></div>
 
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-1">
               <h3 className="text-xl font-bold text-slate-800">{job.role}</h3>
-              <span className="text-sm font-mono text-cyan-400/80 bg-cyan-950/30 px-2 py-0.5 rounded border border-cyan-500/10">
+              <span className="text-sm font-mono text-white bg-slate-600/80 px-2 py-0.5 rounded border border-slate-500/30">
                 {job.period}
               </span>
             </div>
@@ -37,7 +37,7 @@ const ExperienceWidget = ({ data }) => {
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {job.tags.map(tag => (
-                <span key={tag} className="px-2 py-1 text-[10px] uppercase tracking-wider font-bold text-cyan-300 bg-cyan-950/30 rounded border border-cyan-500/20 hover:border-cyan-500/40 transition-colors">
+                <span key={tag} className="px-2 py-1 text-[10px] uppercase tracking-wider font-bold text-white bg-slate-600/80 rounded border border-slate-500/30 hover:bg-slate-700 transition-colors">
                   {tag}
                 </span>
               ))}

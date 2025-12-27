@@ -20,10 +20,10 @@ RSS_FEEDS = [
     "https://krebsonsecurity.com/feed/"
 ]
 BLOG_DATA_PATH = "../src/data/blog_posts.json"
+TOPICS_DATA_PATH = "../src/data/topics.json"
 
 # Educational Topics for "Blog" days
 BLOG_TOPICS = [
-    "Phishing Attacks using AI or normal techniques how to be safe/alert",
     "The Importance of Zero Trust Architecture",
     "How Phishing Attacks Are Evolving in 2025",
     "Understanding SQL Injection (and How to Fix It)",
@@ -117,6 +117,44 @@ def save_blog_data(data):
     with open(file_path, 'w') as f:
         json.dump(data, f, indent=2)
     print(f"💾 Saved data to {file_path}")
+
+def get_topics():
+    try:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(current_dir, TOPICS_DATA_PATH)
+        with open(file_path, 'r') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"⚠️ Could not load topics: {e}")
+        return []
+
+def save_topics(topics):
+    try:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(current_dir, TOPICS_DATA_PATH)
+        with open(file_path, 'w') as f:
+            json.dump(topics, f, indent=2)
+        print(f"💾 Updated topics list ({len(topics)} remaining)")
+    except Exception as e:
+        print(f"❌ Error saving topics: {e}")
+
+def refill_topics(client, model):
+    print("🔄 Refilling topics list via AI...")
+    prompt = """Generate 15 NEW, unique, and engaging cybersecurity blog topics for a technical audience.
+    Topics should cover: AI Security, Cloud Security, Ethical Hacking, Privacy, and Blue Team defense.
+    Return ONLY a raw JSON list of strings. No markdown."""
+    
+    content, error = safe_api_call(client, model, prompt, "refill topics")
+    if error:
+        return []
+        
+    try:
+        content = content.replace('```json', '').replace('```', '').strip()
+        new_topics = json.loads(content)
+        return new_topics
+    except Exception as e:
+        print(f"❌ Error parsing generated topics: {e}")
+        return []
 
 def check_daily_limit(data):
     """Returns True if a post has already been generated today."""
@@ -265,20 +303,97 @@ Requirements:
     content, error = safe_api_call(client, model, prompt, "news post generation")
     return content if content else f"Error generating content: {error}"
 
-def generate_educational_blog(client, model):
-    """Generate educational blog post"""
-    topic = random.choice(BLOG_TOPICS)
-    print(f"📚 Generating EDUCATIONAL BLOG post about: {topic}")
+def filter_unique_topics(client, model, candidates, existing_posts):
+    """
+    Uses LLM to filter out candidates that are semantically similar to existing posts.
+    Returns a list of unique candidates.
+    """
+    if not candidates:
+        return []
+
+    # Get last 20 titles for context
+    recent_titles = [p['title'] for p in existing_posts[-20:]]
+    candidate_titles = [c['title'] for c in candidates]
+
+    print(f"🧠 Checking {len(candidates)} candidates against {len(recent_titles)} recent posts for similarity...")
+
+    prompt = f"""You are a content curator. I have a list of 'Candidate Topics' and a list of 'Recent Existing Topics'.
+Identify which Candidate Topics are NEW and NOT semantically similar to the Recent Existing Topics.
+
+- "Phishing via AI" IS similar to "AI-driven Social Engineering" (Reject).
+- "SQL Injection" is NOT similar to "XSS Attacks" (Keep).
+
+Recent Existing Topics:
+{json.dumps(recent_titles, indent=1)}
+
+Candidate Topics:
+{json.dumps(candidate_titles, indent=1)}
+
+Return a JSON list of the titles from 'Candidate Topics' that are unique enough to likely be interesting.
+Example Output: ["Title 1", "Title 3"]
+"""
+
+    result, error = safe_api_call(client, model, prompt, "topic deduping")
+    if error:
+        print("⚠️ Deduping failed, proceeding with all candidates.")
+        return candidates
+
+    try:
+        # cleanup markdown json
+        result = result.replace('```json', '').replace('```', '').strip()
+        unique_titles = json.loads(result)
+        
+        # Filter the original objects
+        unique_candidates = [c for c in candidates if c['title'] in unique_titles]
+        print(f"📉 Filtered duplicates: {len(candidates)} -> {len(unique_candidates)}")
+        return unique_candidates
+    except Exception as e:
+        print(f"⚠️ JSON parse error in deduping: {e}")
+        return candidates
+
+def generate_educational_blog(client, model, existing_posts):
+    """Generate educational blog post using dynamic topics list"""
     
-    prompt = f"""Write a short educational blog post (250 words) about: {topic}.
+    # 1. Load Topics
+    topics = get_topics()
+    
+    # 2. Refill if low
+    if len(topics) < 3:
+        print("⚠️ Topics running low. Generating more...")
+        new_topics = refill_topics(client, model)
+        if new_topics:
+            topics.extend(new_topics)
+            save_topics(topics)
+            
+    # 3. Filter against existing posts (Double check)
+    # Even if we pull from the list, we want to make sure we haven't written about it recently
+    # (in case the topic list has overlaps with old posts)
+    unique_topics_subset = filter_unique_topics(client, model, [{'title': t} for t in topics[:10]], existing_posts)
+    
+    if unique_topics_subset:
+        topic_title = unique_topics_subset[0]['title']
+    elif topics:
+        topic_title = topics[0] # Fallback to first available
+    else:
+         topic_title = "The Future of Cybersecurity AI" # Ultimate fallback
+         
+    print(f"📚 Generating EDUCATIONAL BLOG post about: {topic_title}")
+    
+    prompt = f"""Write a short educational blog post (250 words) about: {topic_title}.
 Audience: General tech users.
 Tone: Informative, helpful.
 Requirements: No markdown headers."""
     
     content, error = safe_api_call(client, model, prompt, "blog post generation")
     
+    # 4. Remove used topic from list (Consumption)
+    # We remove the exact string or close match
+    if topic_title in topics:
+        topics.remove(topic_title)
+        save_topics(topics)
+    
     return {
-        "title": topic,
+        "title": topic_title,
         "content": content if content else f"Error generating content: {error}",
         "type": "Blog"
     }
@@ -314,13 +429,18 @@ def main():
     # Fetch news candidates
     candidates = fetch_rss_items()
     
-    # Check for existing titles to avoid duplicates
+    candidate_titles = [item['title'] for item in candidates]
     existing_titles = {post['title'] for post in data}
-    # Filter candidates
+    
+    # 1. Exact Match Filter
     new_candidates = [item for item in candidates if item['title'] not in existing_titles]
     
+    # 2. Semantic Filter (Deduping)
+    if new_candidates:
+         new_candidates = filter_unique_topics(client, model, new_candidates, data)
+    
     if len(new_candidates) < len(candidates):
-        print(f"ℹ️  Skipped {len(candidates) - len(new_candidates)} duplicate news items")
+        print(f"ℹ️  Skipped {len(candidates) - len(new_candidates)} duplicate/similar news items")
     
     candidates = new_candidates
     
@@ -361,7 +481,7 @@ def main():
         is_streak = is_news_streak(data)
         if is_streak:
             print("\n📚 Priority: EDUCATIONAL BLOG (breaking news streak)")
-            new_post_data = generate_educational_blog(client, model)
+            new_post_data = generate_educational_blog(client, model, data)
             new_post = {
                 "title": new_post_data['title'],
                 "date": datetime.now().strftime("%Y-%m-%d"),
@@ -383,7 +503,7 @@ def main():
         else:
             # Fallback: Educational blog
             print("\n📚 Priority: EDUCATIONAL BLOG (no news available)")
-            new_post_data = generate_educational_blog(client, model)
+            new_post_data = generate_educational_blog(client, model, data)
             new_post = {
                 "title": new_post_data['title'],
                 "date": datetime.now().strftime("%Y-%m-%d"),
