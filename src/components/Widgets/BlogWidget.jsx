@@ -39,7 +39,7 @@ const BlogWidget = () => {
                     {post.type === 'News' && post.source && post.source !== '#' && (
                         <div className="mt-4 mb-2">
                             <a
-                                href={post.source}
+                                href={post.source && (post.source.startsWith('http://') || post.source.startsWith('https://')) ? post.source : '#'}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-xs font-mono text-cyan-600 hover:text-cyan-500 hover:underline transition-colors inline-flex items-center gap-1"

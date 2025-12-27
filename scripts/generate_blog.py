@@ -8,6 +8,9 @@ from datetime import datetime
 import time
 import random
 import traceback
+import re
+from urllib.parse import urlparse
+import requests
 import overseer
 
 # Configuration
@@ -133,6 +136,52 @@ def is_news_streak(data):
     
     return last_1.get('type') == 'News' and last_2.get('type') == 'News'
 
+def sanitize_text(text):
+    """Remove HTML tags and potential control characters."""
+    if not text:
+        return ""
+    # Remove HTML tags
+    clean = re.sub('<.*?>', '', text)
+    # Remove non-printable characters (basic check)
+    clean = "".join(ch for ch in clean if ch.isprintable())
+    return clean.strip()
+
+def validate_url(url):
+    """Ensure URL is valid, uses http/https, and is reachable (200 OK)."""
+    if not url or url == '#':
+        return "#"
+    
+    try:
+        # 1. Syntax Check
+        parsed = urlparse(url)
+        if not (parsed.scheme in ['http', 'https'] and parsed.netloc):
+            return "#"
+
+        # 2. Reachability Check (HEAD request first, then GET)
+        print(f"      🔎 Verifying link: {url[:50]}...", end='', flush=True)
+        headers = {'User-Agent': 'Mozilla/5.0 (compatible; SecurityBlogBot/1.0)'}
+        
+        try:
+            resp = requests.head(url, headers=headers, timeout=5, allow_redirects=True)
+            if resp.status_code < 400:
+                print(" OK")
+                return url
+        except requests.RequestException:
+            pass # Fallback to GET
+            
+        # Fallback to GET if HEAD fails (some servers block HEAD)
+        resp = requests.get(url, headers=headers, timeout=5, stream=True)
+        if resp.status_code < 400:
+            print(" OK")
+            return url
+            
+        print(f" ❌ Dead link ({resp.status_code})")
+        return "#"
+
+    except Exception as e:
+        print(f" ❌ Error: {str(e)[:20]}")
+        return "#"
+
 def fetch_rss_items():
     items = []
     print("\n📰 Fetching news from feeds...")
@@ -141,12 +190,18 @@ def fetch_rss_items():
             feed = feedparser.parse(url)
             if feed.entries:
                 for entry in feed.entries[:2]:
-                    items.append({
-                        "title": entry.title,
-                        "link": entry.link,
-                        "summary": entry.summary if 'summary' in entry else entry.get('description', ''),
-                        "source": feed.feed.title if 'title' in feed.feed else url
-                    })
+                    title = sanitize_text(entry.title)
+                    link = validate_url(entry.link)
+                    summary = sanitize_text(entry.summary if 'summary' in entry else entry.get('description', ''))
+                    source = sanitize_text(feed.feed.title if 'title' in feed.feed else url)
+                    
+                    if link != "#": # Only add if link is valid
+                        items.append({
+                            "title": title,
+                            "link": link,
+                            "summary": summary,
+                            "source": source
+                        })
                 print(f"   ✓ Fetched {len(feed.entries[:2])} items from {feed.feed.get('title', url)}")
         except Exception as e:
             print(f"   ✗ Error fetching {url}: {e}")
