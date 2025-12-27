@@ -11,10 +11,9 @@ export const useVisitorData = () => {
     useEffect(() => {
         const fetchIP = async () => {
             try {
-                // Using ipapi.co for free JSON data (rate limited but sufficient for personal site)
+                // Primary: ipapi.co
                 const res = await fetch('https://ipapi.co/json/');
-                if (!res.ok) throw new Error('Failed to fetch');
-
+                if (!res.ok) throw new Error('Primary API failed');
                 const json = await res.json();
 
                 setData({
@@ -23,9 +22,27 @@ export const useVisitorData = () => {
                     city: (json.city || 'UNKNOWN').toUpperCase(),
                     loading: false
                 });
-            } catch (error) {
-                console.error("Intel Fetch Failed:", error);
-                setData(prev => ({ ...prev, loading: false, ip: 'TRACE_FAILED' }));
+            } catch (err1) {
+                console.warn("Primary IP Fetch failed, trying fallback...", err1);
+
+                try {
+                    // Fallback: ipwho.is (No key required, HTTPS supported)
+                    const res = await fetch('https://ipwho.is/');
+                    if (!res.ok) throw new Error('Fallback API failed');
+                    const json = await res.json();
+
+                    if (!json.success) throw new Error('Fallback API returned error');
+
+                    setData({
+                        ip: json.ip || 'UNKNOWN',
+                        isp: (json.connection?.isp || json.isp || 'UNKNOWN').toUpperCase(),
+                        city: (json.city || 'UNKNOWN').toUpperCase(),
+                        loading: false
+                    });
+                } catch (err2) {
+                    console.error("All IP Fetches Failed:", err2);
+                    setData(prev => ({ ...prev, loading: false, ip: 'TRACE_FAILED' }));
+                }
             }
         };
 
