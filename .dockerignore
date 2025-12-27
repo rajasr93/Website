@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.gitignore
+*.md
+docker-compose.yml
+Dockerfile
+scripts
+venv
+debug_output.txt
+verification.log
+nginx.test.conf
