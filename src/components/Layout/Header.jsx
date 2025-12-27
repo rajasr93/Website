@@ -69,6 +69,13 @@ const Header = () => {
                     ${isResumeOpen ? 'fixed top-44 left-4 right-4 mx-auto w-auto max-w-sm z-[70] shadow-2xl md:static md:w-72 md:mx-0 md:shadow-sm' : 'hidden md:flex'}
                 `}
               >
+                {/* Mobile Close Button */}
+                <button
+                  onClick={() => setIsResumeOpen(false)}
+                  className="absolute -top-3 -right-3 md:hidden bg-white text-slate-400 border border-slate-200 p-1.5 rounded-full shadow-md z-50 hover:text-red-500 hover:border-red-200 transition-colors"
+                >
+                  <X size={16} />
+                </button>
                 <h3 className="text-xs font-bold text-cyan-600 uppercase tracking-widest mb-4 border-b border-cyan-100 pb-2 flex items-center justify-between">
                   <span>Resume Preview</span>
                   <span className="relative flex h-2 w-2">
@@ -143,6 +150,13 @@ const Header = () => {
                                 ${isWidgetOpen ? 'fixed top-44 left-4 right-4 mx-auto w-auto max-w-sm z-[70] shadow-2xl md:static md:w-72 md:mx-0 md:shadow-sm' : 'hidden md:flex'}
                             `}
               >
+                {/* Mobile Close Button */}
+                <button
+                  onClick={() => setIsWidgetOpen(false)}
+                  className="absolute -top-3 -right-3 md:hidden bg-white text-slate-400 border border-slate-200 p-1.5 rounded-full shadow-md z-50 hover:text-red-500 hover:border-red-200 transition-colors"
+                >
+                  <X size={16} />
+                </button>
                 <h3 className="text-xs font-bold text-red-500 uppercase tracking-widest mb-4 border-b border-red-100 pb-2 flex items-center justify-between">
                   <span>Threat Scanning</span>
                   {/* Pulse separate from close button on Desktop */}
