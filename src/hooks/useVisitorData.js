@@ -11,38 +11,53 @@ export const useVisitorData = () => {
     useEffect(() => {
         const fetchIP = async () => {
             try {
-                // Primary: ipwho.is (Preferred: No key, clear JSON structure)
-                const res = await fetch('https://ipwho.is/');
-                if (!res.ok) throw new Error('Primary API failed');
-                const json = await res.json();
+                // Hybrid Fetch: IP/ISP from ipwho.is,  City from ipapi.co
+                const [ipwhoRes, ipapiRes] = await Promise.allSettled([
+                    fetch('https://ipwho.is/'),
+                    fetch('https://ipapi.co/json/')
+                ]);
 
-                if (!json.success) throw new Error('API returned error');
+                let finalData = {
+                    ip: 'UNKNOWN',
+                    isp: 'UNKNOWN',
+                    city: 'UNKNOWN'
+                };
+
+                // 1. Process IP/ISP Source (ipwho.is)
+                if (ipwhoRes.status === 'fulfilled' && ipwhoRes.value.ok) {
+                    try {
+                        const json = await ipwhoRes.value.json();
+                        if (json.success !== false) {
+                            finalData.ip = json.ip || 'UNKNOWN';
+                            finalData.isp = (json.connection?.isp || json.connection?.org || json.isp || 'UNKNOWN');
+                        }
+                    } catch (e) { console.warn("ipwho parse failed", e); }
+                }
+
+                // 2. Process Location Source (ipapi.co)
+                if (ipapiRes.status === 'fulfilled' && ipapiRes.value.ok) {
+                    try {
+                        const json = await ipapiRes.value.json();
+                        if (!json.error) {
+                            finalData.city = json.city || 'UNKNOWN';
+
+                            // Fallbacks if ipwho failed completely
+                            if (finalData.ip === 'UNKNOWN') finalData.ip = json.ip || 'UNKNOWN';
+                            if (finalData.isp === 'UNKNOWN') finalData.isp = (json.org || json.isp || 'UNKNOWN');
+                        }
+                    } catch (e) { console.warn("ipapi parse failed", e); }
+                }
 
                 setData({
-                    ip: json.ip || 'UNKNOWN',
-                    isp: (json.connection?.isp || json.connection?.org || json.isp || 'UNKNOWN').toUpperCase(),
-                    city: (json.city || 'UNKNOWN').toUpperCase(),
+                    ip: finalData.ip,
+                    isp: finalData.isp.toUpperCase(),
+                    city: finalData.city.toUpperCase(),
                     loading: false
                 });
-            } catch (err1) {
-                console.warn("Primary IP Fetch failed, trying fallback...", err1);
 
-                try {
-                    // Fallback: ipapi.co
-                    const res = await fetch('https://ipapi.co/json/');
-                    if (!res.ok) throw new Error('Fallback API failed');
-                    const json = await res.json();
-
-                    setData({
-                        ip: json.ip || 'UNKNOWN',
-                        isp: (json.org || json.isp || 'UNKNOWN').toUpperCase(),
-                        city: (json.city || 'UNKNOWN').toUpperCase(),
-                        loading: false
-                    });
-                } catch (err2) {
-                    console.error("All IP Fetches Failed:", err2);
-                    setData(prev => ({ ...prev, loading: false, ip: 'TRACE_FAILED' }));
-                }
+            } catch (error) {
+                console.error("Hybrid Fetch Error:", error);
+                setData(prev => ({ ...prev, loading: false, ip: 'TRACE_FAILED' }));
             }
         };
 
