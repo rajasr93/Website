@@ -80,7 +80,7 @@ const App = () => {
       {/* 2. UI Layer */}
       <Header />
 
-      <main className="flex-grow flex flex-col items-center justify-center relative z-10 px-4 w-full max-w-5xl mx-auto transition-all duration-500 gap-8 pt-28 pb-24 md:pt-0 md:pb-0">
+      <main className="flex-grow flex flex-col items-center justify-center relative z-10 px-4 w-full max-w-5xl mx-auto transition-all duration-500 gap-8 pt-44 pb-24 md:pt-0 md:pb-0">
 
         {/* 3. Main Widget Display (Dashboard) */}
         <div className="w-full flex justify-center perspective-[1000px] min-h-[400px] items-center">
