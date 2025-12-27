@@ -240,10 +240,7 @@ const Header = () => {
           {isResumeOpen ? (
             <X size={20} className="text-cyan-500" />
           ) : (
-            <>
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-20 scale-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
-            </>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
           )}
         </button>
 
@@ -262,10 +259,7 @@ const Header = () => {
           {isWidgetOpen ? (
             <X size={20} className="text-red-500" />
           ) : (
-            <>
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-20 scale-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-            </>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
           )}
         </button>
       </div>
