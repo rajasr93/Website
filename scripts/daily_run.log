@@ -1,0 +1,22 @@
+==================================================
+🚀 Daily Run Started: Fri Dec 26 06:53:10 PM EST 2025
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 3 existing posts
+✋ Daily limit reached. A post was already generated today.
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+[2025-12-26 18:53:14] [INIT] Overseer Agent Awakened
+[2025-12-26 18:53:14] [START] Starting System Health Check...
+[2025-12-26 18:53:14] [INFO] JSON Integrity Check: PASS (3 posts loaded)
+[2025-12-26 18:53:14] [START] Starting Content QA for: 'China-Linked Evasive Panda Ran DNS Poisoning Campaign to Deliver MgBot Malware'...
+[2025-12-26 18:53:21] [FAIL] AI QA Result: FAIL - Factual inconsistency detected. The content states the activity was observed between November 2022 and November 2024, while the provided source URL is dated December 2025. This creates a significant chronological discrepancy.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Fri Dec 26 06:53:22 PM EST 2025
+

@@ -1,0 +1,42 @@
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 4 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+   ✓ Fetched 2 items from The Hacker News
+   ✓ Fetched 2 items from BleepingComputer
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+ℹ️  Skipped 3 duplicate news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Trust Wallet confirms extension hack led to $7 mil...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: Dismantling Defenses: Trump 2.0 Cyber Year in Revi...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 3/3: Most Parked Domains Now Serving Malicious Content...
+
+📚 Priority: EDUCATIONAL BLOG (breaking news streak)
+📚 Generating EDUCATIONAL BLOG post about: How Phishing Attacks Are Evolving in 2025
+
+🕵️  Running QA Check via Overseer...
+[2025-12-26 19:05:02] [START] Starting Content QA for: 'How Phishing Attacks Are Evolving in 2025'...
+[2025-12-26 19:05:06] [PASS] AI QA Result: PASS - Looks good. No grammatical errors, content is consistent with the title, and the tone is professional.
+✅ QA Check Passed: PASS - Looks good. No grammatical errors, content is consistent with the title, and the tone is professional.
+💾 Saved data to /home/outcast/Documents/GitHub/Website/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: How Phishing Attacks Are Evolving in 2025
+   Type: Blog
+   Date: 2025-12-26
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================

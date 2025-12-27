@@ -21,7 +21,8 @@ export const config = {
       { cmd: "projects", desc: "Research & Payloads" },
       { cmd: "skills", desc: "Technical Arsenal" },
       { cmd: "education", desc: "Credentials" },
-      { cmd: "blog", desc: "Intelligence Feed" }
+      { cmd: "blog", desc: "Intelligence Feed" },
+      { cmd: "news", desc: "Latest Security News" }
     ]
   },
 

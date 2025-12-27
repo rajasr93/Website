@@ -23,7 +23,8 @@ const BlogWidget = () => {
                     <div className="flex items-center justify-between mb-3">
                         <h3 className="text-lg font-bold text-slate-700">{post.title}</h3>
                         <span className={`text-xs px-2 py-1 rounded font-mono uppercase ${post.type === 'CVE' ? 'bg-red-50 text-red-500' :
-                                post.type === 'News' ? 'bg-blue-50 text-blue-500' :
+                            post.type === 'News' ? 'bg-blue-50 text-blue-500' :
+                                post.type === 'Blog' ? 'bg-purple-50 text-purple-500' :
                                     'bg-slate-100 text-slate-500'
                             }`}>
                             {post.type}
@@ -34,7 +35,21 @@ const BlogWidget = () => {
                         {post.content}
                     </div>
 
-                    <div className="mt-3 text-xs text-slate-400 font-mono">
+                    {/* Source Link (Only for News, Above Date) */}
+                    {post.type === 'News' && post.source && post.source !== '#' && (
+                        <div className="mt-4 mb-2">
+                            <a
+                                href={post.source}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs font-mono text-cyan-600 hover:text-cyan-500 hover:underline transition-colors inline-flex items-center gap-1"
+                            >
+                                🔗 Source Record ↗
+                            </a>
+                        </div>
+                    )}
+
+                    <div className="mt-2 text-xs text-slate-400 font-mono border-t border-slate-100 pt-3">
                         Detected: {post.date}
                     </div>
                 </motion.div>

@@ -1,9 +1,40 @@
 [
-    {
-        "id": 1,
-        "title": "Initial System Analysis",
-        "date": "2025-12-26",
-        "type": "System",
-        "content": "The blog subsystem has been initialized. Awaiting first automated intelligence report from the backend neural link. Configured to track high-severity CVEs and global threat intelligence feeds."
-    }
+  {
+    "title": "Trust Wallet Chrome Extension Breach Caused $7 Million Crypto Loss via Malicious Code",
+    "date": "2025-12-26",
+    "type": "News",
+    "content": "Trust Wallet has reported a critical security incident impacting its Google Chrome extension, resulting in an estimated $7 million in cryptocurrency losses. The breach specifically impacts extension version 2.68, where malicious code was exploited to compromise user funds. Trust Wallet, functioning as a multi-chain, non-custodial wallet service, is now urging all users to immediately update their Chrome extension to the latest available version. This update is a direct and necessary response to the identified vulnerability, crucial for mitigating further risk and preventing future exploitation. With approximately one million users, proactive updating is paramount for securing individual client-side cryptocurrency access points. The incident underscores the persistent threat landscape targeting browser-based crypto solutions and reinforces the user's responsibility in maintaining endpoint security for non-custodial assets. While the full technical details of the malicious code's injection or execution vector are not fully public, the immediate imperative is clear: update. Users who recently interacted with the vulnerable version should also review wallet activity logs for any unauthorized transactions.",
+    "id": 1,
+    "source": "https://thehackernews.com/2025/12/trust-wallet-chrome-extension-breach.html"
+  },
+  {
+    "title": "How Phishing Attacks Are Evolving in 2025",
+    "date": "2025-12-26",
+    "type": "Blog",
+    "content": "Phishing isn't new, but as we head into 2025, these deceptive attacks are evolving at an alarming rate, becoming far more sophisticated and harder to spot. Cybercriminals are leveraging advanced technologies to craft incredibly convincing lures, making it crucial for general tech users to understand these new threats.\n\nOne major evolution is the widespread use of Artificial Intelligence (AI) to power hyper-personalized attacks. Gone are the days of obvious grammatical errors; AI can now generate perfectly worded emails, texts, and even voice messages that mimic trusted contacts, colleagues, or institutions flawlessly. Deepfake technology is making voice and video phishing (vishing and deepfake scams) incredibly realistic, allowing attackers to convincingly impersonate someone you know to trick you into revealing sensitive information or transferring money.\n\nBeyond AI, phishing is becoming much more multi-channel and integrated. While email remains a primary vector, expect a surge in sophisticated \"smishing\" (SMS phishing) and social media scams that leverage personal information gleaned from public profiles. Supply chain phishing is also growing, where attackers compromise a legitimate third-party service you use (like a software vendor or online retailer) to send convincing phishing messages from a seemingly trusted source.\n\nThe payloads of these attacks are also evolving. Attackers are using more advanced, fileless malware that operates in your device's memory, making it harder for traditional antivirus software to detect. Credential harvesting pages are becoming indistinguishable from real login portals, sometimes even incorporating legitimate elements from the actual website they're mimicking.\n\nTo stay safe, constant vigilance is your best defense. Always pause before clicking any link or opening an attachment, even if it looks familiar. Verify requests for sensitive information directly through official channels (e.g., call the company using a number from their official website, not one from the email). Enable two-factor authentication (2FA) wherever possible \u2013 it's a critical layer of defense. Keep your software updated, and most importantly, trust your gut. If something feels off, it probably is.",
+    "id": 2
+  },
+  {
+    "title": "China-Linked Evasive Panda Ran DNS Poisoning Campaign to Deliver MgBot Malware",
+    "date": "2025-12-26",
+    "type": "News",
+    "content": "Kaspersky has identified a cyber espionage campaign attributed to the China-linked APT group Evasive Panda. This activity, observed between November 2022 and November 2024, utilized DNS poisoning to deliver the MgBot backdoor. The adversaries specifically targeted organizations in T\u00fcrkiye, China, and India.\n\nThe attack vector involved manipulating Domain Name System requests, redirecting legitimate traffic to malicious infrastructure. This allowed Evasive Panda to inject the MgBot malware, a sophisticated backdoor designed for persistent access and data exfiltration. Successful exploitation granted the attackers covert control over compromised systems, facilitating long-term espionage objectives.\n\nThe impact of this campaign is significant, enabling extensive data theft and unauthorized network persistence within targeted entities. Organizations within the affected geographies, and those with similar threat profiles, must strengthen DNS security protocols, implement robust monitoring for unusual DNS activity, and enhance endpoint detection capabilities to counter such evasive tactics. This highlights the ongoing sophistication of nation-state actors in utilizing fundamental network services for advanced persistent threats.",
+    "source": "https://thehackernews.com/2025/12/china-linked-evasive-panda-ran-dns.html",
+    "id": 3
+  },
+  {
+    "title": "Fake GrubHub emails promise tenfold return on sent cryptocurrency",
+    "date": "2025-12-26",
+    "type": "News",
+    "content": "A concerning phishing campaign recently targeted Grubhub users with fraudulent emails seemingly originating from legitimate company domains. These sophisticated messages lured recipients with a deceptive promise: a tenfold return on Bitcoin transferred to a specified cryptocurrency wallet. This tactic exploits both brand trust and the appeal of high-yield investments, designed to manipulate individuals into irreversible transactions.\n\nThe campaign underscores critical challenges in email security and user vigilance. The perceived authenticity of the sender, whether due to advanced spoofing or a potential compromise within related email infrastructure, significantly increases the likelihood of success for the attackers. The immediate impact is direct financial loss for any user defrauded into sending cryptocurrency. Beyond individual monetary damage, such incidents erode broader user confidence in online service communications and highlight the persistent need for robust DMARC implementation, stringent email authentication protocols, and continuous user education on recognizing advanced social engineering tactics, irrespective of the apparent source.",
+    "source": "https://www.bleepingcomputer.com/news/security/fake-grubhub-emails-promise-tenfold-return-on-sent-cryptocurrency/",
+    "id": 4
+  },
+  {
+    "title": "How Phishing Attacks Are Evolving in 2025",
+    "date": "2025-12-26",
+    "type": "Blog",
+    "content": "Phishing isn't just about dodgy emails anymore; it's a constantly evolving threat, and by 2025, attackers are getting frighteningly sophisticated. General tech users need to understand these shifts to stay safe online.\n\nOne major evolution is the rise of AI-powered phishing. Artificial intelligence can now craft hyper-realistic emails, messages, and even voice calls that are virtually indistinguishable from legitimate communications. AI helps phishers generate perfectly worded, grammatically flawless messages tailored specifically to you, often by analyzing publicly available information. Imagine an email from your \"bank\" or \"manager\" that\u2019s not only perfect but also references recent activities, making it incredibly convincing. Deepfakes for voice and video are also becoming more accessible, allowing fraudsters to impersonate trusted individuals during calls.\n\nBeyond email, phishing is becoming increasingly multi-channel. We\u2019re seeing more \"smishing\" (SMS phishing) using text messages, and \"QRishing\" where malicious QR codes lead to fake login pages or malware downloads. Attackers are also exploiting popular messaging apps and social media platforms, embedding traps in what seem like benign interactions or urgent notifications. The goal is to catch you off guard, no matter which communication channel you primarily use.\n\nSo, how do you protect yourself? Critical thinking remains your best defense. Always scrutinize unexpected requests, especially those asking for personal information or urgent action. Verify the sender's identity through an independent channel (e.g., call the company directly using a number from their official website, not one from the suspicious message). Use strong, unique passwords and enable two-factor authentication (2FA) wherever possible. Keep your software updated and be wary of any links or attachments, even if they appear legitimate.\n\nStaying informed and vigilant is your strongest shield against the evolving landscape of phishing attacks.",
+    "id": 5
+  }
 ]

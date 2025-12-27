@@ -1,0 +1,8 @@
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 3 existing posts
+✋ Daily limit reached. A post was already generated today.

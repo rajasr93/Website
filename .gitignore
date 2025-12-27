@@ -3,3 +3,8 @@ dist/
 build/
 .env
 env/scripts/
+__pycache__/
+*.pyc
+.DS_Store
+.pytest_cache/
+coverage/

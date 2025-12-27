@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Layout/Header';
 import SearchBar from './components/Search/SearchBar';
 import Background3D from './components/Layout/Background3D';
-import CustomCursor from './components/Layout/CustomCursor';
 
 // Widgets
 import ExperienceWidget from './components/Widgets/ExperienceWidget';
@@ -69,11 +68,10 @@ const App = () => {
   const clearSearch = () => setInput('');
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans relative overflow-hidden selection:bg-cyan-500/30 cursor-none">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans relative overflow-hidden selection:bg-cyan-500/30">
 
       {/* 1. Visual Layer */}
       <Background3D />
-      <CustomCursor />
 
       {/* 2. UI Layer */}
       <Header />
