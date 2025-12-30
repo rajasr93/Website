@@ -87,3 +87,226 @@ Starting Overseer Agent (System Health)...
 ⚠️ Overseer reported issues.
 🏁 Daily Run Finished: Sat 27 Dec 03:02:07 EST 2025
 
+==================================================
+🚀 Daily Run Started: Sun 28 Dec 16:23:56 EST 2025
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/generate_blog.py", line 4, in <module>
+    import feedparser
+ModuleNotFoundError: No module named 'feedparser'
+❌ Blog generation FAILED. Exit code: 1
+Starting Overseer Agent (System Health)...
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/overseer.py", line 4, in <module>
+    from google import genai
+ImportError: cannot import name 'genai' from 'google' (unknown location)
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Sun 28 Dec 16:23:56 EST 2025
+
+==================================================
+🚀 Daily Run Started: Mon 29 Dec 03:14:32 EST 2025
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/generate_blog.py", line 4, in <module>
+    import feedparser
+ModuleNotFoundError: No module named 'feedparser'
+❌ Blog generation FAILED. Exit code: 1
+Starting Overseer Agent (System Health)...
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/overseer.py", line 4, in <module>
+    from google import genai
+ImportError: cannot import name 'genai' from 'google' (unknown location)
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Mon 29 Dec 03:14:32 EST 2025
+
+==================================================
+🚀 Daily Run Started: Mon 29 Dec 03:14:59 EST 2025
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 1 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2025/12/mongodb-vulnerab... OK
+      🔎 Verifying link: https://thehackernews.com/2025/12/traditional-secu... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/exp... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/hac... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/dismantling-de... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/most-parked-do... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 1 recent posts for similarity...
+📉 Filtered duplicates: 6 -> 4
+ℹ️  Skipped 2 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Traditional Security Frameworks Leave Organization...
+🚨 CRITICAL NEWS FOUND: Traditional Security Frameworks Leave Organizations Exposed to AI-Specific Attack Vectors
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: Traditional Security Frameworks Leave Organization...
+
+🕵️  Running QA Check via Overseer...
+[2025-12-29 03:15:22] [START] Starting Content QA for: 'Traditional Security Frameworks Leave Organizations Exposed to AI-Specific Attack Vectors'...
+[2025-12-29 03:15:32] [FAIL] AI QA Result: FAIL - Significant accuracy issues. Several cited incidents (Ultralytics compromise in Dec 2024, malicious Nx packages in Aug 2025, ChatGPT vulnerabilities throughout 2024) are either dated incorrectly in the future or appear fabricated. The provided source URL is also speculative with future dates. This undermines the content's authenticity and industry-specific claims by presenting hypothetical or misdated events as current facts.
+❌ QA Check Failed: Significant accuracy issues. Several cited incidents (Ultralytics compromise in Dec 2024, malicious Nx packages in Aug 2025, ChatGPT vulnerabilities throughout 2024) are either dated incorrectly in the future or appear fabricated. The provided source URL is also speculative with future dates. This undermines the content's authenticity and industry-specific claims by presenting hypothetical or misdated events as current facts.
+⚠️  Post discarded due to QA failure. (Strict Style Enforcement)
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+[2025-12-29 03:15:34] [INIT] Overseer Agent Awakened
+[2025-12-29 03:15:34] [START] Starting System Health Check...
+[2025-12-29 03:15:34] [INFO] JSON Integrity Check: PASS (1 posts loaded)
+[2025-12-29 03:15:34] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Mon 29 Dec 03:15:34 EST 2025
+
+==================================================
+🚀 Daily Run Started: Mon 29 Dec 03:15:58 EST 2025
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 1 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2025/12/mongodb-vulnerab... OK
+      🔎 Verifying link: https://thehackernews.com/2025/12/traditional-secu... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/exp... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/hac... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/dismantling-de... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/most-parked-do... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 1 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: MongoDB Vulnerability CVE-2025-14847 Under Active ...
+🚨 CRITICAL NEWS FOUND: MongoDB Vulnerability CVE-2025-14847 Under Active Exploitation Worldwide
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: MongoDB Vulnerability CVE-2025-14847 Under Active ...
+
+🕵️  Running QA Check via Overseer...
+[2025-12-29 03:16:25] [START] Starting Content QA for: 'MongoDB Vulnerability CVE-2025-14847 Under Active Exploitation Worldwide'...
+[2025-12-29 03:16:31] [PASS] AI QA Result: PASS - Looks good. The content is raw, authentic, and uses specific industry terminology effectively without sounding like corporate fluff. The style is direct and urgent, fitting the tone of a critical security alert.
+✅ QA Check Passed: PASS - Looks good. The content is raw, authentic, and uses specific industry terminology effectively without sounding like corporate fluff. The style is direct and urgent, fitting the tone of a critical security alert.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: MongoDB Vulnerability CVE-2025-14847 Under Active Exploitation Worldwide
+   Type: News
+   Date: 2025-12-29
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+[2025-12-29 03:16:33] [INIT] Overseer Agent Awakened
+[2025-12-29 03:16:33] [START] Starting System Health Check...
+[2025-12-29 03:16:33] [INFO] JSON Integrity Check: PASS (2 posts loaded)
+[2025-12-29 03:16:33] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Mon 29 Dec 03:16:33 EST 2025
+
+==================================================
+🚀 Daily Run Started: Mon 29 Dec 03:21:24 EST 2025
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 2 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2025/12/mongodb-vulnerab... OK
+      🔎 Verifying link: https://thehackernews.com/2025/12/traditional-secu... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/exp... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/hac... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/dismantling-de... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/most-parked-do... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 5 candidates against 2 recent posts for similarity...
+📉 Filtered duplicates: 5 -> 4
+ℹ️  Skipped 2 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Traditional Security Frameworks Leave Organization...
+🚨 CRITICAL NEWS FOUND: Traditional Security Frameworks Leave Organizations Exposed to AI-Specific Attack Vectors
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: Traditional Security Frameworks Leave Organization...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2025-12-29 03:21:47] [START] Starting Content QA for: 'Traditional Security Frameworks Leave Organizations Exposed to AI-Specific Attack Vectors'...
+[2025-12-29 03:21:56] [FAIL] AI QA Result: FAIL - While the style and authenticity are strong, the terminology falls short. Despite mentioning specific incidents (Ultralytics, Nx packages, ChatGPT vulnerabilities), there is a complete absence of specific tool names (e.g., Nmap, Burp Suite, Metasploit) or CVE IDs where highly relevant for named compromises and vulnerabilities. The piece remains too generic in its technical identifiers for a 'Raw, Authentic, and Industry-Specific' standard.
+❌ QA Check Failed: While the style and authenticity are strong, the terminology falls short. Despite mentioning specific incidents (Ultralytics, Nx packages, ChatGPT vulnerabilities), there is a complete absence of specific tool names (e.g., Nmap, Burp Suite, Metasploit) or CVE IDs where highly relevant for named compromises and vulnerabilities. The piece remains too generic in its technical identifiers for a 'Raw, Authentic, and Industry-Specific' standard.
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: While the style and authenticity are strong, the terminology falls short. Despite mentioning specific incidents (Ultralytics, Nx packages, ChatGPT vulnerabilities), there is a complete absence of specific tool names (e.g., Nmap, Burp Suite, Metasploit) or CVE IDs where highly relevant for named compromises and vulnerabilities. The piece remains too generic in its technical identifiers for a 'Raw, Authentic, and Industry-Specific' standard.
+
+🕵️  Running QA Check via Overseer (Attempt 2/3)...
+[2025-12-29 03:22:15] [START] Starting Content QA for: 'Traditional Security Frameworks Leave Organizations Exposed to AI-Specific Attack Vectors'...
+[2025-12-29 03:22:23] [PASS] AI QA Result: PASS - Looks good. The content is raw, authentic, and uses specific industry terminology effectively. It avoids corporate fluff and presents plausible, industry-specific examples including a hypothetical CVE and future scenarios that align with current threat trends. The style is direct and impactful.
+✅ QA Check Passed: PASS - Looks good. The content is raw, authentic, and uses specific industry terminology effectively. It avoids corporate fluff and presents plausible, industry-specific examples including a hypothetical CVE and future scenarios that align with current threat trends. The style is direct and impactful.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Traditional Security Frameworks Leave Organizations Exposed to AI-Specific Attack Vectors
+   Type: News
+   Date: 2025-12-29
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+[2025-12-29 03:22:26] [INIT] Overseer Agent Awakened
+[2025-12-29 03:22:26] [START] Starting System Health Check...
+[2025-12-29 03:22:26] [INFO] JSON Integrity Check: PASS (3 posts loaded)
+[2025-12-29 03:22:26] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Mon 29 Dec 03:22:26 EST 2025
+

@@ -11,7 +11,7 @@ echo "==================================================" >> "$LOG_FILE"
 # 1. Generate Blog Content
 echo "Checking for blog updates..." >> "$LOG_FILE"
 cd "$PROJECT_DIR" || exit
-python3 -u scripts/generate_blog.py >> "$LOG_FILE" 2>&1
+"$PROJECT_DIR/venv/bin/python3" -u scripts/generate_blog.py >> "$LOG_FILE" 2>&1
 
 BLOG_EXIT_CODE=$?
 
@@ -23,7 +23,7 @@ fi
 
 # 2. Run Overseer Agent (System Health Check)
 echo "Starting Overseer Agent (System Health)..." >> "$LOG_FILE"
-python3 scripts/overseer.py >> "$LOG_FILE" 2>&1
+"$PROJECT_DIR/venv/bin/python3" scripts/overseer.py >> "$LOG_FILE" 2>&1
 OVERSEER_EXIT=$?
 
 if [ $OVERSEER_EXIT -eq 0 ]; then

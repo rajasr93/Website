@@ -405,6 +405,36 @@ Requirements:
         "type": "Blog"
     }
 
+def rewrite_post(client, model, post_data, feedback):
+    """Rewrite a blog post based on QA feedback"""
+    print(f"\n✍️  Rewriting post based on QA feedback: {feedback}")
+    
+    prompt = f"""
+    You are a strict technical editor. Your previous draft failed Quality Assurance.
+    
+    Original Title: {post_data['title']}
+    Original Content:
+    {post_data['content']}
+    
+    QA Feedback (Why it failed):
+    {feedback}
+    
+    Task: Rewrite the content to address the feedback. 
+    - Keep the same title.
+    - Ensure it is "Raw, Authentic, and Industry-Specific".
+    - Fix the specific issues mentioned.
+    - Maintain the length (around 200-300 words).
+    - Do NOT include markdown headers.
+    """
+    
+    content, error = safe_api_call(client, model, prompt, "post rewrite")
+    
+    if content:
+        return content
+    else:
+        print(f"⚠️ Rewrite failed: {error}")
+        return post_data['content'] # Return original if rewrite fails
+
 def main():
     print("DEBUG: Inside main", flush=True)
     print("=" * 60)
@@ -520,25 +550,35 @@ def main():
 
     # Save new post
     if new_post:
-        # Perform QA Check via Overseer
-        print("\n🕵️  Running QA Check via Overseer...")
-        qa_passed, qa_result = overseer.check_content_quality(new_post)
-        
-        if not qa_passed:
-            print(f"❌ QA Check Failed: {qa_result.get('reason', 'Unknown error')}")
-            print(f"⚠️  Post discarded due to QA failure. (Strict Style Enforcement)")
-            # Log failure to audit log explicitly if needed or rely on overseer's internal logging
-            return
-
-        print(f"✅ QA Check Passed: {qa_result.get('status')} - {qa_result.get('reason')}")
-
-        new_post['id'] = len(data) + 1
-        data.append(new_post)
-        save_blog_data(data)
-        print("\n✅ Successfully generated and saved new post!")
-        print(f"   Title: {new_post['title']}")
-        print(f"   Type: {new_post['type']}")
-        print(f"   Date: {new_post['date']}")
+        # QA Loop
+        max_retries = 2
+        for attempt in range(max_retries + 1):
+            # Perform QA Check via Overseer
+            print(f"\n🕵️  Running QA Check via Overseer (Attempt {attempt + 1}/{max_retries + 1})...")
+            qa_passed, qa_result = overseer.check_content_quality(new_post)
+            
+            if qa_passed:
+                print(f"✅ QA Check Passed: {qa_result.get('status')} - {qa_result.get('reason')}")
+                new_post['id'] = len(data) + 1
+                data.append(new_post)
+                save_blog_data(data)
+                print("\n✅ Successfully generated and saved new post!")
+                print(f"   Title: {new_post['title']}")
+                print(f"   Type: {new_post['type']}")
+                print(f"   Date: {new_post['date']}")
+                break
+            else:
+                print(f"❌ QA Check Failed: {qa_result.get('reason', 'Unknown error')}")
+                
+                if attempt < max_retries:
+                    # Attempt rewrite
+                    print(f"⚠️  Attempting rewrite...")
+                    new_content = rewrite_post(client, model, new_post, qa_result.get('reason'))
+                    new_post['content'] = new_content
+                else:
+                    print(f"⚠️  Post discarded due to persistent QA failure. (Strict Style Enforcement)")
+                    # Log failure to audit log explicitly if needed or rely on overseer's internal logging
+                    return
     else:
         print("\n⚠️  No post generated")
 
