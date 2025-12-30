@@ -1,4 +1,3 @@
-/* src/data/config.js */
 export const config = {
   profile: {
     name: "Rajas Ronghe",

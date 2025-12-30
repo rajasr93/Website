@@ -19,21 +19,22 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  /* Slate 300 */
+  background: #94a3b8;
+  /* Slate 400 */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-  /* Slate 400 */
+  background: #64748b;
+  /* Slate 500 */
 }
 
 /* --- 2. Text Selection (Cyber Highlight) --- */
 ::selection {
-  background-color: rgba(6, 182, 212, 0.3);
-  /* Cyan with opacity */
-  color: #fff;
+  background-color: rgba(20, 184, 166, 0.3);
+  /* Teal-500 with opacity */
+  color: #0f766e;
+  /* Teal-700 */
 }
 
 /* --- 3. Animations --- */

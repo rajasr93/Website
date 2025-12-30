@@ -17,13 +17,13 @@ import BlogWidget from './components/Widgets/BlogWidget';
 import { config } from './data/config';
 
 // Card Wrapper for consistent look (but static now)
-const WidgetCard = ({ children, title, onClose, isHome = false }) => (
+const WidgetCard = ({ children, title, onClose, isHome = false, borderColor = "border-slate-200" }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.95, y: 20 }}
     animate={{ opacity: 1, scale: 1, y: 0 }}
     exit={{ opacity: 0, scale: 0.95, y: 20 }}
     transition={{ duration: 0.3 }}
-    className="bg-white/90 backdrop-blur-xl border border-slate-200 p-8 rounded-2xl shadow-2xl w-full max-w-3xl relative"
+    className={`bg-white/90 backdrop-blur-xl border ${borderColor} p-8 rounded-2xl shadow-2xl w-full max-w-3xl relative`}
   >
     {/* Close Button - Hide if isHome */}
     {!isHome && (
@@ -72,7 +72,7 @@ const App = () => {
   const handleClose = () => setInput('menu');
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans relative overflow-x-hidden overflow-y-auto selection:bg-cyan-500/30 flex flex-col">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans relative overflow-x-hidden overflow-y-auto selection:bg-teal-500/30 flex flex-col">
 
       {/* 1. Visual Layer */}
       <Background3D />
@@ -80,7 +80,7 @@ const App = () => {
       {/* 2. UI Layer */}
       <Header />
 
-      <main className="flex-grow flex flex-col items-center justify-center relative z-10 px-4 w-full max-w-5xl mx-auto transition-all duration-500 gap-8 pt-44 pb-24 md:pt-0 md:pb-0">
+      <main className="flex-grow flex flex-col items-center justify-center relative z-10 px-4 w-full max-w-5xl mx-auto transition-all duration-500 gap-6 pt-32 pb-24 md:pt-0 md:pb-0">
 
         {/* 3. Main Widget Display (Dashboard) */}
         <div className="w-full flex justify-center perspective-[1000px] min-h-[400px] items-center">
@@ -100,6 +100,7 @@ const App = () => {
                     title="System Dashboard"
                     onClose={() => setInput('')} // Close on Start/Menu just clears input (redundant but safe)
                     isHome={true} // Hide close button if home
+                    borderColor="border-emerald-500/30"
                   >
                     <StartWidget
                       onNavigate={setInput}
@@ -110,17 +111,17 @@ const App = () => {
 
                 {/* Content Widgets */}
                 {activeSection === 'EXPERIENCE' && (
-                  <WidgetCard title="Experience" onClose={handleClose}>
+                  <WidgetCard title="Experience" onClose={handleClose} borderColor="border-teal-500/40">
                     <ExperienceWidget data={config.experience} />
                   </WidgetCard>
                 )}
                 {activeSection === 'PROJECTS' && (
-                  <WidgetCard title="Deployments" onClose={handleClose}>
+                  <WidgetCard title="Deployments" onClose={handleClose} borderColor="border-cyan-500/40">
                     <ProjectsWidget data={config.projects} />
                   </WidgetCard>
                 )}
                 {activeSection === 'EDUCATION' && (
-                  <WidgetCard title="Education" onClose={handleClose}>
+                  <WidgetCard title="Education" onClose={handleClose} borderColor="border-amber-500/40">
                     <EducationWidget
                       education={config.education}
                       certifications={config.certifications}
@@ -128,17 +129,17 @@ const App = () => {
                   </WidgetCard>
                 )}
                 {activeSection === 'SKILLS' && (
-                  <WidgetCard title="Arsenal" onClose={handleClose}>
+                  <WidgetCard title="Arsenal" onClose={handleClose} borderColor="border-slate-300">
                     <SkillsWidget data={config.skills} />
                   </WidgetCard>
                 )}
                 {activeSection === 'ABOUT' && (
-                  <WidgetCard title="About Me" onClose={handleClose}>
+                  <WidgetCard title="About Me" onClose={handleClose} borderColor="border-purple-500/40">
                     <AboutWidget />
                   </WidgetCard>
                 )}
                 {activeSection === 'BLOG' && (
-                  <WidgetCard title="Intelligence Feed" onClose={handleClose}>
+                  <WidgetCard title="Intelligence Feed" onClose={handleClose} borderColor="border-indigo-500/40">
                     <BlogWidget />
                   </WidgetCard>
                 )}
