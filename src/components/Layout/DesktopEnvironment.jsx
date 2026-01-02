@@ -101,8 +101,8 @@ const DesktopEnvironment = () => {
         {
             id: 'education',
             label: "Education",
-            icon: iconFolder,
-            action: () => openWindow('education', 'Education', EducationWidget, iconFolder, { education: config.education, certifications: config.certifications, type: 'document' })
+            icon: iconListFile,
+            action: () => openWindow('education', 'Education', EducationWidget, iconListFile, { education: config.education, certifications: config.certifications, type: 'document' })
         },
         {
             id: 'skills',
@@ -113,8 +113,8 @@ const DesktopEnvironment = () => {
         {
             id: 'thanks',
             label: "Credits",
-            icon: iconListFile,
-            action: () => openWindow('thanks', 'Credits', CreditsWidget, iconListFile, { type: 'document' })
+            icon: iconHearts,
+            action: () => openWindow('thanks', 'Credits', CreditsWidget, iconHearts, { type: 'document' })
         },
         {
             id: 'resume',

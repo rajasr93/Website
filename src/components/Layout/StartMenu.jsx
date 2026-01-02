@@ -13,7 +13,7 @@ import iconNews from '../../assets/icons/news.png';
 import iconEdu from '../../assets/icons/resume download.ico';
 import iconAbout from '../../assets/icons/About me.png';
 import iconSkills from '../../assets/icons/Control Panel.png'; // Using Control Panel for Skills
-import iconFolder from '../../assets/icons/Folder.ico'; // Using Folder for Education
+import iconListFile from '../../assets/icons/List File.ico'; // Using List File for Education
 
 import TerminalWindow from '../Widgets/TerminalWindow';
 import ProjectsWidget from '../Widgets/ProjectsWidget';
@@ -104,9 +104,9 @@ const StartMenu = ({ isOpen, onClose }) => {
                             onClick={() => handleOpen('experience', 'Experience', ExperienceWidget, iconExp, { data: config.experience, type: 'explorer' })}
                         />
                         <StartMenuItem
-                            icon={iconFolder}
+                            icon={iconListFile}
                             label="Education"
-                            onClick={() => handleOpen('education', 'Education', EducationWidget, iconFolder, { education: config.education, certifications: config.certifications, type: 'explorer' })}
+                            onClick={() => handleOpen('education', 'Education', EducationWidget, iconListFile, { education: config.education, certifications: config.certifications, type: 'explorer' })}
                         />
                         <StartMenuItem
                             icon={iconSkills}
