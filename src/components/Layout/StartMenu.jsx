@@ -14,6 +14,8 @@ import iconEdu from '../../assets/icons/resume download.ico';
 import iconAbout from '../../assets/icons/About me.png';
 import iconSkills from '../../assets/icons/Control Panel.png'; // Using Control Panel for Skills
 import iconListFile from '../../assets/icons/List File.ico'; // Using List File for Education
+import iconLogout from '../../assets/icons/logout.png';
+import iconShutdown from '../../assets/icons/shutdown.png';
 
 import TerminalWindow from '../Widgets/TerminalWindow';
 import ProjectsWidget from '../Widgets/ProjectsWidget';
@@ -165,11 +167,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                         onClick={logout}
                         className="group flex items-center gap-1 text-white hover:text-white/90 active:brightness-90 transition-all text-xs cursor-pointer"
                     >
-                        <div className="w-7 h-7 bg-[#E8A232] rounded-[3px] border border-white/40 shadow-sm flex items-center justify-center group-hover:bg-[#F2B958]">
-                            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white drop-shadow-sm">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm5.01-9.93l-1.35 1.48C17.47 6.13 15.86 5 14 5c-3.87 0-7 3.13-7 7s3.13 7 7 7c2.18 0 4.12-1.07 5.34-2.68l1.35 1.55C19.12 19.96 16.73 21 14 21c-4.97 0-9-4.03-9-9s4.03-9 9-9c2.51 0 4.81 1.09 6.49 2.8z" />
-                            </svg>
-                        </div>
+                        <img src={iconLogout} alt="" className="w-7 h-7 object-contain drop-shadow-sm hover:brightness-110" />
                         <span>Log Off</span>
                     </button>
 
@@ -177,11 +175,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                         onClick={shutdown}
                         className="group flex items-center gap-1 text-white hover:text-white/90 active:brightness-90 transition-all text-xs cursor-pointer"
                     >
-                        <div className="w-7 h-7 bg-[#E05B35] rounded-[3px] border border-white/40 shadow-sm flex items-center justify-center group-hover:bg-[#E87352]">
-                            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white drop-shadow-sm">
-                                <path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z" />
-                            </svg>
-                        </div>
+                        <img src={iconShutdown} alt="" className="w-7 h-7 object-contain drop-shadow-sm hover:brightness-110" />
                         <span>Turn Off Computer</span>
                     </button>
                 </div>
