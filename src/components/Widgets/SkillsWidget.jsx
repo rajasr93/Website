@@ -1,47 +1,86 @@
-/* src/components/Widgets/SkillsWidget.jsx */
-import React from 'react';
-import { Cpu, Code2, ShieldCheck, Cloud, TerminalSquare } from 'lucide-react';
+import React, { useState } from 'react';
+import iconList from '../../assets/icons/List File.ico';
+import iconCmd from '../../assets/icons/cmd.png';
+import iconControlPanel from '../../assets/icons/Control Panel.png';
+import iconNews from '../../assets/icons/news.png';
 
-const SkillsWidget = ({ data }) => {
+const getCategoryIcon = (category) => {
+  if (category.includes("Security")) return iconCmd;
+  if (category.includes("Cloud")) return iconControlPanel;
+  if (category.includes("Programming")) return iconList;
+  if (category.includes("Frameworks")) return iconNews;
+  return iconList;
+};
 
-  const getCategoryIcon = (category) => {
-    if (category.includes('Cloud')) return <Cloud size={18} />;
-    if (category.includes('Security') || category.includes('Tools')) return <ShieldCheck size={18} />;
-    if (category.includes('Programming')) return <Code2 size={18} />;
-    if (category.includes('Frameworks')) return <TerminalSquare size={18} />;
-    return <Cpu size={18} />;
-  };
+const TreeToggleIcon = ({ isOpen }) => (
+  <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg" shapeRendering="crispEdges" className="-mr-1 z-10 bg-white">
+    {!isOpen ? (
+      // Right Arrow (Collapsed)
+      <path d="M2 1V8L8 4.5L2 1Z" fill="black" stroke="black" strokeWidth="0.5" />
+    ) : (
+      // Down Arrow (Expanded) - slightly adjusted to center
+      <path d="M1 2H8L4.5 8L1 2Z" fill="black" stroke="black" strokeWidth="0.5" />
+    )}
+  </svg>
+);
+
+const TreeItem = ({ label, children, isRoot = false }) => {
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="space-y-8 pb-10">
-      <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-3 border-b border-slate-200 pb-4">
-        <span className="w-2 h-8 bg-orange-500 rounded-full"></span>
-        Technical Arsenal
-      </h2>
+    <div className="flex flex-col select-none">
+      <div
+        className="flex items-center gap-1 hover:bg-[#E0E0E0] cursor-pointer py-[1px]"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {/* Tree Line / Toggle */}
+        <div className="w-5 h-5 flex items-center justify-center shrink-0">
+          {children && <TreeToggleIcon isOpen={isOpen} />}
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {data.map((skillGroup, i) => (
-          <div key={i} className="bg-white/50 border border-slate-200 rounded-2xl p-6 hover:bg-white transition-colors group shadow-sm">
-            <div className="flex items-center gap-3 mb-4 text-orange-600 group-hover:text-orange-500 transition-colors">
-              {getCategoryIcon(skillGroup.category)}
-              <h3 className="font-bold text-slate-800">{skillGroup.category}</h3>
-            </div>
+        {/* Icon */}
+        <img src={iconList} alt="" className="w-4 h-4 shrink-0" style={{ filter: isRoot ? 'none' : 'grayscale(1)' }} />
 
-            <div className="flex flex-wrap gap-2">
-              {skillGroup.items.map((skill, idx) => (
-                <span
-                  key={idx}
-                  className="px-2.5 py-1 text-xs font-mono text-slate-700 bg-slate-100 rounded border border-slate-200 hover:border-orange-500/50 transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+        {/* Label */}
+        <span className={`text-xs text-black ${isRoot ? 'font-bold' : ''}`}>{label}</span>
       </div>
+
+      {/* Children */}
+      {isOpen && children && (
+        <div className="pl-5 relative border-l border-dotted border-gray-400 ml-2.5">
+          {children}
+        </div>
+      )}
     </div>
   );
 };
+
+const SkillNode = ({ label, icon }) => (
+  <div className="flex items-center gap-1 py-[1px] pl-6 hover:bg-[#E0E0E0] cursor-default relative">
+    <div className="absolute left-0 top-1/2 w-6 border-t border-dotted border-gray-400"></div>
+    <img src={icon} alt="" className="w-3.5 h-3.5 shrink-0 object-contain" />
+    <span className="text-xs text-black">{label}</span>
+  </div>
+);
+
+const SkillsWidget = ({ data }) => {
+  return (
+    <div className="bg-white p-2 h-full overflow-y-auto font-sans border-t border-l border-gray-400 shadow-inner">
+      {/* Tree Root */}
+      <TreeItem label="My Skills" isRoot={true}>
+        {data.map((group, i) => (
+          <TreeItem key={i} label={group.category}>
+            <div className="mb-2"> {/* "One line space for new title" effect */}
+              {group.items.map((skill, j) => (
+                <SkillNode key={j} label={skill} icon={getCategoryIcon(group.category)} />
+              ))}
+            </div>
+          </TreeItem>
+        ))}
+      </TreeItem>
+    </div>
+  );
+};
+
 
 export default SkillsWidget;

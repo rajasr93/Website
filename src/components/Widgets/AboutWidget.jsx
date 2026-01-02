@@ -1,23 +1,67 @@
 import React from 'react';
+import { config } from '../../data/config';
+import { useWindow } from '../../context/WindowContext';
+import xplogo from '../../assets/xp/xplogo.webp';
+// We might not have the exact windows banner, so we'll simulate it with CSS
+import iconAbout from '../../assets/icons/About me.png'; // Fallback icon
+import userPhoto from '../../assets/icons/photo.png';
 
-const AboutWidget = () => {
+const AboutWidget = ({ windowId }) => {
+  const { closeWindow } = useWindow();
+
   return (
-    <div className="animate-fade-in font-mono text-gray-700 space-y-6 leading-relaxed text-justify">
+    <div className="flex flex-col h-full font-sans selection:bg-blue-600 selection:text-white">
+      {/* Top Section containing Header and Copyright - Gray Background */}
+      <div className="bg-[#ECE9D8]">
+        {/* Header Banner - Simulating the XP About Header */}
+        <div className="bg-gradient-to-r from-[#003399] via-[#4d86e1] to-[#003399] p-4 flex items-center border-b border-[#003399] shadow-sm relative overflow-hidden h-24">
+          {/* User Photo */}
+          <div className="flex items-center gap-4 z-10">
+            <img src={userPhoto} alt="User" className="h-20 w-20 object-cover border-2 border-white rounded-md shadow-md" />
+            <span className="text-white text-2xl font-bold tracking-wide drop-shadow-md">Rajas Ronghe</span>
+          </div>
 
-      {/* Section 1 */}
-      <p>
-        My path into cybersecurity wasn't linear; it was a recursive loop of curiosity. During my time at <span className="font-bold">Drexel University</span>, I realized that engineering reliable software requires a fundamental understanding of failure states. That insight shifted my focus from simply building applications to securing the infrastructure that powers them. I became obsessed with the logic behind the code—analyzing why systems fracture under pressure and how to design architectures that are resilient by default.
-      </p>
+          {/* Background Accent Lines/Shapes */}
 
-      {/* Section 2 */}
-      <p>
-        I started my career grappling with the tangible chaos of general IT and network hardware, which gave me a necessary respect for the physical layer of technology. As I pivoted toward <span className="font-bold">Security Engineering</span>, I translated that hands-on discipline into the cloud. I learned that modern security isn't just about configuring firewalls; it is about orchestration, automating compliance, and understanding the behavioral psychology behind every attack vector.
-      </p>
+          {/* Background Accent Lines/Shapes to mimic the banner style if needed */}
+          <div className="absolute right-0 top-0 h-full w-1/3 opacity-20 bg-gradient-to-l from-white to-transparent transform skew-x-12 translate-x-4"></div>
+        </div>
+      </div>
 
-      {/* Section 3 */}
-      <p>
-        Today, my work exists at the volatile intersection of infrastructure and innovation. Whether I am hardening <span className="font-bold">cloud environments</span> or dissecting <span className="font-bold">adversarial AI</span> models, I approach security as an engineering problem rather than a checklist. I don't just want to patch vulnerabilities; I want to engineer environments where those vulnerabilities are statistically unlikely to exist.
-      </p>
+      {/* Main Content Area - White Background */}
+      <div className="flex-1 bg-white px-6 pb-6 text-sm text-black">
+        <div className="border-t border-[#A0A0A0] border-b border-white h-[2px] mb-4"></div>
+
+        <div className="space-y-4 leading-relaxed pr-2">
+          <p className="font-bold mb-2">This product is licensed to:</p>
+          <p className="pl-4 font-bold">{config.profile.name}</p>
+          <p className="pl-4">{config.profile.role}</p>
+
+          {config.about.sections.map((section, idx) => (
+            <p key={idx} className="text-justify indent-4">
+              {section}
+            </p>
+          ))}
+        </div>
+
+        <div className="border-t border-[#A0A0A0] border-b border-white h-[2px] my-4"></div>
+
+        <div className="flex justify-between items-center text-xs pb-4">
+          <span>Physical memory available to Windows:</span>
+          <span className="font-bold">267,366,3719 KB</span>
+        </div>
+      </div>
+
+      {/* Footer - Gray Background */}
+      <div className="bg-[#ECE9D8] p-3 flex justify-end shrink-0">
+        <button
+          onClick={() => closeWindow(windowId)}
+          className="px-6 py-1 border border-[#003c74] rounded-[3px] bg-gradient-to-b from-[#f3f8fe] to-[#cedcf3] hover:from-[#e3eefd] hover:to-[#a7c5ed] text-black text-xs shadow-sm active:bg-[#a7c5ed] min-w-[75px]"
+        >
+          Exit
+        </button>
+      </div>
+
     </div>
   );
 };
