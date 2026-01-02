@@ -83,6 +83,18 @@ export const config = {
       link: "https://github.com/rajasr93/PhishingEmail"
     },
     {
+      title: "CNN-Backdoor",
+      type: "AI Security",
+      desc: "Research implementation of a backdoor attack on Convolutional Neural Networks.",
+      link: "https://github.com/rajasr93/CNN-Backdoor"
+    },
+    {
+      title: "Pulumi-AWS-IAM-Auto",
+      type: "Cloud Security Tool",
+      desc: "Automated AWS IAM provisioning and management using Pulumi Infrastructure as Code.",
+      link: "https://github.com/rajasr93/Pulumi-AWS-IAM-Auto"
+    },
+    {
       title: "Black Mamba AI-Keylogger",
       type: "Offensive",
       desc: "Developed a proof-of-concept AI-keylogger utilizing OpenAI API to demonstrate EDR evasion techniques for academic research.",
