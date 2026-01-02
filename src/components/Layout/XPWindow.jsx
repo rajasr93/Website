@@ -17,6 +17,7 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
             case 'internet': return "bg-white text-black font-sans";
             case 'document': return "bg-[#ECE9D8] text-black font-sans flex flex-col";
             case 'app': return "bg-[#ECE9D8] text-black font-sans flex flex-col";
+            case 'dialog': return "bg-[#ECE9D8] text-black font-sans flex flex-col";
             default: return "bg-white text-black font-sans flex flex-row";
         }
     };
@@ -35,12 +36,12 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
                 ref={nodeRef}
                 className={`absolute flex flex-col
             bg-xp-beige shadow-xp-window 
-            ${isMaximized ? 'w-full h-full top-0 left-0 rounded-none border-0' : 'w-[650px] max-w-[90vw] rounded-t-lg border-[3px] border-luna-blue-dark rounded-b-none'}
+            ${isMaximized ? 'w-full h-full top-0 left-0 rounded-none border-0' : (type === 'dialog' ? 'w-fit h-auto rounded-t-lg border-[3px] border-luna-blue-dark rounded-b-none' : 'w-[650px] max-w-[90vw] rounded-t-lg border-[3px] border-luna-blue-dark rounded-b-none')}
             ${isMinimized ? 'invisible pointer-events-none' : 'visible pointer-events-auto'}
           `}
                 style={{
                     zIndex,
-                    height: isMaximized ? '100%' : (type === 'terminal' ? '400px' : '500px'),
+                    height: isMaximized ? '100%' : (type === 'dialog' ? 'auto' : (type === 'terminal' ? '400px' : '500px')),
                     width: isMaximized ? '100%' : undefined,
                     // Remove top/left styles since Draggable handles transform
                 }}
@@ -81,7 +82,7 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
                 </div>
 
                 {/* Common Menubar */}
-                {type !== 'terminal' && type !== 'document' && type !== 'app' && (
+                {type !== 'terminal' && type !== 'document' && type !== 'app' && type !== 'dialog' && (
                     <div className="bg-[#ECE9D8] border-b border-gray-300 p-0.5 flex items-center text-xs gap-1 pl-2 select-none text-black font-normal cursor-default">
                         <span className="hover:bg-[#1660E8] hover:text-white px-2 py-1 transition-colors">File</span>
                         <span className="hover:bg-[#1660E8] hover:text-white px-2 py-1 transition-colors">Edit</span>
@@ -101,7 +102,7 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
                 )}
 
                 {/* Toolbar */}
-                {type !== 'terminal' && type !== 'document' && type !== 'app' && (
+                {type !== 'terminal' && type !== 'document' && type !== 'app' && type !== 'dialog' && (
                     <div className="bg-[#ECE9D8] border-b border-gray-300 p-1 flex items-center gap-1 select-none">
                         <div className="flex items-center gap-0.5 mr-2">
                             <button className="flex items-center gap-1 px-2 py-1 rounded-sm hover:border hover:border-gray-400 hover:bg-white/50 active:translate-y-[1px] disabled:opacity-50">
@@ -130,7 +131,7 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
                 )}
 
                 {/* Address Bar */}
-                {type !== 'terminal' && type !== 'document' && type !== 'app' && (
+                {type !== 'terminal' && type !== 'document' && type !== 'app' && type !== 'dialog' && (
                     <div className="bg-[#ECE9D8] border-b border-gray-300 p-1 flex items-center gap-2 px-2 pb-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]">
                         <span className="text-xs text-gray-500">Address</span>
                         <div className="flex-1 bg-white border border-[#7F9DB9] h-[22px] flex items-center px-1 shadow-[inset_1px_1px_2px_rgba(0,0,0,0.1)]">

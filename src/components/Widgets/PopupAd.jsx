@@ -14,8 +14,8 @@ const MESSAGES = [
     "Download Complete: 100% Virus Free"
 ];
 
-const PopupAd = ({ closeWindow, windowId }) => {
-    const message = MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
+const PopupAd = ({ closeWindow, windowId, message: customMessage }) => {
+    const message = customMessage || MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
 
     return (
         <div className="h-full w-full bg-[#ECE9D8] flex flex-col p-4 select-none">

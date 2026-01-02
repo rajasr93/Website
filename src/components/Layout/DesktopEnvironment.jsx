@@ -30,6 +30,7 @@ import BlogWidget from '../Widgets/BlogWidget';
 import CreditsWidget from '../Widgets/CreditsWidget';
 import MalwareTrigger from '../Widgets/MalwareTrigger';
 
+
 const DesktopIcon = ({ label, icon, isSelected, onClick, onDoubleClick }) => (
     <div
         className={`flex flex-col items-center w-[80px] gap-1 cursor-pointer group mb-6 p-2 rounded border border-transparent 
@@ -134,6 +135,7 @@ const DesktopEnvironment = () => {
             icon: iconHearts,
             action: () => openWindow('malware', 'C:\\WINDOWS\\system32\\cmd.exe', MalwareTrigger, iconHearts, { type: 'terminal' })
         },
+
     ];
 
     // Initialize positions on mount
