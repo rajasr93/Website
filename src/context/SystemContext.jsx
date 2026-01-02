@@ -12,7 +12,7 @@ export const SystemProvider = ({ children }) => {
     // Load sound effects
     const playSound = (type) => {
         if (type === 'startup') {
-            const audio = new Audio('/src/assets/bootup.mp3');
+            const audio = new Audio(bootSound);
             audio.volume = 0.5;
             audio.play().catch(e => console.error("Audio play failed", e));
         }
