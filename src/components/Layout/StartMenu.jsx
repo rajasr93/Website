@@ -69,7 +69,7 @@ const StartMenu = ({ isOpen, onClose }) => {
 
                 {/* Header: User Info - Authentic Gradient */}
                 {/* Gradient: Top #1C70D2 -> Bottom #1047A8 */}
-                <div className="h-[64px] shrink-0 bg-gradient-to-b from-[#1C70D2] to-[#1047A8] flex items-center px-2 relative overflow-hidden rounded-t-md cursor-pointer border-b border-[#3E80E8] shadow-[inset_0px_2px_2px_rgba(255,255,255,0.3)]">
+                <div className="h-[64px] shrink-0 bg-gradient-to-b from-[#1C70D2] to-[#1047A8] flex items-center px-2 relative overflow-hidden rounded-t-md border-b border-[#3E80E8] shadow-[inset_0px_2px_2px_rgba(255,255,255,0.3)]">
                     {/* Orange top highlight - Solid #F7A33B */}
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#F7A33B] opacity-90 shadow-[0_1px_2px_rgba(0,0,0,0.3)]"></div>
 

@@ -23,6 +23,13 @@ const TerminalWindow = () => {
         bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [history]);
 
+    // Auto-focus input when processing is done
+    useEffect(() => {
+        if (!isProcessing) {
+            inputRef.current?.focus();
+        }
+    }, [isProcessing, history]);
+
     // --- COMMAND REGISTRY ---
     const tools = {
         // --- NEW NETWORK TOOLS ---

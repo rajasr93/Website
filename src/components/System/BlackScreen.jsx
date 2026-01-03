@@ -1,23 +1,32 @@
 import React from 'react';
 import { useSystem } from '../../context/SystemContext';
-import { Power } from 'lucide-react';
 
 const BlackScreen = () => {
     const { turnOn } = useSystem();
 
     return (
-        <div className="bg-black h-screen w-screen flex flex-col items-center justify-center text-white overflow-hidden">
-            <button
-                onClick={turnOn}
-                className="group flex flex-col items-center gap-4 transition-all duration-500 hover:scale-110"
-            >
-                <div className="w-20 h-20 rounded-full border-4 border-zinc-800 bg-zinc-900 group-hover:border-blue-500 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] flex items-center justify-center transition-all duration-300">
-                    <Power size={40} className="text-zinc-600 group-hover:text-blue-400 transition-colors duration-300" />
+        <div className="bg-black h-screen w-screen flex flex-col items-center justify-center text-white overflow-hidden font-mono selection:bg-white selection:text-black">
+            <div className="border-4 border-white p-12 max-w-2xl w-full mx-4 flex flex-col items-center gap-8 relative">
+                {/* Content Container */}
+                <div className="flex flex-col items-center gap-6 text-center z-10">
+                    <h1 className="text-xl md:text-2xl tracking-wider">
+                        Rajas Ronghe Portfolio 2025
+                        <p>Security Engineer</p>
+                    </h1>
+
+                    <div className="flex items-center gap-2 text-lg md:text-xl">
+                        <span>Click start to begin</span>
+                        <span className="animate-pulse">_</span>
+                    </div>
+
+                    <button
+                        onClick={turnOn}
+                        className="mt-8 px-8 py-3 border-4 border-white text-xl hover:bg-white hover:text-black transition-all duration-200 font-bold tracking-widest uppercase focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-black"
+                    >
+                        START
+                    </button>
                 </div>
-                <span className="text-zinc-600 font-mono text-sm tracking-widest group-hover:text-blue-400 transition-colors duration-300">
-                    POWER ON
-                </span>
-            </button>
+            </div>
         </div>
     );
 };

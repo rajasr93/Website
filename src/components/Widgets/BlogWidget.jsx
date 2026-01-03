@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useWindow } from '../../context/WindowContext';
 import PopupAd from './PopupAd';
 import blogData from '../../data/blog_posts.json';
+import { config } from '../../data/config';
 
 const SidebarGroup = ({ title, children }) => (
     <div className="mb-4 bg-[#D3E5FA] border border-[#9DBBE3] rounded-sm overflow-hidden">
@@ -24,7 +25,7 @@ const ArticleDetail = ({ post, onClose }) => (
                 <div className="flex gap-2 text-[10px] text-gray-500 items-center">
                     <span>{post.date}</span>
                     <span className="bg-[#225AD8] text-white px-1 rounded-sm">{post.type}</span>
-                    <span className="border-l border-gray-300 pl-2 ml-1 text-[#1D4078] font-bold">By Rajas Ronghe</span>
+                    <span className="border-l border-gray-300 pl-2 ml-1 text-[#1D4078] font-bold">By {config.profile.name}</span>
                 </div>
             </div>
             <button
@@ -40,6 +41,9 @@ const ArticleDetail = ({ post, onClose }) => (
         <div className="flex-1 overflow-y-auto custom-scrollbar pr-1">
             <div className="text-sm text-black leading-relaxed whitespace-pre-wrap font-sans">
                 {post.content}
+            </div>
+            <div className="mt-8 pt-4 mb-2 border-t border-gray-300 font-serif italic text-gray-600 text-sm">
+                Written by {config.profile.name}
             </div>
         </div>
 

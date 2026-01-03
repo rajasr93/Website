@@ -54,7 +54,7 @@ export const WindowProvider = ({ children }) => {
             // Increment for next window, wrap if too far
             cascadeIndex.current = (offset + step > maxOffset) ? 0 : cascadeIndex.current + 1;
 
-            const baseX = 40;
+            const baseX = 250;
             const baseY = 40;
 
             const newWin = {

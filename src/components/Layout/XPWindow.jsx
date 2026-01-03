@@ -84,12 +84,12 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
                 {/* Common Menubar */}
                 {type !== 'terminal' && type !== 'document' && type !== 'app' && type !== 'dialog' && (
                     <div className="bg-[#ECE9D8] border-b border-gray-300 p-0.5 flex items-center text-xs gap-1 pl-2 select-none text-black font-normal cursor-default">
-                        <span className="hover:bg-[#1660E8] hover:text-white px-2 py-1 transition-colors">File</span>
-                        <span className="hover:bg-[#1660E8] hover:text-white px-2 py-1 transition-colors">Edit</span>
-                        <span className="hover:bg-[#1660E8] hover:text-white px-2 py-1 transition-colors">View</span>
-                        <span className="hover:bg-[#1660E8] hover:text-white px-2 py-1 transition-colors">Favorites</span>
-                        <span className="hover:bg-[#1660E8] hover:text-white px-2 py-1 transition-colors">Tools</span>
-                        <span className="hover:bg-[#1660E8] hover:text-white px-2 py-1 transition-colors">Help</span>
+                        <span className="px-2 py-1 transition-colors">File</span>
+                        <span className="px-2 py-1 transition-colors">Edit</span>
+                        <span className="px-2 py-1 transition-colors">View</span>
+                        <span className="px-2 py-1 transition-colors">Favorites</span>
+                        <span className="px-2 py-1 transition-colors">Tools</span>
+                        <span className="px-2 py-1 transition-colors">Help</span>
                         {/* XP Throbber */}
                         <div className="ml-auto w-6 h-6 mr-1 bg-gradient-to-br from-gray-100 to-gray-300 border border-gray-400 rounded-sm flex items-center justify-center shadow-inner">
                             {type === 'internet' ? (
@@ -105,27 +105,27 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
                 {type !== 'terminal' && type !== 'document' && type !== 'app' && type !== 'dialog' && (
                     <div className="bg-[#ECE9D8] border-b border-gray-300 p-1 flex items-center gap-1 select-none">
                         <div className="flex items-center gap-0.5 mr-2">
-                            <button className="flex items-center gap-1 px-2 py-1 rounded-sm hover:border hover:border-gray-400 hover:bg-white/50 active:translate-y-[1px] disabled:opacity-50">
+                            <div className="flex items-center gap-1 px-2 py-1 rounded-sm opacity-50 cursor-default">
                                 <div className="w-5 h-5 bg-[#3F9C52] rounded-full flex items-center justify-center text-white text-[10px] shadow-sm">←</div>
                                 <span className="text-xs">Back</span>
-                            </button>
-                            <button className="w-5 h-6 flex items-center justify-center hover:bg-white/50 rounded-sm opacity-50">
+                            </div>
+                            <div className="w-5 h-6 flex items-center justify-center rounded-sm opacity-50 cursor-default">
                                 <div className="w-4 h-4 bg-[#3F9C52] rounded-full flex items-center justify-center text-white text-[10px] shadow-sm">→</div>
-                            </button>
+                            </div>
                         </div>
                         <div className="h-5 w-[1px] bg-gray-400 mx-1"></div>
-                        <button className="p-1 hover:border hover:border-gray-400 hover:scale-105 active:scale-95 transition-transform" title="Search">
-                            <img src={icon} className="w-5 h-5 opacity-80 grayscale" alt="Search" />
-                        </button>
+                        <div className="p-1 opacity-80 grayscale cursor-default" title="Search">
+                            <img src={icon} className="w-5 h-5" alt="Search" />
+                        </div>
                         {type === 'explorer' && (
-                            <button className="p-1 hover:border hover:border-gray-400 hover:scale-105 active:scale-95 transition-transform" title="Folders">
+                            <div className="p-1 cursor-default" title="Folders">
                                 <div className="w-5 h-5 bg-yellow-400 border border-yellow-600 rounded-sm shadow-sm flex items-center justify-center text-[9px] font-bold text-yellow-800">F</div>
-                            </button>
+                            </div>
                         )}
                         {type === 'internet' && (
-                            <button className="p-1 hover:border hover:border-gray-400 hover:scale-105 active:scale-95 transition-transform" title="Home">
+                            <div className="p-1 cursor-default" title="Home">
                                 <div className="w-5 h-5 bg-white border border-gray-400 rounded-sm shadow-sm flex items-center justify-center text-[9px]">🏠</div>
-                            </button>
+                            </div>
                         )}
                     </div>
                 )}
@@ -143,9 +143,9 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
                                             'C:\\Documents and Settings\\Owner\\Desktop'}
                             </span>
                         </div>
-                        <button className="flex items-center gap-1 bg-[#21A121] active:bg-[#1B891B] text-white text-xs px-2 py-[3px] rounded-sm border border-[#1B891B] shadow-sm hover:brightness-110">
+                        <div className="flex items-center gap-1 bg-[#21A121] text-white text-xs px-2 py-[3px] rounded-sm border border-[#1B891B] shadow-sm opacity-90 cursor-default">
                             Go
-                        </button>
+                        </div>
                     </div>
                 )}
 

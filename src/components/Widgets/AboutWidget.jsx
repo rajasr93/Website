@@ -33,8 +33,8 @@ const AboutWidget = ({ windowId }) => {
         <div className="border-t border-[#A0A0A0] border-b border-white h-[2px] mb-4"></div>
 
         <div className="space-y-4 leading-relaxed">
-          <p className="font-bold mb-2">This product is licensed to:</p>
-          <div className="pl-4">
+          <p className="font-bold">This product is licensed to:</p>
+          <div>
             <p className="font-bold">{config.profile.name}</p>
             <p className="">{config.profile.role}</p>
           </div>

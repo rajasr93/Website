@@ -4,26 +4,30 @@ import iconAbout from '../../assets/icons/About me.png'; // Fallback for sidebar
 import { config } from '../../data/config';
 
 // Sidebar Item Component
-const SidebarGroup = ({ title, open = true, children, color = "blue" }) => ( // color not really used yet but for extending
-  <div className="mb-4 rounded-t-sm overflow-hidden shadow-sm">
-    <div className={`
-            bg-gradient-to-r from-[#225AD8] to-[#1C50B3] 
-            px-3 py-1 flex justify-between items-center cursor-pointer border-t border-l border-r border-white/40
-        `}>
-      <span className="text-white font-bold text-xs">{title}</span>
-      <div className="w-4 h-4 bg-white/20 rounded-full flex items-center justify-center">
-        <svg viewBox="0 0 24 24" className={`w-3 h-3 fill-white transition-transform ${open ? 'rotate-0' : '-rotate-90'}`}>
-          <path d="M7 10l5 5 5-5z" />
-        </svg>
+const SidebarGroup = ({ title, children }) => {
+  const [isOpen, setIsOpen] = React.useState(true);
+
+  return (
+    <div className="mb-4 rounded-t-sm overflow-hidden shadow-sm">
+      <div
+        className="bg-gradient-to-r from-[#225AD8] to-[#1C50B3] px-3 py-1 flex justify-between items-center cursor-pointer border-t border-l border-r border-white/40"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="text-white font-bold text-xs">{title}</span>
+        <div className="w-4 h-4 bg-white/20 rounded-full flex items-center justify-center">
+          <svg viewBox="0 0 24 24" className={`w-3 h-3 fill-white transition-transform ${isOpen ? 'rotate-0' : '-rotate-90'}`}>
+            <path d="M7 10l5 5 5-5z" />
+          </svg>
+        </div>
       </div>
+      {isOpen && (
+        <div className="bg-[#D3E5FA] border-l border-r border-[#9DBBE3] p-3 text-[11px] text-[#1D4078] space-y-2">
+          {children}
+        </div>
+      )}
     </div>
-    {open && (
-      <div className="bg-[#D3E5FA] border-l border-r border-[#9DBBE3] p-3 text-[11px] text-[#1D4078] space-y-2">
-        {children}
-      </div>
-    )}
-  </div>
-);
+  );
+};
 
 const ProjectsWidget = ({ data }) => {
   return (
@@ -33,31 +37,31 @@ const ProjectsWidget = ({ data }) => {
       <div className="w-[200px] bg-gradient-to-b from-[#7BA2E7] to-[#6375D6] p-3 flex flex-col overflow-y-auto">
 
         <SidebarGroup title="System Tasks">
-          <div className="flex items-center gap-2 hover:underline cursor-pointer">
+          <div className="flex items-center gap-2 cursor-default">
             <img src={iconAbout} className="w-4 h-4" alt="" />
             <span>View system information</span>
           </div>
-          <div className="flex items-center gap-2 hover:underline cursor-pointer">
+          <div className="flex items-center gap-2 cursor-default">
             {/* Simulated icon */}
             <div className="w-4 h-4 bg-green-500 rounded-sm"></div>
             <span>Add or remove programs</span>
           </div>
-          <div className="flex items-center gap-2 hover:underline cursor-pointer">
+          <div className="flex items-center gap-2 cursor-default">
             <div className="w-4 h-4 bg-blue-500 rounded-sm"></div>
             <span>Change a setting</span>
           </div>
         </SidebarGroup>
 
         <SidebarGroup title="Other Places">
-          <div className="flex items-center gap-2 hover:underline cursor-pointer">
+          <div className="flex items-center gap-2 cursor-default">
             <span className="w-4 h-4 bg-transparent border border-gray-500 rounded-sm"></span>
             <span>My Network Places</span>
           </div>
-          <div className="flex items-center gap-2 hover:underline cursor-pointer">
+          <div className="flex items-center gap-2 cursor-default">
             <span className="w-4 h-4 bg-yellow-400 rounded-sm"></span>
             <span>My Documents</span>
           </div>
-          <div className="flex items-center gap-2 hover:underline cursor-pointer">
+          <div className="flex items-center gap-2 cursor-default">
             <span className="w-4 h-4 bg-gray-300 rounded-sm"></span>
             <span>Control Panel</span>
           </div>
