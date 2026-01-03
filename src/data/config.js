@@ -25,7 +25,7 @@ export const config = {
   },
 
   thanks: {
-    message: "Thank you for visiting!"
+    message: "Thank you for taking the time to explore my world! It truly means a lot. If you'd like to discuss security, engineering, or just connect, please feel free to reach out. I'd love to chat!"
   },
 
   // 2. UPDATED: The Narrative "About Me"

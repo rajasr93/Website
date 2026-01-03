@@ -112,9 +112,9 @@ const DesktopEnvironment = () => {
         },
         {
             id: 'thanks',
-            label: "Credits",
+            label: "Thank You",
             icon: iconHearts,
-            action: () => openWindow('thanks', 'Credits', CreditsWidget, iconHearts, { type: 'document' })
+            action: () => openWindow('thanks', 'Thank You', CreditsWidget, iconHearts, { type: 'document' })
         },
         {
             id: 'resume',
