@@ -33,17 +33,19 @@ const AboutWidget = ({ windowId }) => {
         <div className="border-t border-[#A0A0A0] border-b border-white h-[2px] mb-4"></div>
 
         <div className="space-y-4 leading-relaxed">
-          <p className="font-bold">This product is licensed to:</p>
-          <div>
-            <p className="font-bold">{config.profile.name}</p>
-            <p className="">{config.profile.role}</p>
-          </div>
-
           {config.about.sections.map((section, idx) => (
             <p key={idx} className="text-justify indent-6">
               {section}
             </p>
           ))}
+
+          <div className="leading-snug pt-4">
+            <p className="font-bold mb-0">This product is licensed to:</p>
+            <div className="ml-0">
+              <p className="font-bold mb-0">{config.profile.name}</p>
+              <p className="mb-0">{config.profile.role}</p>
+            </div>
+          </div>
         </div>
 
         <div className="border-t border-[#A0A0A0] border-b border-white h-[2px] my-4"></div>

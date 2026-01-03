@@ -124,13 +124,13 @@ const BlogWidget = () => {
 
                 <SidebarGroup title="System Tasks">
                     <div
-                        className="px-1 cursor-pointer hover:underline flex gap-1"
+                        className="px-1 cursor-default flex gap-1"
                         onClick={() => setSelectedArticle(null)}
                     >
                         <span>🏠</span> Home / Feed
                     </div>
                     <div
-                        className="px-1 cursor-pointer hover:underline flex gap-1"
+                        className="px-1 cursor-default flex gap-1"
                         onClick={handleRefresh}
                     >
                         <span>🔄</span> Refresh news feeds
