@@ -574,6 +574,11 @@ def main():
             
             if qa_passed:
                 print(f"✅ QA Check Passed: {qa_result.get('status')} - {qa_result.get('reason')}")
+                
+                # Add Footer
+                footer = f"\n\nArticle written on : {new_post['date']}\nwritten by : rajas ronghe"
+                new_post['content'] += footer
+                
                 new_post['id'] = len(data) + 1
                 data.append(new_post)
                 save_blog_data(data)
