@@ -120,13 +120,13 @@ const BlogWidget = () => {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 bg-white p-3 overflow-y-auto">
+            <div className="flex-1 bg-white p-4 overflow-y-auto">
                 {selectedArticle ? (
                     <ArticleDetail post={selectedArticle} onClose={() => setSelectedArticle(null)} />
                 ) : (
                     <>
-                        <h2 className="text-[#1D4078] font-bold text-sm mb-3">Latest News Stories</h2>
-                        <div className="space-y-2">
+                        <h2 className="text-[#1D4078] font-bold text-sm mb-4 border-b border-[#D3D3D3] pb-1">Latest News Stories</h2>
+                        <div className="space-y-4">
                             {posts.map((post, i) => (
                                 <ArticleItem key={i} post={post} onSelect={setSelectedArticle} />
                             ))}

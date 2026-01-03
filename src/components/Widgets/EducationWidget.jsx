@@ -8,13 +8,13 @@ const EducationWidget = ({ education, certifications }) => {
 
         {/* Education Section */}
         <div className="mb-8">
-          <h3 className="font-bold underline mb-4">Academic Background</h3>
+          <h3 className="font-bold underline mb-4 decoration-[#316AC5] decoration-2 underline-offset-4">Academic Background</h3>
           <div className="space-y-4">
             {education.map((edu, i) => (
-              <div key={i} className="pl-4 border-l-2 border-gray-300">
-                <div className="font-bold text-lg">{edu.school}</div>
-                <div>{edu.degree}</div>
-                <div className="text-sm text-gray-600">{edu.year}</div>
+              <div key={i} className="pl-4 border-l-4 border-[#316AC5] py-2 hover:bg-gray-50 transition-colors rounded-r-md">
+                <div className="font-bold text-lg text-[#1D4078]">{edu.school}</div>
+                <div className="font-semibold">{edu.degree}</div>
+                <div className="text-sm text-gray-500 mt-1">{edu.year}</div>
               </div>
             ))}
           </div>

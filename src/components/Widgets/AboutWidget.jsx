@@ -29,16 +29,18 @@ const AboutWidget = ({ windowId }) => {
       </div>
 
       {/* Main Content Area - White Background */}
-      <div className="flex-1 bg-white px-6 pb-6 text-sm text-black">
+      <div className="flex-1 bg-white p-5 text-sm text-black overflow-y-auto">
         <div className="border-t border-[#A0A0A0] border-b border-white h-[2px] mb-4"></div>
 
-        <div className="space-y-4 leading-relaxed pr-2">
+        <div className="space-y-4 leading-relaxed">
           <p className="font-bold mb-2">This product is licensed to:</p>
-          <p className="pl-4 font-bold">{config.profile.name}</p>
-          <p className="pl-4">{config.profile.role}</p>
+          <div className="pl-4">
+            <p className="font-bold">{config.profile.name}</p>
+            <p className="">{config.profile.role}</p>
+          </div>
 
           {config.about.sections.map((section, idx) => (
-            <p key={idx} className="text-justify indent-4">
+            <p key={idx} className="text-justify indent-6">
               {section}
             </p>
           ))}
@@ -46,7 +48,7 @@ const AboutWidget = ({ windowId }) => {
 
         <div className="border-t border-[#A0A0A0] border-b border-white h-[2px] my-4"></div>
 
-        <div className="flex justify-between items-center text-xs pb-4">
+        <div className="flex justify-between items-center text-xs pb-1 px-1">
           <span>Physical memory available to Windows:</span>
           <span className="font-bold">267,366,3719 KB</span>
         </div>

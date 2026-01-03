@@ -65,7 +65,7 @@ const SkillNode = ({ label, icon }) => (
 
 const SkillsWidget = ({ data }) => {
   return (
-    <div className="bg-white p-2 h-full overflow-y-auto font-sans border-t border-l border-gray-400 shadow-inner">
+    <div className="bg-white p-4 h-full overflow-y-auto font-sans border-t border-l border-gray-400 shadow-inner">
       {/* Tree Root */}
       <TreeItem label="My Skills" isRoot={true}>
         {data.map((group, i) => (

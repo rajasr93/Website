@@ -75,7 +75,7 @@ const Taskbar = () => {
                     </button>
 
                     {/* Quick Launch / Divider */}
-                    <div className="w-[2px] h-[80%] bg-blue-400/30 mx-1 border-l border-white/20 border-r border-black/20" />
+                    <div className="w-[2px] h-[60%] bg-blue-400/30 mx-1 border-l border-white/20 border-r border-black/20 self-center" />
 
                     {/* Window Tabs */}
                     <div className="flex-1 flex items-center px-1 gap-1 overflow-x-auto">

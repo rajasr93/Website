@@ -78,20 +78,20 @@ const ProjectsWidget = ({ data }) => {
           <h3 className="text-[#1D4078] font-bold text-sm mb-1 px-2">Project Files</h3>
           <div className="h-[1px] bg-gradient-to-r from-[#D3D3D3] via-[#D3D3D3] to-white mb-4"></div>
 
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-2">
             {data.map((project, idx) => (
               <div
                 key={idx}
-                className="flex gap-2 p-2 hover:bg-[#E8F0FA] border border-transparent hover:border-[#BFD6F6] rounded-[2px] cursor-pointer group/item items-start"
+                className="flex gap-2 p-2 hover:bg-[#E8F0FA] border border-transparent hover:border-[#BFD6F6] rounded-[2px] cursor-pointer group/item items-start transition-all"
                 onDoubleClick={() => window.open(project.link, '_blank')}
               >
-                <img src={iconFolder} alt="Project" className="w-10 h-10 object-contain drop-shadow-sm" />
-                <div className="flex flex-col">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-bold text-xs text-black group-hover/item:text-[#1D4078] truncate w-full mb-0.5 pointer-events-auto">
+                <img src={iconFolder} alt="Project" className="w-9 h-9 object-contain drop-shadow-sm shrink-0" />
+                <div className="flex flex-col min-w-0">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-bold text-xs text-black group-hover/item:text-[#1D4078] truncate w-full mb-0.5 pointer-events-auto hover:underline">
                     {project.title}
                   </a>
-                  <span className="text-[10px] text-gray-500">{project.type} Project</span>
-                  <span className="text-[10px] text-gray-400 line-clamp-2 mt-1 leading-snug">{project.desc}</span>
+                  <span className="text-[9px] text-gray-500 uppercase tracking-wide">{project.type}</span>
+                  <span className="text-[10px] text-gray-600 line-clamp-2 mt-0.5 leading-snug">{project.desc}</span>
                 </div>
               </div>
             ))}

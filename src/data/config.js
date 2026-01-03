@@ -135,8 +135,8 @@ export const config = {
   ],
   skills: [
     { category: "Security Tools", items: ["Metasploit", "Burp Suite", "Nessus", "Qualys", "Wireshark", "Nmap", "Shodan", "Splunk", "Kali Linux"] },
-    { category: "Cloud & Infrastructure", items: ["AWS (IAM, Security Hub, CloudTrail)", "Pulumi", "IaC"] },
-    { category: "Programming", items: ["Python", "Bash", "PowerShell", "JavaScript", "SQL", "Java"] },
+    { category: "Cloud & Infrastructure", items: ["AWS (IAM, Security Hub, CloudTrail)", "Pulumi"] },
+    { category: "Programming", items: ["Python", "Bash", "PowerShell", "JavaScript"] },
     { category: "Frameworks", items: ["NIST CSF", "OWASP Top 10", "MITRE ATT&CK", "ISO 27001"] }
   ]
 };
