@@ -48,17 +48,19 @@ const ArticleDetail = ({ post, onClose }) => (
         </div>
 
         {/* Detail Footer */}
-        <div className="mt-2 pt-2 border-t border-gray-200 text-right shrink-0">
-            <a
-                href={post.source || '#'}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline text-xs flex items-center justify-end gap-1"
-            >
-                <span>Read original source</span>
-                <span className="text-[10px]">↗</span>
-            </a>
-        </div>
+        {post.type !== 'Blog' && post.source && post.source !== '#' && (
+            <div className="mt-2 pt-2 border-t border-gray-200 text-right shrink-0">
+                <a
+                    href={post.source || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline text-xs flex items-center justify-end gap-1"
+                >
+                    <span>Read original source</span>
+                    <span className="text-[10px]">↗</span>
+                </a>
+            </div>
+        )}
     </div>
 );
 
