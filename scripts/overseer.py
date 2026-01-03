@@ -91,6 +91,25 @@ def check_content_quality(latest_post):
              log_audit("AI QA Failed: Could not setup Gemini client", "ERROR")
              return False, {"status": "ERROR", "reason": "Client Init Failed"}
 
+        prompt = f"""
+        You are a Quality Assurance bot for a cybersecurity blog.
+        Review the following blog post.
+
+        Title: {latest_post.get('title')}
+        Content: {latest_post.get('content')}
+
+        Criteria:
+        1. Accuracy: Are the facts/dates plausible? (No future dates presented as past).
+        2. Style: Is it raw, authentic, and direct? (No "In this digital age" fluff).
+        3. Technicality: Does it use specific industry terminology (CVEs, tools, specific attack vectors)?
+        
+        Output JSON:
+        {{
+            "status": "PASS" or "FAIL",
+            "reason": "Short explanation of failure or success"
+        }}
+        """
+
         response = client.models.generate_content(
             model=model_name,
             contents=prompt,

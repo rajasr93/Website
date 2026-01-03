@@ -1,0 +1,15 @@
+[
+  "Detecting and Mitigating Adversarial Attacks on Machine Learning Models in Production",
+  "Securing Large Language Models: A Deep Dive into Architectural Vulnerabilities Beyond Prompt Injection",
+  "Deep Dive into Serverless Security: Function-Level Isolation and Event-Driven Attack Surface Management",
+  "Advanced Kubernetes Security Posture: Runtime Threat Detection and Policy Enforcement with OPA",
+  "Bypassing EDRs with Syscall Hooking and Userland Exploits: A Practical Guide for Red Teams",
+  "IoT Firmware Exploitation: Reverse Engineering and Gaining Persistent Access on Embedded Devices",
+  "Hunting for Malicious Open-Source Packages: Supply Chain Attacks in Developer Workflows",
+  "Implementing Differential Privacy: Balancing Data Utility and Anonymity in Big Data Analytics",
+  "Zero-Knowledge Proofs in Practice: Building Privacy-Preserving Authentication and Verification Systems",
+  "Data De-anonymization Risks in Federated Learning: How to Protect Against Model Inversion Attacks",
+  "Deception Technologies: Deploying Honeypots and Honeytokens for Early-Stage Threat Detection and Adversary Engagement",
+  "Advanced Threat Hunting: Leveraging OSINT and MITRE ATT&CK Matrix for Proactive Detection of TTPs",
+  "Ransomware Incident Response 2.0: Beyond Recovery \u2013 Proactive Eradication and Threat Intelligence Integration"
+]

@@ -577,3 +577,220 @@ Starting Overseer Agent (System Health)...
 - Log Analysis: WARN - Critical errors detected in today's logs.
 ⚠️ Overseer reported issues.
 🏁 Daily Run Finished: Fri  2 Jan 18:06:04 EST 2026
+==================================================
+🚀 Daily Run Started: Sat  3 Jan 17:48:18 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/generate_blog.py", line 4, in <module>
+    import feedparser
+ModuleNotFoundError: No module named 'feedparser'
+❌ Blog generation FAILED. Exit code: 1
+Starting Overseer Agent (System Health)...
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/overseer.py", line 4, in <module>
+    from google import genai
+ImportError: cannot import name 'genai' from 'google' (unknown location)
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Sat  3 Jan 17:48:18 EST 2026
+
+==================================================
+🚀 Daily Run Started: Sat  3 Jan 17:48:24 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/generate_blog.py", line 4, in <module>
+    import feedparser
+ModuleNotFoundError: No module named 'feedparser'
+❌ Blog generation FAILED. Exit code: 1
+Starting Overseer Agent (System Health)...
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/overseer.py", line 4, in <module>
+    from google import genai
+ImportError: cannot import name 'genai' from 'google' (unknown location)
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Sat  3 Jan 17:48:24 EST 2026
+
+==================================================
+🚀 Daily Run Started: Sat  3 Jan 17:51:24 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/generate_blog.py", line 15, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+❌ Blog generation FAILED. Exit code: 1
+Starting Overseer Agent (System Health)...
+Traceback (most recent call last):
+  File "/var/www/mywebsite/scripts/overseer.py", line 6, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Sat  3 Jan 17:51:26 EST 2026
+
+==================================================
+🚀 Daily Run Started: Sat  3 Jan 17:52:34 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 6 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/transparent-trib... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/the-roi-problem-... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/hac... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/cov... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/happy-16th-bir... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 5 candidates against 6 recent posts for similarity...
+📉 Filtered duplicates: 5 -> 2
+ℹ️  Skipped 4 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/2: The ROI Problem in Attack Surface Management...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/2: Happy 16th Birthday, KrebsOnSecurity.com!...
+
+📚 Priority: EDUCATIONAL BLOG (breaking news streak)
+⚠️ Could not load topics: Expecting value: line 1 column 1 (char 0)
+⚠️ Topics running low. Generating more...
+🔄 Refilling topics list via AI...
+💾 Updated topics list (15 remaining)
+🧠 Checking 10 candidates against 6 recent posts for similarity...
+📉 Filtered duplicates: 10 -> 7
+📚 Generating EDUCATIONAL BLOG post about: AI for Threat Detection: Building Robust AI/ML Systems to Counter AI-Driven Adversaries
+💾 Updated topics list (14 remaining)
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-03 17:53:45] [START] Starting Content QA for: 'AI for Threat Detection: Building Robust AI/ML Systems to Counter AI-Driven Adversaries'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-03 17:53:45] [ERROR] AI QA Failed: name 'prompt' is not defined
+❌ QA Check Failed: name 'prompt' is not defined
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: name 'prompt' is not defined
+
+🕵️  Running QA Check via Overseer (Attempt 2/3)...
+[2026-01-03 17:53:57] [START] Starting Content QA for: 'AI for Threat Detection: Building Robust AI/ML Systems to Counter AI-Driven Adversaries'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-03 17:53:58] [ERROR] AI QA Failed: name 'prompt' is not defined
+❌ QA Check Failed: name 'prompt' is not defined
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: name 'prompt' is not defined
+
+🕵️  Running QA Check via Overseer (Attempt 3/3)...
+[2026-01-03 17:54:10] [START] Starting Content QA for: 'AI for Threat Detection: Building Robust AI/ML Systems to Counter AI-Driven Adversaries'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-03 17:54:11] [ERROR] AI QA Failed: name 'prompt' is not defined
+❌ QA Check Failed: name 'prompt' is not defined
+⚠️  Post discarded due to persistent QA failure. (Strict Style Enforcement)
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-03 17:54:12] [INIT] Overseer Agent Awakened
+[2026-01-03 17:54:12] [START] Starting System Health Check...
+[2026-01-03 17:54:12] [INFO] JSON Integrity Check: PASS (6 posts loaded)
+[2026-01-03 17:54:12] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Sat  3 Jan 17:54:13 EST 2026
+
+==================================================
+🚀 Daily Run Started: Sat  3 Jan 17:54:50 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 6 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/transparent-trib... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/the-roi-problem-... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/hac... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/cov... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/happy-16th-bir... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 5 candidates against 6 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+ℹ️  Skipped 1 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: The ROI Problem in Attack Surface Management...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: Hackers claim to hack Resecurity, firm says it was...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 3/3: Covenant Health says May data breach impacted near...
+
+📚 Priority: EDUCATIONAL BLOG (breaking news streak)
+🧠 Checking 10 candidates against 6 recent posts for similarity...
+📉 Filtered duplicates: 10 -> 7
+📚 Generating EDUCATIONAL BLOG post about: Shift Left in Multi-Cloud: Embedding Security as Code in CI/CD for Kubernetes and Serverless
+💾 Updated topics list (13 remaining)
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-03 17:56:23] [START] Starting Content QA for: 'Shift Left in Multi-Cloud: Embedding Security as Code in CI/CD for Kubernetes and Serverless'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-03 17:56:29] [PASS] AI QA Result: PASS - The blog post meets all criteria: facts are plausible, style is direct and authentic, and it uses specific industry terminology and tools.
+✅ QA Check Passed: PASS - The blog post meets all criteria: facts are plausible, style is direct and authentic, and it uses specific industry terminology and tools.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Shift Left in Multi-Cloud: Embedding Security as Code in CI/CD for Kubernetes and Serverless
+   Type: Blog
+   Date: 2026-01-03
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-03 17:56:30] [INIT] Overseer Agent Awakened
+[2026-01-03 17:56:30] [START] Starting System Health Check...
+[2026-01-03 17:56:30] [INFO] JSON Integrity Check: PASS (7 posts loaded)
+[2026-01-03 17:56:30] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Sat  3 Jan 17:56:30 EST 2026
+
