@@ -134,9 +134,11 @@ export const config = {
     }
   ],
   skills: [
-    { category: "Security Tools", items: ["Metasploit", "Burp Suite", "Nessus", "Qualys", "Wireshark", "Nmap", "Shodan", "Splunk", "Kali Linux"] },
-    { category: "Cloud & Infrastructure", items: ["AWS (IAM, Security Hub, CloudTrail)", "Pulumi"] },
+    { category: "Penetration Testing", items: ["Metasploit", "Burp Suite", "Kali Linux", "Nmap"] },
+    { category: "Security Operations", items: ["Splunk", "Wireshark", "Shodan"] },
+    { category: "Vulnerability Management", items: ["Nessus", "Qualys"] },
+    { category: "Cloud Security", items: ["AWS (IAM, Security Hub, CloudTrail)", "Pulumi"] },
     { category: "Programming", items: ["Python", "Bash", "PowerShell", "JavaScript"] },
-    { category: "Frameworks", items: ["NIST CSF", "OWASP Top 10", "MITRE ATT&CK", "ISO 27001"] }
+    { category: "Governance & Frameworks", items: ["NIST CSF", "OWASP Top 10", "MITRE ATT&CK", "ISO 27001"] }
   ]
 };
