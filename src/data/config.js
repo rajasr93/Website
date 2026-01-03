@@ -95,22 +95,20 @@ export const config = {
       link: "https://github.com/rajasr93/Pulumi-AWS-IAM-Auto"
     },
     {
-      title: "Black Mamba AI-Keylogger",
-      type: "Offensive",
-      desc: "Researched a proof-of-concept AI-keylogger utilizing OpenAI API to demonstrate EDR evasion techniques for academic research.",
-      link: "#"
+      title: "Web Privacy Analysis tool",
+      type: "Privacy tool",
+      desc: "lightweight, privacy-focused forensic tool that discloses exactly what the web sees through your browser. See your digital trace instantly, from HTTP headers to WebGL hardware leaks.",
+      link: "https://github.com/rajasr93/Web-Privacy-analyzer"
     },
     {
-      title: "Web Privacy Analysis",
-      type: "Research",
-      desc: "Evaluated privacy-enhancing technologies across major browsers, assessing tracking mechanisms and compliance with GDPR/CCPA standards.",
-      link: "#"
+      title: "Black Mamba Polymorphic AI Malware",
+      type: "Offensive",
+      desc: "Presented and theorized a proof-of-concept AI polymorphic malware utilizing OpenAI API or local LLMs to demonstrate EDR evasion techniques for academic research.",
     },
     {
       title: "Federal InfoSec Training",
       type: "Education",
       desc: "Designed interactive training modules on cybersecurity threats, addressing the root causes of data breaches in government sectors.",
-      link: "#"
     }
   ],
   education: [
