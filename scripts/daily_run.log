@@ -310,3 +310,271 @@ Starting Overseer Agent (System Health)...
 ⚠️ Overseer reported issues.
 🏁 Daily Run Finished: Mon 29 Dec 03:22:26 EST 2025
 
+==================================================
+🚀 Daily Run Started: Wed 31 Dec 21:51:48 EST 2025
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 3 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2025/12/trust-wallet-chr... OK
+      🔎 Verifying link: https://thehackernews.com/2025/12/darkspectre-brow... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/nyc... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/hac... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/happy-16th-bir... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/dismantling-de... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 3 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Trust Wallet Chrome Extension Hack Drains $8.5M vi...
+🚨 CRITICAL NEWS FOUND: Trust Wallet Chrome Extension Hack Drains $8.5M via Shai-Hulud Supply Chain Attack
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: Trust Wallet Chrome Extension Hack Drains $8.5M vi...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2025-12-31 21:52:11] [START] Starting Content QA for: 'Trust Wallet Chrome Extension Hack Drains $8.5M via Shai-Hulud Supply Chain Attack'...
+[2025-12-31 21:52:17] [FAIL] AI QA Result: FAIL - Accuracy failure: The article reports an event ('November 2025', 'December 2025' in URL) that is in the future as if it has already occurred. This is a critical factual error/hallucination.
+❌ QA Check Failed: Accuracy failure: The article reports an event ('November 2025', 'December 2025' in URL) that is in the future as if it has already occurred. This is a critical factual error/hallucination.
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: Accuracy failure: The article reports an event ('November 2025', 'December 2025' in URL) that is in the future as if it has already occurred. This is a critical factual error/hallucination.
+
+🕵️  Running QA Check via Overseer (Attempt 2/3)...
+[2025-12-31 21:52:28] [START] Starting Content QA for: 'Trust Wallet Chrome Extension Hack Drains $8.5M via Shai-Hulud Supply Chain Attack'...
+[2025-12-31 21:52:35] [PASS] AI QA Result: PASS - Looks good. The content is raw, authentic, and industry-specific, clearly outlining a hypothetical supply chain attack via exposed GitHub secrets without corporate fluff. Terminology like 'GitHub secrets', 'source control', 'dev ops pipeline', and 'secrets management' is specific and relevant to the attack vector. The style is direct and no-nonsense, and the explicit mention of it being a 'critical threat scenario, not a past event' handles accuracy effectively.
+✅ QA Check Passed: PASS - Looks good. The content is raw, authentic, and industry-specific, clearly outlining a hypothetical supply chain attack via exposed GitHub secrets without corporate fluff. Terminology like 'GitHub secrets', 'source control', 'dev ops pipeline', and 'secrets management' is specific and relevant to the attack vector. The style is direct and no-nonsense, and the explicit mention of it being a 'critical threat scenario, not a past event' handles accuracy effectively.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Trust Wallet Chrome Extension Hack Drains $8.5M via Shai-Hulud Supply Chain Attack
+   Type: News
+   Date: 2025-12-31
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+[2025-12-31 21:52:36] [INIT] Overseer Agent Awakened
+[2025-12-31 21:52:36] [START] Starting System Health Check...
+[2025-12-31 21:52:36] [INFO] JSON Integrity Check: PASS (4 posts loaded)
+[2025-12-31 21:52:36] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Wed 31 Dec 21:52:37 EST 2025
+
+==================================================
+🚀 Daily Run Started: Thu  1 Jan 23:08:14 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 4 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/threatsday-bulle... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/rondodox-botnet-... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/artificial-i... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/the... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/happy-16th-bir... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/dismantling-de... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 4 recent posts for similarity...
+📉 Filtered duplicates: 6 -> 6
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: ThreatsDay Bulletin: GhostAd Drain, macOS Attacks,...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: RondoDox Botnet Exploits Critical React2Shell Flaw...
+🚨 CRITICAL NEWS FOUND: RondoDox Botnet Exploits Critical React2Shell Flaw to Hijack IoT Devices and Web Servers
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: RondoDox Botnet Exploits Critical React2Shell Flaw...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-01 23:09:22] [START] Starting Content QA for: 'RondoDox Botnet Exploits Critical React2Shell Flaw to Hijack IoT Devices and Web Servers'...
+[2026-01-01 23:09:29] [FAIL] AI QA Result: FAIL - Content hallucinates the 'React2Shell' vulnerability and CVE-2025-55182. While the style and authenticity are strong, accuracy is paramount and hallucinated technical details are a critical failure.
+❌ QA Check Failed: Content hallucinates the 'React2Shell' vulnerability and CVE-2025-55182. While the style and authenticity are strong, accuracy is paramount and hallucinated technical details are a critical failure.
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: Content hallucinates the 'React2Shell' vulnerability and CVE-2025-55182. While the style and authenticity are strong, accuracy is paramount and hallucinated technical details are a critical failure.
+
+🕵️  Running QA Check via Overseer (Attempt 2/3)...
+[2026-01-01 23:09:44] [START] Starting Content QA for: 'RondoDox Botnet Exploits Critical React2Shell Flaw to Hijack IoT Devices and Web Servers'...
+[2026-01-01 23:09:52] [FAIL] AI QA Result: FAIL - Content uses a fabricated vulnerability name ('React2Shell') and describes observations from 'December 2025', making the report speculative and inaccurate for current publication. A CVSS 10.0 RCE would necessitate a CVE ID for industry specificity, which is missing.
+❌ QA Check Failed: Content uses a fabricated vulnerability name ('React2Shell') and describes observations from 'December 2025', making the report speculative and inaccurate for current publication. A CVSS 10.0 RCE would necessitate a CVE ID for industry specificity, which is missing.
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: Content uses a fabricated vulnerability name ('React2Shell') and describes observations from 'December 2025', making the report speculative and inaccurate for current publication. A CVSS 10.0 RCE would necessitate a CVE ID for industry specificity, which is missing.
+
+🕵️  Running QA Check via Overseer (Attempt 3/3)...
+[2026-01-01 23:10:05] [START] Starting Content QA for: 'RondoDox Botnet Exploits Critical React2Shell Flaw to Hijack IoT Devices and Web Servers'...
+[2026-01-01 23:10:11] [PASS] AI QA Result: PASS - Looks good. The content is raw, authentic, and uses specific industry terminology without resorting to corporate fluff. The style is direct and urgent, appropriate for a cybersecurity alert.
+✅ QA Check Passed: PASS - Looks good. The content is raw, authentic, and uses specific industry terminology without resorting to corporate fluff. The style is direct and urgent, appropriate for a cybersecurity alert.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: RondoDox Botnet Exploits Critical React2Shell Flaw to Hijack IoT Devices and Web Servers
+   Type: News
+   Date: 2026-01-01
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+[2026-01-01 23:10:13] [INIT] Overseer Agent Awakened
+[2026-01-01 23:10:13] [START] Starting System Health Check...
+[2026-01-01 23:10:13] [INFO] JSON Integrity Check: PASS (5 posts loaded)
+[2026-01-01 23:10:13] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Thu  1 Jan 23:10:13 EST 2026
+
+==================================================
+🚀 Daily Run Started: Fri  2 Jan 04:57:43 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 5 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/threatsday-bulle... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/rondodox-botnet-... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/artificial-i... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/the... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/happy-16th-bir... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/dismantling-de... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 5 candidates against 5 recent posts for similarity...
+📉 Filtered duplicates: 5 -> 4
+ℹ️  Skipped 2 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: OpenAI is offering $20 ChatGPT Plus for free to so...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: The biggest cybersecurity and cyberattack stories ...
+🚨 CRITICAL NEWS FOUND: The biggest cybersecurity and cyberattack stories of 2025
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: The biggest cybersecurity and cyberattack stories ...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-02 04:58:31] [START] Starting Content QA for: 'The biggest cybersecurity and cyberattack stories of 2025'...
+
+
+⚠️  Script interrupted by user
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+[2026-01-02 04:58:37] [INIT] Overseer Agent Awakened
+[2026-01-02 04:58:37] [START] Starting System Health Check...
+[2026-01-02 04:58:37] [INFO] JSON Integrity Check: PASS (5 posts loaded)
+[2026-01-02 04:58:37] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Fri  2 Jan 04:58:37 EST 2026
+
+==================================================
+🚀 Daily Run Started: Fri  2 Jan 18:05:34 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 5 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/transparent-trib... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/the-roi-problem-... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/cov... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/cry... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/happy-16th-bir... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 5 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Transparent Tribe Launches New RAT Attacks Against...
+🚨 CRITICAL NEWS FOUND: Transparent Tribe Launches New RAT Attacks Against Indian Government and Academia
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: Transparent Tribe Launches New RAT Attacks Against...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-02 18:05:58] [START] Starting Content QA for: 'Transparent Tribe Launches New RAT Attacks Against Indian Government and Academia'...
+[2026-01-02 18:06:02] [PASS] AI QA Result: PASS - Looks good. Raw, authentic, and industry-specific terminology used effectively without corporate fluff. Direct and accurate.
+✅ QA Check Passed: PASS - Looks good. Raw, authentic, and industry-specific terminology used effectively without corporate fluff. Direct and accurate.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Transparent Tribe Launches New RAT Attacks Against Indian Government and Academia
+   Type: News
+   Date: 2026-01-02
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+[2026-01-02 18:06:04] [INIT] Overseer Agent Awakened
+[2026-01-02 18:06:04] [START] Starting System Health Check...
+[2026-01-02 18:06:04] [INFO] JSON Integrity Check: PASS (6 posts loaded)
+[2026-01-02 18:06:04] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Fri  2 Jan 18:06:04 EST 2026
+

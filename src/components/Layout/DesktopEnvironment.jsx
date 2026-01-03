@@ -21,7 +21,6 @@ import iconNews from '../../assets/icons/news.png';
 import iconResume from '../../assets/icons/resume download.ico';
 import iconUserShare from '../../assets/icons/userinfoshare.ico';
 import iconControlPanel from '../../assets/icons/Control Panel.png';
-import iconFolder from '../../assets/icons/Folder.ico';
 import iconListFile from '../../assets/icons/List File.ico';
 import iconHearts from '../../assets/icons/Hearts.ico';
 

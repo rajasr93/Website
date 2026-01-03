@@ -6,7 +6,7 @@ import { config } from '../../data/config';
 const TerminalWindow = () => {
     // Standardizing history state to use the new unified format: { text: string, color: string }
     const [history, setHistory] = useState([
-        { text: "RajaOS Terminal [Online]", color: "text-slate-300" },
+        { text: "Terminal [Online]", color: "text-slate-300" },
         { text: "Microsoft Windows XP [Version 5.1.2600]", color: "text-slate-500" },
         { text: "(C) Copyright 1985-2001 Microsoft Corp.", color: "text-slate-500" },
         { text: "", color: "" },

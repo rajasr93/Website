@@ -1,5 +1,5 @@
 import React from 'react';
-import iconFolder from '../../assets/icons/Folder.ico';
+import iconFolder from '../../assets/icons/Folder.png';
 import iconAbout from '../../assets/icons/About me.png'; // Fallback for sidebar
 import { config } from '../../data/config';
 

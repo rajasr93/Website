@@ -89,7 +89,7 @@ export const config = {
       link: "https://github.com/rajasr93/CNN-Backdoor"
     },
     {
-      title: "Pulumi-AWS-IAM-Auto",
+      title: "Pulumi AWS IAM Management script",
       type: "Cloud Security Tool",
       desc: "Automated AWS IAM provisioning and management using Pulumi Infrastructure as Code.",
       link: "https://github.com/rajasr93/Pulumi-AWS-IAM-Auto"
@@ -97,19 +97,19 @@ export const config = {
     {
       title: "Black Mamba AI-Keylogger",
       type: "Offensive",
-      desc: "Developed a proof-of-concept AI-keylogger utilizing OpenAI API to demonstrate EDR evasion techniques for academic research.",
-      link: "#"
-    },
-    {
-      title: "Federal InfoSec Training",
-      type: "Education",
-      desc: "Designed interactive training modules on cybersecurity threats, addressing the root causes of data breaches in government sectors.",
+      desc: "Researched a proof-of-concept AI-keylogger utilizing OpenAI API to demonstrate EDR evasion techniques for academic research.",
       link: "#"
     },
     {
       title: "Web Privacy Analysis",
       type: "Research",
       desc: "Evaluated privacy-enhancing technologies across major browsers, assessing tracking mechanisms and compliance with GDPR/CCPA standards.",
+      link: "#"
+    },
+    {
+      title: "Federal InfoSec Training",
+      type: "Education",
+      desc: "Designed interactive training modules on cybersecurity threats, addressing the root causes of data breaches in government sectors.",
       link: "#"
     }
   ],
