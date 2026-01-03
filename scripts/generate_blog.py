@@ -10,6 +10,9 @@ import random
 import traceback
 import re
 from urllib.parse import urlparse
+import socket
+import ipaddress
+from dotenv import load_dotenv
 import requests
 import overseer
 
@@ -45,19 +48,8 @@ MODELS_TO_TRY = [
 
 API_RETRY_DELAY = 15  # seconds between API calls to avoid rate limits
 
-def load_env():
-    """Load .env file manually"""
-    try:
-        env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
-        if os.path.exists(env_path):
-            with open(env_path, 'r') as f:
-                for line in f:
-                    if line.strip() and not line.startswith('#'):
-                        if '=' in line:
-                            key, value = line.strip().split('=', 1)
-                            os.environ[key] = value
-    except Exception as e:
-        print(f"Warning: Could not load .env file: {e}")
+# ENV Loading handled by python-dotenv in main
+
 
 def setup_gemini():
     """Setup Gemini client and find working model"""
@@ -184,8 +176,16 @@ def sanitize_text(text):
     clean = "".join(ch for ch in clean if ch.isprintable())
     return clean.strip()
 
+def is_private_ip(ip_str):
+    """Check if IP is private/internal RFC1918 or loopback."""
+    try:
+        ip = ipaddress.ip_address(ip_str)
+        return ip.is_private or ip.is_loopback or ip.is_link_local
+    except ValueError:
+        return True # fail safe
+
 def validate_url(url):
-    """Ensure URL is valid, uses http/https, and is reachable (200 OK)."""
+    """Ensure URL is valid, uses http/https, and is NOT pointing to internal IPs (SSRF Header)."""
     if not url or url == '#':
         return "#"
     
@@ -195,7 +195,21 @@ def validate_url(url):
         if not (parsed.scheme in ['http', 'https'] and parsed.netloc):
             return "#"
 
-        # 2. Reachability Check (HEAD request first, then GET)
+        # 2. SSRF Protection (DNS Resolution Check)
+        hostname = parsed.hostname
+        try:
+            # Resolve to IP
+            ip_list = socket.getaddrinfo(hostname, None)
+            for item in ip_list:
+                ip_addr = item[4][0]
+                if is_private_ip(ip_addr):
+                    print(f" ⚠️  BLOCKED Internal IP access attempt: {hostname} -> {ip_addr}")
+                    return "#"
+        except Exception:
+            # If we can't resolve it, we can't safely fetch it.
+            return "#"
+
+        # 3. Reachability Check (HEAD request first, then GET)
         print(f"      🔎 Verifying link: {url[:50]}...", end='', flush=True)
         headers = {'User-Agent': 'Mozilla/5.0 (compatible; SecurityBlogBot/1.0)'}
         
@@ -442,7 +456,8 @@ def main():
     print("=" * 60)
     
     # Load environment
-    load_env()
+    env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
+    load_dotenv(env_path)
     
     # Load existing data
     data = get_blog_data()

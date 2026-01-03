@@ -1,4 +1,5 @@
 import React from 'react';
+import { useWindow } from '../../context/WindowContext';
 import errorIcon from '../../assets/icons/close.png'; // Using generic icon or we could use specific error icon if available.
 // For a true "msg *" look, it's just a gray box with text and OK.
 
@@ -14,7 +15,9 @@ const MESSAGES = [
     "Download Complete: 100% Virus Free"
 ];
 
-const PopupAd = ({ closeWindow, windowId, message: customMessage }) => {
+const PopupAd = ({ closeWindow: propCloseWindow, windowId, message: customMessage }) => {
+    const { closeWindow: contextCloseWindow } = useWindow();
+    const closeWindow = propCloseWindow || contextCloseWindow;
     const message = customMessage || MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
 
     return (

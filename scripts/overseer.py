@@ -3,27 +3,30 @@ import json
 import datetime
 from google import genai
 from google.genai.errors import ClientError
+from dotenv import load_dotenv
 
 # --- Configuration ---
 BLOG_DATA_PATH = "../src/data/blog_posts.json"
 RUN_LOG_PATH = "scripts/daily_run.log"
 AUDIT_LOG_PATH = "scripts/audit.log"
 
-def load_env():
-    """Load .env file manually"""
-    try:
-        env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
-        if os.path.exists(env_path):
-            with open(env_path, 'r') as f:
-                for line in f:
-                    if line.strip() and not line.startswith('#'):
-                        if '=' in line:
-                            key, value = line.strip().split('=', 1)
-                            os.environ[key] = value
-    except Exception:
-        pass
+# --- Shared Configuration using generate_blog logic if we could import, 
+# but easier to duplicate safe logic or import it.
+# Let's import the setup_gemini from generate_blog to be consistent!
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+try:
+    from generate_blog import setup_gemini
+except ImportError:
+    # Fallback if import fails
+    def setup_gemini():
+         return None, None
 
-load_env()
+def load_env_safe():
+    env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
+    load_dotenv(env_path)
+
+load_env_safe()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 def log_audit(message, status="INFO"):
@@ -82,31 +85,14 @@ def check_content_quality(latest_post):
         return
 
     try:
-        client = genai.Client(api_key=GEMINI_API_KEY, http_options={'api_version': 'v1alpha'})
-        
-        prompt = f"""
-        Act as a strict Quality Assurance Editor for a cybersecurity blog.
-        Your goal is to ensure content is "Raw, Authentic, and Industry-Specific" but accessible.
-        
-        Title: {latest_post.get('title')}
-        Content: {latest_post.get('content')}
-        Source: {latest_post.get('source', 'N/A')}
-
-        CRITICAL CHECKS:
-        1. **Authenticity**: Does it sound like a real person/hacker? Reject "corporate fluff" or generic AI buzzwords.
-        2. **Terminology**: Does it use specific industry tools (e.g., 'nmap', 'Burp Suite', 'Metasploit') and CVE IDs where relevant? Reject generic terms like "cyber tools".
-        3. **Style**: Simple, direct, no-nonsense. No "In the ever-evolving landscape..." intros.
-        4. **Accuracy**: No hallucinations.
-
-        Reply STRICTLY in JSON:
-        {{
-            "status": "PASS" | "WARN" | "FAIL",
-            "reason": "Specific feedback on why it failed (e.g. 'Too corporate', 'Missing tool names') or 'Looks good'"
-        }}
-        """
+        # Use shared setup logic to ensure we pick a working model/version
+        client, model_name = setup_gemini()
+        if not client or not model_name:
+             log_audit("AI QA Failed: Could not setup Gemini client", "ERROR")
+             return False, {"status": "ERROR", "reason": "Client Init Failed"}
 
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model=model_name,
             contents=prompt,
             config={'response_mime_type': 'application/json'}
         )

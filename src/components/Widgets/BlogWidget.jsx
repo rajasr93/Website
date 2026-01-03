@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useWindow } from '../../context/WindowContext';
+import PopupAd from './PopupAd';
 import blogData from '../../data/blog_posts.json';
 
 const SidebarGroup = ({ title, children }) => (
@@ -87,8 +89,23 @@ const ArticleItem = ({ post, onSelect }) => (
 );
 
 const BlogWidget = () => {
+    const { openWindow } = useWindow();
     const [selectedArticle, setSelectedArticle] = useState(null);
     const posts = [...blogData].reverse();
+
+    const handleRefresh = () => {
+        const uniqueId = `popup-refresh-${Date.now()}`;
+        openWindow(
+            uniqueId,
+            'Notification',
+            PopupAd,
+            null,
+            {
+                type: 'dialog',
+                message: "News already refreshed for the day."
+            }
+        );
+    };
 
     return (
         <div className="flex h-full bg-[#ECE9D8] font-sans">
@@ -108,7 +125,10 @@ const BlogWidget = () => {
                     >
                         <span>🏠</span> Home / Feed
                     </div>
-                    <div className="px-1 cursor-pointer hover:underline flex gap-1">
+                    <div
+                        className="px-1 cursor-pointer hover:underline flex gap-1"
+                        onClick={handleRefresh}
+                    >
                         <span>🔄</span> Refresh news feeds
                     </div>
                 </SidebarGroup>

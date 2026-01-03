@@ -1,8 +1,39 @@
 DEBUG: Start of file
-DEBUG: Inside main
-============================================================
-🚀 Blog Post Generator Starting
-============================================================
+🧪 Testing SSRF Protection Mechanics...
 
-📊 Loaded 3 existing posts
-✋ Daily limit reached. A post was already generated today.
+Target: http://127.0.0.1 (Loopback IP)
+Expect Block: True
+ ⚠️  BLOCKED Internal IP access attempt: 127.0.0.1 -> 127.0.0.1
+✅ PASS: Blocked=True
+
+Target: http://localhost (Localhost)
+Expect Block: True
+ ⚠️  BLOCKED Internal IP access attempt: localhost -> ::1
+✅ PASS: Blocked=True
+
+Target: http://192.168.1.50 (Private Class C)
+Expect Block: True
+ ⚠️  BLOCKED Internal IP access attempt: 192.168.1.50 -> 192.168.1.50
+✅ PASS: Blocked=True
+
+Target: http://10.0.0.5 (Private Class A)
+Expect Block: True
+ ⚠️  BLOCKED Internal IP access attempt: 10.0.0.5 -> 10.0.0.5
+✅ PASS: Blocked=True
+
+Target: http://169.254.169.254/latest/meta-data/ (AWS Metadata)
+Expect Block: True
+ ⚠️  BLOCKED Internal IP access attempt: 169.254.169.254 -> 169.254.169.254
+✅ PASS: Blocked=True
+
+Target: https://google.com (Public URL)
+Expect Block: False
+      🔎 Verifying link: https://google.com... OK
+✅ PASS: Blocked=False
+
+Target: https://example.com (Public URL 2)
+Expect Block: False
+      🔎 Verifying link: https://example.com... OK
+✅ PASS: Blocked=False
+
+✨ All Security Tests Passed!
