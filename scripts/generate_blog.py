@@ -576,7 +576,7 @@ def main():
                 print(f"✅ QA Check Passed: {qa_result.get('status')} - {qa_result.get('reason')}")
                 
                 # Add Footer
-                footer = f"\n\nArticle written on : {new_post['date']}\nwritten by : rajas ronghe"
+                footer = f"\n\nArticle written on : {new_post['date']}\nwritten by : Rajas Ronghe"
                 new_post['content'] += footer
                 
                 new_post['id'] = len(data) + 1
