@@ -30,50 +30,50 @@ import CreditsWidget from '../Widgets/CreditsWidget';
 import MalwareTrigger from '../Widgets/MalwareTrigger';
 
 
-const DesktopIcon = ({ label, icon, isSelected, onClick, onDoubleClick }) => (
+const DesktopIcon = ({ label, icon, isSelected, onClick, onDoubleClick }) => {
     const [lastTap, setLastTap] = React.useState(0);
 
-const handleTouchEnd = (e) => {
-    // Prevent default behavior if needed, but be careful with scrolling. 
-    // We generally don't want to prevent default on simple taps unless it's the second tap.
+    const handleTouchEnd = (e) => {
+        // Prevent default behavior if needed, but be careful with scrolling. 
+        // We generally don't want to prevent default on simple taps unless it's the second tap.
 
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - lastTap;
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
 
-    if (tapLength < 300 && tapLength > 0) {
-        // Double Tap detected
-        e.stopPropagation();
-        e.preventDefault(); // Prevent zoom or other native double-tap actions
-        onDoubleClick();
-    }
+        if (tapLength < 300 && tapLength > 0) {
+            // Double Tap detected
+            e.stopPropagation();
+            e.preventDefault(); // Prevent zoom or other native double-tap actions
+            onDoubleClick();
+        }
 
-    setLastTap(currentTime);
-};
+        setLastTap(currentTime);
+    };
 
-return (
-    <div
-        className={`flex flex-col items-center w-[80px] gap-1 cursor-pointer group mb-6 p-2 rounded border border-transparent 
+    return (
+        <div
+            className={`flex flex-col items-center w-[80px] gap-1 cursor-pointer group mb-6 p-2 rounded border border-transparent 
             ${isSelected ? 'bg-[#0B61FF]/50 border-[#0B61FF]/50' : 'hover:bg-white/10 hover:border-white/10'}`}
-        onClick={(e) => { e.stopPropagation(); onClick(); }}
-        onDoubleClick={(e) => { e.stopPropagation(); onDoubleClick(); }}
-        onTouchEnd={handleTouchEnd}
-    >
-        <img
-            src={icon}
-            alt={label}
-            draggable="false"
-            className={`w-[48px] h-[48px] object-contain drop-shadow-md transition-opacity ${isSelected ? 'opacity-50' : 'group-hover:opacity-90'}`}
-            style={isSelected ? { filter: 'brightness(0.7) sepia(1) hue-rotate(200deg) saturate(2)' } : {}}
-        />
-        <span
-            className={`text-white text-[13px] text-center drop-shadow-md px-1 rounded-sm border border-transparent line-clamp-2 leading-tight
-                ${isSelected ? 'bg-[#0B61FF] text-white' : 'group-hover:bg-xp-blue-select group-hover:border-white/20'}`}
-            style={{ textShadow: '1px 1px 2px black' }}
+            onClick={(e) => { e.stopPropagation(); onClick(); }}
+            onDoubleClick={(e) => { e.stopPropagation(); onDoubleClick(); }}
+            onTouchEnd={handleTouchEnd}
         >
-            {label}
-        </span>
-    </div>
-);
+            <img
+                src={icon}
+                alt={label}
+                draggable="false"
+                className={`w-[48px] h-[48px] object-contain drop-shadow-md transition-opacity ${isSelected ? 'opacity-50' : 'group-hover:opacity-90'}`}
+                style={isSelected ? { filter: 'brightness(0.7) sepia(1) hue-rotate(200deg) saturate(2)' } : {}}
+            />
+            <span
+                className={`text-white text-[13px] text-center drop-shadow-md px-1 rounded-sm border border-transparent line-clamp-2 leading-tight
+                ${isSelected ? 'bg-[#0B61FF] text-white' : 'group-hover:bg-xp-blue-select group-hover:border-white/20'}`}
+                style={{ textShadow: '1px 1px 2px black' }}
+            >
+                {label}
+            </span>
+        </div>
+    );
 };
 
 
