@@ -29,6 +29,37 @@ const SidebarGroup = ({ title, children }) => {
   );
 };
 
+const ProjectItem = ({ project }) => {
+  const [lastTap, setLastTap] = React.useState(0);
+
+  const handleTouchEnd = (e) => {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    if (tapLength < 300 && tapLength > 0) {
+      e.preventDefault();
+      window.open(project.link, '_blank');
+    }
+    setLastTap(currentTime);
+  };
+
+  return (
+    <div
+      className="flex gap-2 p-2 hover:bg-[#E8F0FA] border border-transparent hover:border-[#BFD6F6] rounded-[2px] cursor-pointer group/item items-start transition-all"
+      onDoubleClick={() => window.open(project.link, '_blank')}
+      onTouchEnd={handleTouchEnd}
+    >
+      <img src={iconFolder} alt="Project" className="w-9 h-9 object-contain drop-shadow-sm shrink-0" />
+      <div className="flex flex-col min-w-0">
+        <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-bold text-xs text-black group-hover/item:text-[#1D4078] truncate w-full mb-0.5 pointer-events-auto hover:underline">
+          {project.title}
+        </a>
+        <span className="text-[9px] text-gray-500 uppercase tracking-wide">{project.type}</span>
+        <span className="text-[10px] text-gray-600 line-clamp-2 mt-0.5 leading-snug">{project.desc}</span>
+      </div>
+    </div>
+  );
+};
+
 const ProjectsWidget = ({ data }) => {
   return (
     <div className="flex h-full bg-[#ECE9D8] font-sans">
@@ -84,20 +115,7 @@ const ProjectsWidget = ({ data }) => {
 
           <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-2">
             {data.map((project, idx) => (
-              <div
-                key={idx}
-                className="flex gap-2 p-2 hover:bg-[#E8F0FA] border border-transparent hover:border-[#BFD6F6] rounded-[2px] cursor-pointer group/item items-start transition-all"
-                onDoubleClick={() => window.open(project.link, '_blank')}
-              >
-                <img src={iconFolder} alt="Project" className="w-9 h-9 object-contain drop-shadow-sm shrink-0" />
-                <div className="flex flex-col min-w-0">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-bold text-xs text-black group-hover/item:text-[#1D4078] truncate w-full mb-0.5 pointer-events-auto hover:underline">
-                    {project.title}
-                  </a>
-                  <span className="text-[9px] text-gray-500 uppercase tracking-wide">{project.type}</span>
-                  <span className="text-[10px] text-gray-600 line-clamp-2 mt-0.5 leading-snug">{project.desc}</span>
-                </div>
-              </div>
+              <ProjectItem key={idx} project={project} />
             ))}
           </div>
         </div>

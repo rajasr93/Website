@@ -10,6 +10,19 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
     const nodeRef = useRef(null);
 
 
+    const [lastTap, setLastTap] = React.useState(0);
+
+    const handleTouchMaximize = (e) => {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+        if (tapLength < 300 && tapLength > 0) {
+            e.stopPropagation();
+            e.preventDefault();
+            toggleMaximize(id);
+        }
+        setLastTap(currentTime);
+    };
+
     // Window body style based on type
     const getBodyStyle = () => {
         switch (type) {
@@ -31,6 +44,7 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
             disabled={isMaximized}
             defaultPosition={position || { x: 40, y: 40 }}
             position={isMaximized ? { x: 0, y: 0 } : undefined}
+            cancel=".window-action-btn"
         >
             <div
                 ref={nodeRef}
@@ -51,6 +65,7 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
                 <div
                     className={`window-title-bar h-8 bg-gradient-to-r from-luna-blue-dark via-luna-blue-mid to-luna-blue-light flex items-center justify-between px-2 cursor-default select-none ${isMaximized ? '' : 'rounded-t-[5px]'}`}
                     onDoubleClick={() => toggleMaximize(id)}
+                    onTouchEnd={handleTouchMaximize}
                 >
                     <div className="flex items-center gap-2">
                         {icon && <img src={icon} alt="" className="w-4 h-4 shadow-sm" />}
@@ -62,21 +77,21 @@ const XPWindow = ({ id, title, children, icon, isMinimized, isMaximized, positio
                     <div className="flex items-center gap-1">
                         <button
                             onClick={(e) => { e.stopPropagation(); minimizeWindow(id); }}
-                            className="w-[21px] h-[21px] flex items-center justify-center active:brightness-90 transition-filter bg-xp-beige/10 rounded-[2px]"
+                            className="window-action-btn w-[21px] h-[21px] flex items-center justify-center active:brightness-90 transition-filter bg-xp-beige/10 rounded-[2px]"
                         >
-                            <img src={minimizeIcon} alt="Minimize" className="w-full h-full object-contain" />
+                            <img src={minimizeIcon} alt="Minimize" className="w-full h-full object-contain pointer-events-none" />
                         </button>
                         <button
                             onClick={(e) => { e.stopPropagation(); toggleMaximize(id); }}
-                            className="w-[21px] h-[21px] flex items-center justify-center active:brightness-90 transition-filter bg-xp-beige/10 rounded-[2px] ml-0.5 box-border border-transparent hover:bg-white/10"
+                            className="window-action-btn w-[21px] h-[21px] flex items-center justify-center active:brightness-90 transition-filter bg-xp-beige/10 rounded-[2px] ml-0.5 box-border border-transparent hover:bg-white/10"
                         >
-                            <img src={maximizeIcon} alt="Maximize" className="w-full h-full object-contain" />
+                            <img src={maximizeIcon} alt="Maximize" className="w-full h-full object-contain pointer-events-none" />
                         </button>
                         <button
                             onClick={(e) => { e.stopPropagation(); closeWindow(id); }}
-                            className="w-[21px] h-[21px] flex items-center justify-center active:brightness-90 transition-filter bg-[#E44C3C] rounded-[2px] ml-0.5 border border-white/20 shadow-sm"
+                            className="window-action-btn w-[21px] h-[21px] flex items-center justify-center active:brightness-90 transition-filter bg-[#E44C3C] rounded-[2px] ml-0.5 border border-white/20 shadow-sm"
                         >
-                            <img src={closeIcon} alt="Close" className="w-full h-full object-contain" />
+                            <img src={closeIcon} alt="Close" className="w-full h-full object-contain pointer-events-none" />
                         </button>
                     </div>
                 </div>
