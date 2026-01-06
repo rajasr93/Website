@@ -794,3 +794,70 @@ DEBUG: Start of file
 ⚠️ Overseer reported issues.
 🏁 Daily Run Finished: Sat  3 Jan 17:56:30 EST 2026
 
+==================================================
+🚀 Daily Run Started: Mon  5 Jan 23:53:29 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 7 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/russia-aligned-h... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/kimwolf-android-... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/clo... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/cli... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/happy-16th-bir... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 7 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Russia-Aligned Hackers Abuse Viber to Target Ukrai...
+🚨 CRITICAL NEWS FOUND: Russia-Aligned Hackers Abuse Viber to Target Ukrainian Military and Government
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: Russia-Aligned Hackers Abuse Viber to Target Ukrai...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-05 23:54:02] [START] Starting Content QA for: 'Russia-Aligned Hackers Abuse Viber to Target Ukrainian Military and Government'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-05 23:54:06] [PASS] AI QA Result: PASS - The post is accurate, uses a raw and direct style suitable for a heads-up, and employs appropriate industry terminology including a specific threat actor identifier (UAC-0184) and attack/defense vectors.
+✅ QA Check Passed: PASS - The post is accurate, uses a raw and direct style suitable for a heads-up, and employs appropriate industry terminology including a specific threat actor identifier (UAC-0184) and attack/defense vectors.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Russia-Aligned Hackers Abuse Viber to Target Ukrainian Military and Government
+   Type: News
+   Date: 2026-01-05
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-05 23:54:07] [INIT] Overseer Agent Awakened
+[2026-01-05 23:54:07] [START] Starting System Health Check...
+[2026-01-05 23:54:07] [INFO] JSON Integrity Check: PASS (8 posts loaded)
+[2026-01-05 23:54:07] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Mon  5 Jan 23:54:08 EST 2026
+
