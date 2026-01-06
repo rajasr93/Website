@@ -31,11 +31,32 @@ import MalwareTrigger from '../Widgets/MalwareTrigger';
 
 
 const DesktopIcon = ({ label, icon, isSelected, onClick, onDoubleClick }) => (
+    const [lastTap, setLastTap] = React.useState(0);
+
+const handleTouchEnd = (e) => {
+    // Prevent default behavior if needed, but be careful with scrolling. 
+    // We generally don't want to prevent default on simple taps unless it's the second tap.
+
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+
+    if (tapLength < 300 && tapLength > 0) {
+        // Double Tap detected
+        e.stopPropagation();
+        e.preventDefault(); // Prevent zoom or other native double-tap actions
+        onDoubleClick();
+    }
+
+    setLastTap(currentTime);
+};
+
+return (
     <div
         className={`flex flex-col items-center w-[80px] gap-1 cursor-pointer group mb-6 p-2 rounded border border-transparent 
-        ${isSelected ? 'bg-[#0B61FF]/50 border-[#0B61FF]/50' : 'hover:bg-white/10 hover:border-white/10'}`}
+            ${isSelected ? 'bg-[#0B61FF]/50 border-[#0B61FF]/50' : 'hover:bg-white/10 hover:border-white/10'}`}
         onClick={(e) => { e.stopPropagation(); onClick(); }}
         onDoubleClick={(e) => { e.stopPropagation(); onDoubleClick(); }}
+        onTouchEnd={handleTouchEnd}
     >
         <img
             src={icon}
@@ -46,13 +67,14 @@ const DesktopIcon = ({ label, icon, isSelected, onClick, onDoubleClick }) => (
         />
         <span
             className={`text-white text-[13px] text-center drop-shadow-md px-1 rounded-sm border border-transparent line-clamp-2 leading-tight
-            ${isSelected ? 'bg-[#0B61FF] text-white' : 'group-hover:bg-xp-blue-select group-hover:border-white/20'}`}
+                ${isSelected ? 'bg-[#0B61FF] text-white' : 'group-hover:bg-xp-blue-select group-hover:border-white/20'}`}
             style={{ textShadow: '1px 1px 2px black' }}
         >
             {label}
         </span>
     </div>
 );
+};
 
 
 
