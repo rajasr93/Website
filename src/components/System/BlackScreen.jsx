@@ -10,7 +10,7 @@ const BlackScreen = () => {
                 {/* Content Container */}
                 <div className="flex flex-col items-center gap-6 text-center z-10">
                     <h1 className="text-xl md:text-2xl tracking-wider">
-                        Rajas Ronghe Portfolio 2025
+                        Rajas Ronghe Portfolio
                         <p>Security Engineer</p>
                     </h1>
 

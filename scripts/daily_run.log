@@ -861,3 +861,958 @@ DEBUG: Start of file
 ⚠️ Overseer reported issues.
 🏁 Daily Run Finished: Mon  5 Jan 23:54:08 EST 2026
 
+==================================================
+🚀 Daily Run Started: Tue  6 Jan 17:42:11 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 8 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/two-chrome-exten... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/unpatched-firmwa... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/tai... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/microsoft/mi... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/happy-16th-bir... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 8 recent posts for similarity...
+📉 Filtered duplicates: 6 -> 2
+ℹ️  Skipped 4 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/2: Microsoft cancels plans to rate limit Exchange Onl...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/2: Happy 16th Birthday, KrebsOnSecurity.com!...
+
+📰 Priority: REGULAR NEWS
+📝 Generating NEWS post for: Microsoft cancels plans to rate limit Exchange Onl...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-06 17:42:58] [START] Starting Content QA for: 'Microsoft cancels plans to rate limit Exchange Online bulk emails'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-06 17:43:03] [PASS] AI QA Result: PASS - All criteria met: Facts are plausible, style is raw and direct, and specific industry terminology (e.g., DMARC, SPF, DKIM, CVE, EXO, red team) is used appropriately.
+✅ QA Check Passed: PASS - All criteria met: Facts are plausible, style is raw and direct, and specific industry terminology (e.g., DMARC, SPF, DKIM, CVE, EXO, red team) is used appropriately.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Microsoft cancels plans to rate limit Exchange Online bulk emails
+   Type: News
+   Date: 2026-01-06
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-06 17:43:04] [INIT] Overseer Agent Awakened
+[2026-01-06 17:43:04] [START] Starting System Health Check...
+[2026-01-06 17:43:04] [INFO] JSON Integrity Check: PASS (9 posts loaded)
+[2026-01-06 17:43:04] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Tue  6 Jan 17:43:04 EST 2026
+
+==================================================
+🚀 Daily Run Started: Wed  7 Jan 17:04:25 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 9 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/webinar-learn-ho... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/black-cat-behind... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/cri... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/artificial-i... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2025/12/happy-16th-bir... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 9 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Webinar: Learn How AI-Powered Zero Trust Detects A...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: Black Cat Behind SEO Poisoning Malware Campaign Ta...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 3/3: Critical jsPDF flaw lets hackers steal secrets via...
+
+📚 Priority: EDUCATIONAL BLOG (breaking news streak)
+🧠 Checking 10 candidates against 9 recent posts for similarity...
+📉 Filtered duplicates: 10 -> 8
+📚 Generating EDUCATIONAL BLOG post about: Securing Large Language Models: A Deep Dive into Architectural Vulnerabilities Beyond Prompt Injection
+💾 Updated topics list (12 remaining)
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-07 17:05:59] [START] Starting Content QA for: 'Securing Large Language Models: A Deep Dive into Architectural Vulnerabilities Beyond Prompt Injection'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-07 17:06:05] [PASS] AI QA Result: PASS - The blog post is accurate, direct in style, and highly technical, utilizing specific industry terminology, tools, and attack vectors relevant to LLM security beyond prompt injection.
+✅ QA Check Passed: PASS - The blog post is accurate, direct in style, and highly technical, utilizing specific industry terminology, tools, and attack vectors relevant to LLM security beyond prompt injection.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Securing Large Language Models: A Deep Dive into Architectural Vulnerabilities Beyond Prompt Injection
+   Type: Blog
+   Date: 2026-01-07
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-07 17:06:06] [INIT] Overseer Agent Awakened
+[2026-01-07 17:06:06] [START] Starting System Health Check...
+[2026-01-07 17:06:06] [INFO] JSON Integrity Check: PASS (10 posts loaded)
+[2026-01-07 17:06:06] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Wed  7 Jan 17:06:06 EST 2026
+
+==================================================
+🚀 Daily Run Started: Thu  8 Jan 20:40:04 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 10 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/whatsapp-worm-sp... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/china-linked-uat... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/google/gmail... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/new... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 10 recent posts for similarity...
+📉 Filtered duplicates: 6 -> 2
+ℹ️  Skipped 4 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/2: WhatsApp Worm Spreads Astaroth Banking Trojan Acro...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/2: Gmail's new AI Inbox uses Gemini, but Google says ...
+
+📰 Priority: REGULAR NEWS
+📝 Generating NEWS post for: WhatsApp Worm Spreads Astaroth Banking Trojan Acro...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-08 20:40:56] [START] Starting Content QA for: 'WhatsApp Worm Spreads Astaroth Banking Trojan Across Brazil via Contact Auto-Messaging'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-08 20:41:04] [PASS] AI QA Result: PASS - The blog post accurately describes a plausible threat, employs raw and direct language, and utilizes specific cybersecurity terminology such as 'Astaroth Banking Trojan,' 'worm mechanism,' 'exfiltrates,' 'social graphs,' and 'credential harvesting' with relevant defense strategies.
+✅ QA Check Passed: PASS - The blog post accurately describes a plausible threat, employs raw and direct language, and utilizes specific cybersecurity terminology such as 'Astaroth Banking Trojan,' 'worm mechanism,' 'exfiltrates,' 'social graphs,' and 'credential harvesting' with relevant defense strategies.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: WhatsApp Worm Spreads Astaroth Banking Trojan Across Brazil via Contact Auto-Messaging
+   Type: News
+   Date: 2026-01-08
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-08 20:41:05] [INIT] Overseer Agent Awakened
+[2026-01-08 20:41:05] [START] Starting System Health Check...
+[2026-01-08 20:41:05] [INFO] JSON Integrity Check: PASS (11 posts loaded)
+[2026-01-08 20:41:05] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Thu  8 Jan 20:41:05 EST 2026
+
+==================================================
+🚀 Daily Run Started: Fri  9 Jan 16:23:38 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 11 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/chinese-linked-h... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/russian-apt28-ru... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/microsoft/mi... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/hac... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 11 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: China-Linked Hackers Exploit VMware ESXi Zero-Days...
+🚨 CRITICAL NEWS FOUND: China-Linked Hackers Exploit VMware ESXi Zero-Days to Escape Virtual Machines
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: China-Linked Hackers Exploit VMware ESXi Zero-Days...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-09 16:24:19] [START] Starting Content QA for: 'China-Linked Hackers Exploit VMware ESXi Zero-Days to Escape Virtual Machines'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-09 16:24:23] [FAIL] AI QA Result: FAIL - The blog post refers to an incident caught in 'December 2025', which is a future date presented as a past event, violating the accuracy criterion.
+❌ QA Check Failed: The blog post refers to an incident caught in 'December 2025', which is a future date presented as a past event, violating the accuracy criterion.
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: The blog post refers to an incident caught in 'December 2025', which is a future date presented as a past event, violating the accuracy criterion.
+
+🕵️  Running QA Check via Overseer (Attempt 2/3)...
+[2026-01-09 16:24:30] [START] Starting Content QA for: 'China-Linked Hackers Exploit VMware ESXi Zero-Days to Escape Virtual Machines'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-09 16:24:35] [FAIL] AI QA Result: FAIL - The blog post refers to an incident in 'December 2024' as a past event ('successfully intercepted and contained'), which is a future date relative to the current context, violating the accuracy criterion.
+❌ QA Check Failed: The blog post refers to an incident in 'December 2024' as a past event ('successfully intercepted and contained'), which is a future date relative to the current context, violating the accuracy criterion.
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: The blog post refers to an incident in 'December 2024' as a past event ('successfully intercepted and contained'), which is a future date relative to the current context, violating the accuracy criterion.
+
+🕵️  Running QA Check via Overseer (Attempt 3/3)...
+[2026-01-09 16:24:41] [START] Starting Content QA for: 'China-Linked Hackers Exploit VMware ESXi Zero-Days to Escape Virtual Machines'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-09 16:24:46] [PASS] AI QA Result: PASS - All facts and dates are plausible and consistent. The style is raw, authentic, and direct, free of fluff. It effectively uses specific industry terminology like 'VMware ESXi zero-days', 'VM escape', 'SonicWall VPN appliance', and 'hypervisor monitoring', fitting the technicality requirement without being overly academic.
+✅ QA Check Passed: PASS - All facts and dates are plausible and consistent. The style is raw, authentic, and direct, free of fluff. It effectively uses specific industry terminology like 'VMware ESXi zero-days', 'VM escape', 'SonicWall VPN appliance', and 'hypervisor monitoring', fitting the technicality requirement without being overly academic.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: China-Linked Hackers Exploit VMware ESXi Zero-Days to Escape Virtual Machines
+   Type: News
+   Date: 2026-01-09
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-09 16:24:48] [INIT] Overseer Agent Awakened
+[2026-01-09 16:24:48] [START] Starting System Health Check...
+[2026-01-09 16:24:48] [INFO] JSON Integrity Check: PASS (12 posts loaded)
+[2026-01-09 16:24:48] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Fri  9 Jan 16:24:48 EST 2026
+
+==================================================
+🚀 Daily Run Started: Sun 11 Jan 23:30:03 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 12 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/muddywater-launc... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/europol-arrests-... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/ins... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/legal/califo... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 12 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: MuddyWater Launches RustyWater RAT via Spear-Phish...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: Europol Arrests 34 Black Axe Members in Spain Over...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 3/3: Instagram denies breach amid claims of 17 million ...
+
+📚 Priority: EDUCATIONAL BLOG (breaking news streak)
+🧠 Checking 10 candidates against 12 recent posts for similarity...
+📉 Filtered duplicates: 10 -> 9
+📚 Generating EDUCATIONAL BLOG post about: Detecting and Mitigating Adversarial Attacks on Machine Learning Models in Production
+💾 Updated topics list (11 remaining)
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-11 23:31:46] [START] Starting Content QA for: 'Detecting and Mitigating Adversarial Attacks on Machine Learning Models in Production'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-11 23:31:51] [PASS] AI QA Result: PASS - The blog post successfully meets all criteria: facts are plausible, style is direct and authentic, and it effectively uses specific industry terminology and tools relevant to cybersecurity and machine learning.
+✅ QA Check Passed: PASS - The blog post successfully meets all criteria: facts are plausible, style is direct and authentic, and it effectively uses specific industry terminology and tools relevant to cybersecurity and machine learning.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Detecting and Mitigating Adversarial Attacks on Machine Learning Models in Production
+   Type: Blog
+   Date: 2026-01-11
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-11 23:31:53] [INIT] Overseer Agent Awakened
+[2026-01-11 23:31:53] [START] Starting System Health Check...
+[2026-01-11 23:31:53] [INFO] JSON Integrity Check: PASS (13 posts loaded)
+[2026-01-11 23:31:53] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Sun 11 Jan 23:31:53 EST 2026
+
+==================================================
+🚀 Daily Run Started: Mon 12 Jan 20:17:22 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 13 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/n8n-supply-chain... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/weekly-recap-ai-... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/hac... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/fac... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 13 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: n8n Supply Chain Attack Abuses Community Nodes to ...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: ⚡ Weekly Recap: AI Automation Exploits, Telecom Es...
+🚨 CRITICAL NEWS FOUND: ⚡ Weekly Recap: AI Automation Exploits, Telecom Espionage, Prompt Poaching & More
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: ⚡ Weekly Recap: AI Automation Exploits, Telecom Es...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-12 20:18:17] [START] Starting Content QA for: '⚡ Weekly Recap: AI Automation Exploits, Telecom Espionage, Prompt Poaching & More'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-12 20:18:25] [FAIL] AI QA Result: FAIL - The blog post excels in accuracy and style, offering plausible facts and a raw, direct voice. However, it falls short on technicality by not including specific industry terminology such as CVEs, named tools, or more granular attack vector examples beyond general concepts like 'exposed endpoints' or 'misconfigured prompts'.
+❌ QA Check Failed: The blog post excels in accuracy and style, offering plausible facts and a raw, direct voice. However, it falls short on technicality by not including specific industry terminology such as CVEs, named tools, or more granular attack vector examples beyond general concepts like 'exposed endpoints' or 'misconfigured prompts'.
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: The blog post excels in accuracy and style, offering plausible facts and a raw, direct voice. However, it falls short on technicality by not including specific industry terminology such as CVEs, named tools, or more granular attack vector examples beyond general concepts like 'exposed endpoints' or 'misconfigured prompts'.
+
+🕵️  Running QA Check via Overseer (Attempt 2/3)...
+[2026-01-12 20:18:39] [START] Starting Content QA for: '⚡ Weekly Recap: AI Automation Exploits, Telecom Espionage, Prompt Poaching & More'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-12 20:18:43] [PASS] AI QA Result: PASS - The blog post demonstrates high accuracy and plausibility, maintains a raw, authentic, and direct style without fluff, and effectively uses specific industry terminology, tools, and attack vectors, meeting all technicality requirements.
+✅ QA Check Passed: PASS - The blog post demonstrates high accuracy and plausibility, maintains a raw, authentic, and direct style without fluff, and effectively uses specific industry terminology, tools, and attack vectors, meeting all technicality requirements.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: ⚡ Weekly Recap: AI Automation Exploits, Telecom Espionage, Prompt Poaching & More
+   Type: News
+   Date: 2026-01-12
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-12 20:18:44] [INIT] Overseer Agent Awakened
+[2026-01-12 20:18:44] [START] Starting System Health Check...
+[2026-01-12 20:18:44] [INFO] JSON Integrity Check: PASS (14 posts loaded)
+[2026-01-12 20:18:44] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Mon 12 Jan 20:18:45 EST 2026
+
+==================================================
+🚀 Daily Run Started: Tue 13 Jan 15:10:47 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 14 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/long-running-web... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/malicious-chrome... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/mic... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/microsoft/mi... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/the-kimwolf-bo... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 14 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Long-Running Web Skimming Campaign Steals Credit C...
+🚨 CRITICAL NEWS FOUND: Long-Running Web Skimming Campaign Steals Credit Cards From Online Checkout Pages
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: Long-Running Web Skimming Campaign Steals Credit C...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-13 15:11:51] [START] Starting Content QA for: 'Long-Running Web Skimming Campaign Steals Credit Cards From Online Checkout Pages'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-13 15:11:56] [PASS] AI QA Result: PASS - The post is accurate with plausible dates and facts, maintains a raw and direct style, and uses appropriate industry-specific technical terminology like 'web skimming,' 'malicious JavaScript,' 'frontend/backend,' 'CSPs,' and 'data exfiltration' with a relevant tool mention (Silent Push).
+✅ QA Check Passed: PASS - The post is accurate with plausible dates and facts, maintains a raw and direct style, and uses appropriate industry-specific technical terminology like 'web skimming,' 'malicious JavaScript,' 'frontend/backend,' 'CSPs,' and 'data exfiltration' with a relevant tool mention (Silent Push).
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Long-Running Web Skimming Campaign Steals Credit Cards From Online Checkout Pages
+   Type: News
+   Date: 2026-01-13
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-13 15:11:57] [INIT] Overseer Agent Awakened
+[2026-01-13 15:11:57] [START] Starting System Health Check...
+[2026-01-13 15:11:57] [INFO] JSON Integrity Check: PASS (15 posts loaded)
+[2026-01-13 15:11:57] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Tue 13 Jan 15:11:57 EST 2026
+
+==================================================
+🚀 Daily Run Started: Wed 14 Jan 18:57:46 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 15 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/kimwolf-botnet-i... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/ai-agents-are-be... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/artificial-i... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/sou... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/patch-tuesday-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 15 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Researchers Null-Route Over 550 Kimwolf and Aisuru...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: AI Agents Are Becoming Privilege Escalation Paths...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 3/3: OpenAI's hidden ChatGPT Translate tool takes on Go...
+
+📚 Priority: EDUCATIONAL BLOG (breaking news streak)
+🧠 Checking 10 candidates against 15 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+📚 Generating EDUCATIONAL BLOG post about: Deep Dive into Serverless Security: Function-Level Isolation and Event-Driven Attack Surface Management
+💾 Updated topics list (10 remaining)
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-14 18:59:09] [START] Starting Content QA for: 'Deep Dive into Serverless Security: Function-Level Isolation and Event-Driven Attack Surface Management'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-14 18:59:16] [PASS] AI QA Result: PASS - The blog post is accurate, direct in style, and highly technical, utilizing specific industry terminology, tools like Ghidra and Metasploit, and detailed attack vectors relevant to serverless security. No fluff or inaccurate information found.
+✅ QA Check Passed: PASS - The blog post is accurate, direct in style, and highly technical, utilizing specific industry terminology, tools like Ghidra and Metasploit, and detailed attack vectors relevant to serverless security. No fluff or inaccurate information found.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Deep Dive into Serverless Security: Function-Level Isolation and Event-Driven Attack Surface Management
+   Type: Blog
+   Date: 2026-01-14
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-14 18:59:17] [INIT] Overseer Agent Awakened
+[2026-01-14 18:59:17] [START] Starting System Health Check...
+[2026-01-14 18:59:17] [INFO] JSON Integrity Check: PASS (16 posts loaded)
+[2026-01-14 18:59:17] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Wed 14 Jan 18:59:17 EST 2026
+
+==================================================
+🚀 Daily Run Started: Thu 15 Jan 18:37:54 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 16 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/aws-codebuild-mi... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/critical-wordpre... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/goo... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/gru... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/patch-tuesday-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 16 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: AWS CodeBuild Misconfiguration Exposed GitHub Repo...
+🚨 CRITICAL NEWS FOUND: AWS CodeBuild Misconfiguration Exposed GitHub Repos to Potential Supply Chain Attacks
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: AWS CodeBuild Misconfiguration Exposed GitHub Repo...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-15 18:38:32] [START] Starting Content QA for: 'AWS CodeBuild Misconfiguration Exposed GitHub Repos to Potential Supply Chain Attacks'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-15 18:38:36] [FAIL] AI QA Result: FAIL - Accuracy: The blog post states that AWS patched the vulnerability in 'September 2025', which is a future date presented as a past event, making the information inaccurate and implausible.
+❌ QA Check Failed: Accuracy: The blog post states that AWS patched the vulnerability in 'September 2025', which is a future date presented as a past event, making the information inaccurate and implausible.
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: Accuracy: The blog post states that AWS patched the vulnerability in 'September 2025', which is a future date presented as a past event, making the information inaccurate and implausible.
+
+🕵️  Running QA Check via Overseer (Attempt 2/3)...
+[2026-01-15 18:38:48] [START] Starting Content QA for: 'AWS CodeBuild Misconfiguration Exposed GitHub Repos to Potential Supply Chain Attacks'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-15 18:38:55] [PASS] AI QA Result: PASS - The blog post is accurate, plausible, and uses specific industry terminology. The style is raw, authentic, and direct, free of generic fluff.
+✅ QA Check Passed: PASS - The blog post is accurate, plausible, and uses specific industry terminology. The style is raw, authentic, and direct, free of generic fluff.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: AWS CodeBuild Misconfiguration Exposed GitHub Repos to Potential Supply Chain Attacks
+   Type: News
+   Date: 2026-01-15
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-15 18:38:56] [INIT] Overseer Agent Awakened
+[2026-01-15 18:38:56] [START] Starting System Health Check...
+[2026-01-15 18:38:56] [INFO] JSON Integrity Check: PASS (17 posts loaded)
+[2026-01-15 18:38:56] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Thu 15 Jan 18:38:56 EST 2026
+
+==================================================
+🚀 Daily Run Started: Fri 16 Jan 15:35:49 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 17 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/gootloader-malwa... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/five-malicious-c... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/bla... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/chi... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/patch-tuesday-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 6 candidates against 17 recent posts for similarity...
+📉 Filtered duplicates: 6 -> 4
+ℹ️  Skipped 2 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: GootLoader Malware Uses 500–1,000 Concatenated ZIP...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: Black Basta boss makes it onto Interpol's 'Red Not...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 3/3: Patch Tuesday, January 2026 Edition...
+🚨 CRITICAL NEWS FOUND: Patch Tuesday, January 2026 Edition
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: Patch Tuesday, January 2026 Edition...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-16 15:36:51] [START] Starting Content QA for: 'Patch Tuesday, January 2026 Edition'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-16 15:36:57] [FAIL] AI QA Result: FAIL - The blog post presents a future date (January 2026) as if it has already occurred, violating the 'plausible dates' aspect of the accuracy criterion.
+❌ QA Check Failed: The blog post presents a future date (January 2026) as if it has already occurred, violating the 'plausible dates' aspect of the accuracy criterion.
+⚠️  Attempting rewrite...
+
+✍️  Rewriting post based on QA feedback: The blog post presents a future date (January 2026) as if it has already occurred, violating the 'plausible dates' aspect of the accuracy criterion.
+
+🕵️  Running QA Check via Overseer (Attempt 2/3)...
+[2026-01-16 15:37:11] [START] Starting Content QA for: 'Patch Tuesday, January 2026 Edition'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-16 15:37:16] [PASS] AI QA Result: PASS - The blog post is accurate in its future-facing predictions, maintains a raw and direct style without fluff, and uses specific, relevant cybersecurity terminology, tools, and attack vectors.
+✅ QA Check Passed: PASS - The blog post is accurate in its future-facing predictions, maintains a raw and direct style without fluff, and uses specific, relevant cybersecurity terminology, tools, and attack vectors.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Patch Tuesday, January 2026 Edition
+   Type: News
+   Date: 2026-01-16
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-16 15:37:17] [INIT] Overseer Agent Awakened
+[2026-01-16 15:37:17] [START] Starting System Health Check...
+[2026-01-16 15:37:17] [INFO] JSON Integrity Check: PASS (18 posts loaded)
+[2026-01-16 15:37:17] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Fri 16 Jan 15:37:17 EST 2026
+
+==================================================
+🚀 Daily Run Started: Sat 17 Jan 16:49:24 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 18 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/black-basta-rans... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/openai-to-show-a... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/artificial-i... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/artificial-i... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/patch-tuesday-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 5 candidates against 18 recent posts for similarity...
+📉 Filtered duplicates: 5 -> 3
+ℹ️  Skipped 3 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/3: Black Basta Ransomware Leader Added to EU Most Wan...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/3: OpenAI to Show Ads in ChatGPT for Logged-In U.S. A...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 3/3: Who Benefited from the Aisuru and Kimwolf Botnets?...
+🚨 CRITICAL NEWS FOUND: Who Benefited from the Aisuru and Kimwolf Botnets?
+
+🚨 Priority: CRITICAL NEWS
+📝 Generating NEWS post for: Who Benefited from the Aisuru and Kimwolf Botnets?...
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-17 16:50:28] [START] Starting Content QA for: 'Who Benefited from the Aisuru and Kimwolf Botnets?'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-17 16:50:34] [PASS] AI QA Result: PASS - The blog post is accurate, uses a raw and direct writing style, and incorporates appropriate cybersecurity terminology like 'ADB access,' 'backdoored firmware,' 'C2 comms,' 'CVEs,' and 'VLAN' effectively.
+✅ QA Check Passed: PASS - The blog post is accurate, uses a raw and direct writing style, and incorporates appropriate cybersecurity terminology like 'ADB access,' 'backdoored firmware,' 'C2 comms,' 'CVEs,' and 'VLAN' effectively.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Who Benefited from the Aisuru and Kimwolf Botnets?
+   Type: News
+   Date: 2026-01-17
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-17 16:50:36] [INIT] Overseer Agent Awakened
+[2026-01-17 16:50:36] [START] Starting System Health Check...
+[2026-01-17 16:50:36] [INFO] JSON Integrity Check: PASS (19 posts loaded)
+[2026-01-17 16:50:36] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Sat 17 Jan 16:50:36 EST 2026
+
+==================================================
+🚀 Daily Run Started: Sun 18 Jan 15:10:57 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 19 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+
+📰 Fetching news from feeds...
+      🔎 Verifying link: https://thehackernews.com/2026/01/black-basta-rans... OK
+      🔎 Verifying link: https://thehackernews.com/2026/01/openai-to-show-a... OK
+   ✓ Fetched 2 items from The Hacker News
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/microsoft/mi... OK
+      🔎 Verifying link: https://www.bleepingcomputer.com/news/security/cir... OK
+   ✓ Fetched 2 items from BleepingComputer
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/patch-tuesday-... OK
+      🔎 Verifying link: https://krebsonsecurity.com/2026/01/who-benefited-... OK
+   ✓ Fetched 2 items from Krebs on Security
+📊 Total items fetched: 6
+🧠 Checking 4 candidates against 19 recent posts for similarity...
+📉 Filtered duplicates: 4 -> 2
+ℹ️  Skipped 4 duplicate/similar news items
+
+🔍 Analyzing for critical news...
+   Analyzing item 1/2: Black Basta Ransomware Leader Added to EU Most Wan...
+   ⏳ Waiting 15s to respect rate limits...
+   Analyzing item 2/2: OpenAI to Show Ads in ChatGPT for Logged-In U.S. A...
+
+📚 Priority: EDUCATIONAL BLOG (breaking news streak)
+🧠 Checking 10 candidates against 19 recent posts for similarity...
+⚠️ JSON parse error in deduping: Expecting value: line 1 column 1 (char 0)
+📚 Generating EDUCATIONAL BLOG post about: Advanced Kubernetes Security Posture: Runtime Threat Detection and Policy Enforcement with OPA
+💾 Updated topics list (9 remaining)
+
+🕵️  Running QA Check via Overseer (Attempt 1/3)...
+[2026-01-18 15:12:02] [START] Starting Content QA for: 'Advanced Kubernetes Security Posture: Runtime Threat Detection and Policy Enforcement with OPA'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+✅ Successfully connected: API=v1alpha, Model=models/gemini-2.5-flash
+[2026-01-18 15:12:09] [PASS] AI QA Result: PASS - The blog post is accurate, uses a direct and authentic style, and employs specific industry terminology and attack vectors effectively without unnecessary fluff.
+✅ QA Check Passed: PASS - The blog post is accurate, uses a direct and authentic style, and employs specific industry terminology and attack vectors effectively without unnecessary fluff.
+💾 Saved data to /var/www/mywebsite/scripts/../src/data/blog_posts.json
+
+✅ Successfully generated and saved new post!
+   Title: Advanced Kubernetes Security Posture: Runtime Threat Detection and Policy Enforcement with OPA
+   Type: Blog
+   Date: 2026-01-18
+
+============================================================
+🏁 Blog Post Generator Finished
+============================================================
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-18 15:12:10] [INIT] Overseer Agent Awakened
+[2026-01-18 15:12:10] [START] Starting System Health Check...
+[2026-01-18 15:12:10] [INFO] JSON Integrity Check: PASS (20 posts loaded)
+[2026-01-18 15:12:10] [WARN] Log Analysis: WARN - Critical errors detected in today's logs.
+
+!!! OVERSEER ALERT !!!
+- Log Analysis: WARN - Critical errors detected in today's logs.
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Sun 18 Jan 15:12:10 EST 2026
+
+==================================================
+🚀 Daily Run Started: Mon 19 Jan 17:22:00 EST 2026
+==================================================
+Checking for blog updates...
+DEBUG: Start of file
+DEBUG: Start of file
+DEBUG: Inside main
+============================================================
+🚀 Blog Post Generator Starting
+============================================================
+
+📊 Loaded 20 existing posts
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+   models/gemini-2.5-flash failed: [Errno -3] Temporary failure in name resolution
+   Testing v1alpha with models/gemini-2.0-flash...
+   models/gemini-2.0-flash failed: [Errno -3] Temporary failure in name resolution
+   Testing v1alpha with models/gemini-flash-latest...
+   models/gemini-flash-latest failed: [Errno -3] Temporary failure in name resolution
+   Testing v1 with models/gemini-2.5-flash...
+   models/gemini-2.5-flash failed: [Errno -3] Temporary failure in name resolution
+   Testing v1 with models/gemini-2.0-flash...
+   models/gemini-2.0-flash failed: [Errno -3] Temporary failure in name resolution
+   Testing v1 with models/gemini-flash-latest...
+   models/gemini-flash-latest failed: [Errno -3] Temporary failure in name resolution
+❌ Could not initialize Gemini client with any configuration
+
+❌ Cannot proceed without API client. Exiting.
+💡 Possible solutions:
+   1. Wait 24 hours if you hit your quota
+   2. Check your API key at https://aistudio.google.com/apikey
+   3. Verify billing is set up
+✅ Blog generation complete.
+Starting Overseer Agent (System Health)...
+DEBUG: Start of file
+[2026-01-19 17:23:16] [INIT] Overseer Agent Awakened
+[2026-01-19 17:23:16] [START] Starting System Health Check...
+[2026-01-19 17:23:16] [INFO] JSON Integrity Check: PASS (20 posts loaded)
+[2026-01-19 17:23:16] [START] Starting Content QA for: 'Advanced Kubernetes Security Posture: Runtime Threat Detection and Policy Enforcement with OPA'...
+🔧 Setting up Gemini API client...
+   Testing v1alpha with models/gemini-2.5-flash...
+   models/gemini-2.5-flash failed: [Errno -3] Temporary failure in name resolution
+   Testing v1alpha with models/gemini-2.0-flash...
+   models/gemini-2.0-flash failed: [Errno -3] Temporary failure in name resolution
+   Testing v1alpha with models/gemini-flash-latest...
+   models/gemini-flash-latest failed: [Errno -3] Temporary failure in name resolution
+   Testing v1 with models/gemini-2.5-flash...
+   models/gemini-2.5-flash failed: [Errno -3] Temporary failure in name resolution
+   Testing v1 with models/gemini-2.0-flash...
+   models/gemini-2.0-flash failed: [Errno -3] Temporary failure in name resolution
+   Testing v1 with models/gemini-flash-latest...
+   models/gemini-flash-latest failed: [Errno -3] Temporary failure in name resolution
+❌ Could not initialize Gemini client with any configuration
+[2026-01-19 17:24:30] [ERROR] AI QA Failed: Could not setup Gemini client
+⚠️ Overseer reported issues.
+🏁 Daily Run Finished: Mon 19 Jan 17:24:30 EST 2026
+
